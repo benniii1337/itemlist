@@ -69,6 +69,6 @@ mods:
   author: true
 
 # Build settings
-remote_theme: sylhare/Type-on-Strap
+remote_theme: SirRandoo/Type-on-Strap
 plugins:
   -
