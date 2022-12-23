@@ -12,6 +12,12 @@
     "version": "10.0.1"
   },
   {
+    "author": "UnlimitedHugs",
+    "name": "Allow Tool",
+    "steamId": null,
+    "version": null
+  },
+  {
     "author": "Oskar Potocki, XeoNovaDan, Orion, Kikohi, Taranchuk, Sarg Bjornson and Erdelf",
     "name": "Vanilla Expanded Framework",
     "steamId": "2023507013",
@@ -72,26 +78,20 @@
     "version": null
   },
   {
-    "author": "Imranfish",
-    "name": "XML Extensions",
-    "steamId": "2574315206",
-    "version": "1.7.0"
-  },
-  {
-    "author": "Comigo Games, Djeeshka, Zipzopdippidybopbop, Kamikadza13 and hohen",
-    "name": "Comigo's Majestic Trees Combined (temp)[HH]",
-    "steamId": null,
-    "version": null
-  },
-  {
     "author": "avilmask",
     "name": "Common Sense",
     "steamId": "1561769193",
-    "version": "1.0.8362.14900"
+    "version": "1.0.8391.36780"
   },
   {
     "author": "TheWireLord",
     "name": "Conduit Deconstruct",
+    "steamId": null,
+    "version": null
+  },
+  {
+    "author": "Falconne",
+    "name": "Better Workbench Management",
     "steamId": null,
     "version": null
   },
@@ -130,12 +130,6 @@
     "name": "Haul to Stack",
     "steamId": null,
     "version": null
-  },
-  {
-    "author": "Netrve",
-    "name": "Hunters Use Melee! (Continued)",
-    "steamId": "2900108163",
-    "version": "1.4.1"
   },
   {
     "author": "Hanabishi",
@@ -220,6 +214,12 @@
     "name": "Prioritize Meals over Preserved Foods",
     "steamId": null,
     "version": null
+  },
+  {
+    "author": "Syrchalis",
+    "name": "[SYR] Prosthetic Table",
+    "steamId": "1473332565",
+    "version": "0.0.0.0"
   },
   {
     "author": "iamrespawn",
@@ -558,6 +558,12 @@
     "version": "3.21.303"
   },
   {
+    "author": "Imranfish",
+    "name": "XML Extensions",
+    "steamId": "2574315206",
+    "version": "1.7.0"
+  },
+  {
     "author": "none",
     "name": "[CAT] Show Hair With Hats or Hide All Hats",
     "steamId": "2879080074",
@@ -590,6 +596,12 @@
   {
     "author": "FrozenSnowFox",
     "name": "[FSF] Filth Vanishes With Rain And Time",
+    "steamId": null,
+    "version": null
+  },
+  {
+    "author": "FrozenSnowFox",
+    "name": "[FSF] Vanilla Bionics Expansion",
     "steamId": null,
     "version": null
   },
