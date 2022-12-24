@@ -1150,5 +1150,59 @@
     "userLevel": "Anyone",
     "shortcut": false,
     "defName": "Divorce"
+  },
+  {
+    "data": {
+      "isShortcut": false,
+      "isBuy": true,
+      "isBalance": false,
+      "hasGlobalCooldown": false,
+      "globalCooldown": 0,
+      "hasLocalCooldown": false,
+      "localCooldown": 0,
+      "mod": "ToolkitUtils"
+    },
+    "description": "Purchases a weapon and equips it on your pawn.",
+    "name": "Equip weapon",
+    "usage": "!buy equip (weaponname)",
+    "userLevel": "Anyone",
+    "shortcut": false,
+    "defName": "EquipWeapon"
+  },
+  {
+    "data": {
+      "isShortcut": false,
+      "isBuy": true,
+      "isBalance": false,
+      "hasGlobalCooldown": false,
+      "globalCooldown": 0,
+      "hasLocalCooldown": false,
+      "localCooldown": 0,
+      "mod": "ToolkitUtils"
+    },
+    "description": "Purchases an item and puts it on your pawn. Valid item categories are: 'apparel', 'armor', 'headgear' and 'handwear and footwear'",
+    "name": "Wear item",
+    "usage": "!buy wear (item)",
+    "userLevel": "Anyone",
+    "shortcut": false,
+    "defName": "WearItem"
+  },
+  {
+    "data": {
+      "isShortcut": false,
+      "isBuy": true,
+      "isBalance": false,
+      "hasGlobalCooldown": false,
+      "globalCooldown": 0,
+      "hasLocalCooldown": false,
+      "localCooldown": 0,
+      "mod": "ToolkitUtils"
+    },
+    "description": "Purchases an item and uses it on your pawn.",
+    "name": "Use item",
+    "usage": "!buy use (item)",
+    "userLevel": "Anyone",
+    "shortcut": false,
+    "defName": "UseItem"
   }
 ]
