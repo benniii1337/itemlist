@@ -154,7 +154,7 @@
       "localCooldown": 0,
       "mod": "Twitch Toolkit"
     },
-    "description": null,
+    "description": "Explains what the karma system is.",
     "name": "Karma explanation",
     "usage": "!whatiskarma",
     "userLevel": "Anyone",
@@ -172,7 +172,7 @@
       "localCooldown": 0,
       "mod": "Twitch Toolkit"
     },
-    "description": null,
+    "description": "Will give you a link to the public purchase list.",
     "name": "Purchase list",
     "usage": "!purchaselist",
     "userLevel": "Anyone",
@@ -208,7 +208,7 @@
       "localCooldown": 0,
       "mod": "Twitch Toolkit"
     },
-    "description": null,
+    "description": "Joins the queue to get a pawn named after you.",
     "name": "Join queue",
     "usage": "!joinqueue",
     "userLevel": "Anyone",
@@ -226,7 +226,7 @@
       "localCooldown": 0,
       "mod": "Twitch Toolkit"
     },
-    "description": null,
+    "description": "Will give you a basic description of Twitch Toolkit",
     "name": "Mod info",
     "usage": "!modinfo",
     "userLevel": "Anyone",
@@ -244,7 +244,7 @@
       "localCooldown": 0,
       "mod": "Twitch Toolkit"
     },
-    "description": null,
+    "description": "Buys the specific Event or Item.",
     "name": "Buy",
     "usage": "!buy (item) [quantity]",
     "userLevel": "Anyone",
@@ -280,7 +280,7 @@
       "localCooldown": 0,
       "mod": "Twitch Toolkit"
     },
-    "description": null,
+    "description": "Gives info on how many coins are being earned and global settings.",
     "name": "Mod settings",
     "usage": "!modsettings",
     "userLevel": "Anyone",
@@ -298,7 +298,7 @@
       "localCooldown": 0,
       "mod": "Twitch Toolkit"
     },
-    "description": null,
+    "description": "Gives users basic information about the usage of the tool.",
     "name": "Instructions",
     "usage": "!instructions",
     "userLevel": "Anyone",
@@ -316,7 +316,7 @@
       "localCooldown": 0,
       "mod": "Twitch Toolkit"
     },
-    "description": null,
+    "description": "Shows all available commands.",
     "name": "All commands",
     "usage": "!allcommands",
     "userLevel": "Anyone",
@@ -352,7 +352,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "A colony wide resurrector mech serum. (Resurrects all)",
     "name": "Revive all",
     "usage": "!reviveall",
     "userLevel": "Anyone",
@@ -370,7 +370,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "A personal resurrector mech serum. (Resurrects you)",
     "name": "Revive me",
     "usage": "!reviveme",
     "userLevel": "Anyone",
@@ -388,7 +388,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "A personal healer mech serum. (Heals one random condition)",
     "name": "Heal me",
     "usage": "!healme",
     "userLevel": "Anyone",
@@ -406,7 +406,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "A colony wide healer mech serum. (Heals one random condition on everybody)",
     "name": "Healall",
     "usage": "!healall",
     "userLevel": "Anyone",
@@ -460,7 +460,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "Adds a trait for your pawn.",
     "name": "Add trait",
     "usage": "!trait (trait)",
     "userLevel": "Anyone",
@@ -478,7 +478,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "Removes a trait from your pawn.",
     "name": "Remove trait",
     "usage": "!removetrait (trait)",
     "userLevel": "Anyone",
@@ -496,7 +496,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "A resurrector mech serum for a random deceased colonist.",
     "name": "Revive any pawn",
     "usage": "!reviveanypawn",
     "userLevel": "Anyone",
@@ -514,7 +514,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "A healer mech serum for a random colonist. (Heals one random condition on any pawn)",
     "name": "Heal any pawn",
     "usage": "!healanypawn",
     "userLevel": "Anyone",
@@ -604,7 +604,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "Heals all healable injuries your pawn currently has. (Costs multiply per injury)",
     "name": "Full heal",
     "usage": "!fullheal",
     "userLevel": "Anyone",
@@ -622,7 +622,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "Creates a prisoner rescue quest for your most recently kidnapped pawn.",
     "name": "Rescue me",
     "usage": "!rescueme",
     "userLevel": "Anyone",
@@ -640,7 +640,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "Shows your current kill count.",
     "name": "Viewer kill count",
     "usage": "!mypawnkills",
     "userLevel": "Anyone",
@@ -802,7 +802,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "Attempts to relink your pawn to you.",
     "name": "Fix viewer pawn",
     "usage": "!fixmypawn",
     "userLevel": "Anyone",
@@ -820,7 +820,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "Attempts to relink all pawns to their respective viewers.",
     "name": "Fix all pawns",
     "usage": "!fixallpawns",
     "userLevel": "Moderator",
@@ -874,7 +874,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "Shows an overview of the colony's current faction relations.",
     "name": "Factions",
     "usage": "!factions",
     "userLevel": "Anyone",
@@ -946,7 +946,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "Removes viewers that were stuck in the "game paused" limbo.",
     "name": "Unstick",
     "usage": "!unstick",
     "userLevel": "Moderator",
@@ -964,7 +964,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "Toggles whether or not viewers can actively purchase things from the store.",
     "name": "Toggle store",
     "usage": "!togglestore",
     "userLevel": "Moderator",
@@ -1054,7 +1054,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "Shows the colony's current wealth. This command uses the same value the storyteller will use.",
     "name": "Colony wealth",
     "usage": "!wealth",
     "userLevel": "Anyone",
@@ -1072,7 +1072,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "Shows the current number of colonists remaining in the colony.",
     "name": "Colonist count",
     "usage": "!colonists",
     "userLevel": "Anyone",
@@ -1108,7 +1108,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "It's like unstick, but safer for viewers to use.",
     "name": "Unstick me",
     "usage": "!imstuck",
     "userLevel": "Anyone",
@@ -1126,7 +1126,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "Lets viewers marry each other.",
     "name": "Marriage",
     "usage": "!marry [target]",
     "userLevel": "Anyone",
@@ -1144,29 +1144,11 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": null,
+    "description": "Lets a viewer divorce their spouse.",
     "name": "Divorce",
     "usage": "!divorce [target]",
     "userLevel": "Anyone",
     "shortcut": false,
     "defName": "Divorce"
-  },
-  {
-    "data": {
-      "isShortcut": false,
-      "isBuy": false,
-      "isBalance": false,
-      "hasGlobalCooldown": false,
-      "globalCooldown": 0,
-      "hasLocalCooldown": false,
-      "localCooldown": 0,
-      "mod": "ToolkitCore"
-    },
-    "description": null,
-    "name": "hello",
-    "usage": "!hello",
-    "userLevel": "Moderator",
-    "shortcut": false,
-    "defName": "HelloWorld"
   }
 ]
