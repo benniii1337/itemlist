@@ -48,7 +48,7 @@
     },
     "description": "Gives eveyrone coins.",
     "name": "Give all coins",
-    "usage": "!giveallcoins \<coins\>",
+    "usage": "!giveallcoins (coins)",
     "userLevel": "Moderator",
     "shortcut": false,
     "defName": "GiveAllCoins"
@@ -66,7 +66,7 @@
     },
     "description": "Gives a viewer coins.",
     "name": "Give coins",
-    "usage": "!givecoins \<viewer\> \<coins\>",
+    "usage": "!givecoins (viewer) (coins)",
     "userLevel": "Moderator",
     "shortcut": false,
     "defName": "GiveCoins"
@@ -84,7 +84,7 @@
     },
     "description": "Shows the balance of a given user.",
     "name": "Check user",
-    "usage": "!checkuser \<viewer\>",
+    "usage": "!checkuser (viewer)",
     "userLevel": "Moderator",
     "shortcut": false,
     "defName": "CheckUser"
@@ -102,7 +102,7 @@
     },
     "description": "Sets the current karma for a given user.",
     "name": "Set karma",
-    "usage": "!setkarma \<viewer\> \<karma\>",
+    "usage": "!setkarma (viewer) (karma)",
     "userLevel": "Moderator",
     "shortcut": false,
     "defName": "SetKarma"
@@ -192,7 +192,7 @@
     },
     "description": "Gives a viewer some of your coins.",
     "name": "Gift coins",
-    "usage": "!giftcoins \<viewer\> \<amount\>",
+    "usage": "!giftcoins (viewer) (amount)",
     "userLevel": "Anyone",
     "shortcut": false,
     "defName": "GiftCoins"
@@ -246,7 +246,7 @@
     },
     "description": null,
     "name": "Buy",
-    "usage": "!buy \<item\> [quantity]",
+    "usage": "!buy (item) [quantity]",
     "userLevel": "Anyone",
     "shortcut": false,
     "defName": "Buy"
@@ -264,7 +264,7 @@
     },
     "description": "Lets you wager coins to level up a skill of your choosing.",
     "name": "Level skill",
-    "usage": "!levelskill \<skill\> \<coins\>",
+    "usage": "!levelskill (skill) (coins)",
     "userLevel": "Anyone",
     "shortcut": true,
     "defName": "LevelSkillShortcut"
@@ -426,7 +426,7 @@
     },
     "description": "Shuffles your passions. If a skill is specified, you'll be guaranteed a minor passion in it.",
     "name": "Passion shuffle",
-    "usage": "!passionshuffle \<skill\>",
+    "usage": "!passionshuffle (skill)",
     "userLevel": "Anyone",
     "shortcut": true,
     "defName": "PassionShuffleShortcut"
@@ -444,7 +444,7 @@
     },
     "description": "Purchases the part specified and queues it for surgery on your pawn.",
     "name": "Surgery",
-    "usage": "!surgery \<item\> \<quantity\/bodypart\>",
+    "usage": "!surgery (item) (quantity/bodypart)",
     "userLevel": "Anyone",
     "shortcut": true,
     "defName": "SurgeryShortcut"
@@ -462,7 +462,7 @@
     },
     "description": null,
     "name": "Add trait",
-    "usage": "!trait \<trait\>",
+    "usage": "!trait (trait)",
     "userLevel": "Anyone",
     "shortcut": true,
     "defName": "TraitShortcut"
@@ -480,7 +480,7 @@
     },
     "description": null,
     "name": "Remove trait",
-    "usage": "!removetrait \<trait\>",
+    "usage": "!removetrait (trait)",
     "userLevel": "Anyone",
     "shortcut": true,
     "defName": "RemoveTraitShortcut"
@@ -534,7 +534,7 @@
     },
     "description": "Replaces a trait with a different trait.",
     "name": "Replace trait",
-    "usage": "!replacetrait \<old\> \<new\>",
+    "usage": "!replacetrait (old) (new)",
     "userLevel": "Anyone",
     "shortcut": true,
     "defName": "ReplaceTraitShortcut"
@@ -552,7 +552,7 @@
     },
     "description": "It's like buy item, but it gets added to your inventory if possible.",
     "name": "Backpack",
-    "usage": "!backpack \<item\> [quantity]",
+    "usage": "!backpack (item) [quantity]",
     "userLevel": "Anyone",
     "shortcut": true,
     "defName": "BackpackShortcut"
@@ -570,7 +570,7 @@
     },
     "description": "Downgrades a skill's passion... sometimes.",
     "name": "Remove passion",
-    "usage": "!removepassion \<skill\>",
+    "usage": "!removepassion (skill)",
     "userLevel": "Anyone",
     "shortcut": true,
     "defName": "RemovePassionShortcut"
@@ -588,7 +588,7 @@
     },
     "description": "Upgrades a skill's passion... sometimes.",
     "name": "Add passion",
-    "usage": "!passion \<skill\>",
+    "usage": "!passion (skill)",
     "userLevel": "Anyone",
     "shortcut": true,
     "defName": "AddPassionShortcut"
@@ -894,7 +894,7 @@
     },
     "description": "Shows the current research progress. If a project is specified, it'll show the progress of that instead.",
     "name": "Research",
-    "usage": "!research [project\/item]",
+    "usage": "!research [project/item]",
     "userLevel": "Anyone",
     "shortcut": false,
     "defName": "Research"
@@ -912,7 +912,7 @@
     },
     "description": "Shows the first few results for the query in the given category. Valid categories are: 'pawns', 'traits', 'items', 'events', 'diseases', 'animals', and 'skills'.",
     "name": "Lookup",
-    "usage": "!lookup \<item\/category\> [query]",
+    "usage": "!lookup (item/category) [query]",
     "userLevel": "Anyone",
     "shortcut": false,
     "defName": "Lookup"
@@ -930,7 +930,7 @@
     },
     "description": "Similar to the lookup command, except it'll show the price for the first valid match.",
     "name": "Price check",
-    "usage": "!price \<item\/category\> [query]",
+    "usage": "!price (item/category) [query]",
     "userLevel": "Anyone",
     "shortcut": false,
     "defName": "PriceCheck"
@@ -1092,7 +1092,7 @@
     },
     "description": "Provides some information about supported things. Supported categories are: 'weapons'",
     "name": "Database",
-    "usage": "!rwdata \<category\/weaponname\> [weaponname]",
+    "usage": "!rwdata (category/weaponname) [weaponname]",
     "userLevel": "Anyone",
     "shortcut": false,
     "defName": "RimDatabase"
