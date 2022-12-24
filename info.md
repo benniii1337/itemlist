@@ -91,6 +91,23 @@ are the `!mypawn` commands, which allow you see various information about your p
 every command here, but most commands should generally be self-descriptive or have a description of
 what they do on the [commands]({{- "/commands" | relative_url -}}) page.
 
+## Some Examples
+
+#### Beginner
+
+Let's start with buying a weapon and some clothings for your pawn. You may had a look already in the
+[commands]({{- "/commands" | relative_url -}}) to have an idea which will come in handy now. It's
+`!buy equip <weaponname>` and `!buy wear <item>` (Tip: We can substitute `!buy` commands to a simple `$`)
+Choose a suitable weapon in the [store]({{- "/" | relative_url -}}). It has to be researched and you
+need enough coins. Check it with `{{ bal }}`. We will use a shortbow for now. Go into chat and try it out:
+ `$equip shortbow`
+
+Woah, we got a bow now. Still naked? Lets follow up with some pants and a shirt, or if you are a nudist
+maybe just a sash? Let's make it short: Use `$wear pants` and `$wear t-shirt` - Was easy, wasn't it?
+
+#### Advanced
+
+Following
 
 {%- if puppeteer -%}
 <br/>
