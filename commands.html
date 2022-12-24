@@ -59,7 +59,7 @@ permalink: /commands
                                 <br/>
                                 <span class="metadata">
                                     {% capture usage %}
-                                        {{ command.usage | prepend: " " | replace: "(", "&lt;" | replace: ")", "&gt;" }}
+                                        {{ command.usage | prepend: " " | replace: "&lt;", "(" | replace: "&gt;", ")" }}
                                     {% endcapture %}
 
                                     {{- site.data.language.usage | replace: '%s', usage -}}
@@ -78,7 +78,7 @@ permalink: /commands
                                 <br/>
                                 <span class="metadata">
                                     {% capture shortcut %}
-                                        {{ buy }} {{ command.usage | slice: 1, command.usage.size | replace: "(" , "&lt;" | replace: ")", "&gt;" }}
+                                        {{ buy }} {{ command.usage | slice: 1, command.usage.size | replace: "&lt;", "(" | replace: "&gt;", ")" }}
                                     {% endcapture %}
 
                                     {{- site.data.language.shortcut | replace: '%s', shortcut -}}
