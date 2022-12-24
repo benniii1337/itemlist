@@ -730,7 +730,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": Shows your damaged or replaced body parts.,
+    "description": "Shows your damaged or replaced body parts.",
     "name": "Viewer body",
     "usage": "!mypawnbody",
     "userLevel": "Anyone",
@@ -946,7 +946,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": "Removes viewers that were stuck in the "game paused" limbo.",
+    "description": "Removes viewers that were stuck in the 'game paused' limbo.",
     "name": "Unstick",
     "usage": "!unstick",
     "userLevel": "Moderator",
