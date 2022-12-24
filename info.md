@@ -96,8 +96,8 @@ what they do on the [commands]({{- "/commands" | relative_url -}}) page.
 #### Beginner
 
 Let's start with buying a weapon and some clothings for your pawn. You may had a look already in the
-[commands]({{- "/commands" | relative_url -}}) to have an idea which will come in handy now. It's
-`!buy equip <weaponname>` and `!buy wear <item>` (Tip: We can substitute `!buy` commands to a simple `$`)
+[commands]({{- "/commands" | relative_url -}}) to have an idea which commands will come in handy now.
+It's `!buy equip <weaponname>` and `!buy wear <item>` (Tip: We can substitute `!buy` commands to a simple `$`)
 Choose a suitable weapon in the [store]({{- "/" | relative_url -}}). It has to be researched and you
 need enough coins. Check it with `{{ bal }}`. We will use a shortbow for now. Go into chat and try it out:
  `$equip shortbow`
@@ -107,7 +107,19 @@ maybe just a sash? Let's make it short: Use `$wear pants` and `$wear t-shirt` - 
 
 #### Advanced
 
-Following
+You may have noticed that we only get a random material and a random quality like that. And i can see that
+you don't like your new pants made of pigskin. So let's learn how we can buy you some nice new devilstrand
+pants with at least an excellent quality, shall we? We will add two new attributes to our command:
+`$wear <item>[material,quality]`. You can also only use one attribute at a time, as it will cost more. To
+check the costs beforehand you can use `!price t-shirt[devilstrand,excellent]` in chat. But let's buy and
+equip it for now:
+`$wear t-shirt[devilstrand,excellent]` - And of course it will work with the equip command too!
+
+To get an idea which materials to pick, what they change and what the different qualities do check it in the
+official [RimWorld Wiki](https://rimworldwiki.com/)!
+
+- [Materials](https://rimworldwiki.com/wiki/Materials) 
+- [Quality](https://rimworldwiki.com/wiki/Quality)
 
 {%- if puppeteer -%}
 <br/>
