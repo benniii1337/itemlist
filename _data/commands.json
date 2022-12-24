@@ -46,7 +46,7 @@
       "localCooldown": 0,
       "mod": "Twitch Toolkit"
     },
-    "description": "Gives eveyrone coins.",
+    "description": "Gives everyone coins.",
     "name": "Give all coins",
     "usage": "!giveallcoins (coins)",
     "userLevel": "Moderator",
@@ -496,7 +496,7 @@
       "localCooldown": 0,
       "mod": "ToolkitUtils"
     },
-    "description": "A resurrector mech serum for a random deceased colonist.",
+    "description": "A resurrector mech serum for a random deceased colonist. (Resurrects a random pawn)",
     "name": "Revive any pawn",
     "usage": "!reviveanypawn",
     "userLevel": "Anyone",
