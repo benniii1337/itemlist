@@ -95,10 +95,10 @@ what they do on the [commands]({{- "/commands" | relative_url -}}) page.
 
 #### TL;DR
 
-Equip a primary weapon:</br>
+Equip a primary weapon: <br/>
 `!buy equip <item>[material,quality]` or `$equip <item>[material,quality]`
 
-Wear apparel or armor:</br>
+Wear apparel or armor: <br/>
 `!buy wear <item>[material,quality]` or `$wear <item>[material,quality]`
 
 #### Beginner
