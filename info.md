@@ -93,6 +93,14 @@ what they do on the [commands]({{- "/commands" | relative_url -}}) page.
 
 ## Some Examples
 
+#### TL;DR
+
+Equip a primary weapon:</br>
+`!buy equip <item>[material,quality]` or `$equip <item>[material,quality]`
+
+Wear apparel or armor:</br>
+`!buy wear <item>[material,quality]` or `$wear <item>[material,quality]`
+
 #### Beginner
 
 Let's start with buying a weapon and some clothings for your pawn. You may had a look already in the
