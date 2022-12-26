@@ -101,6 +101,8 @@ Equip a primary weapon: <br/>
 Wear apparel or armor: <br/>
 `!buy wear <item>[material,quality]` or `$wear <item>[material,quality]`
 
+ℹ️ declaring material and quality is optional
+
 #### Beginner
 
 Let's start with buying a weapon and some clothings for your pawn. You may had a look already in the
