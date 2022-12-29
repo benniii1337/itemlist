@@ -141,7 +141,7 @@ title: Store
 
 {%- if apparelForDisplay.size > 0 -%}
     {% capture headers %}
-        {{ site.data.language.name_header }},{{ site.data.language.cost_header }}
+        {{ site.data.language.name_header }},{{ site.data.language.cost_header }}{{ site.data.language.category_header }}
     {% endcapture %}
 
     {%- include store_tab.html
