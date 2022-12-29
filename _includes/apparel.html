@@ -68,4 +68,9 @@
             </span>
         {%- endif -%}
     </td>
+    
+    
+    {%- if site.store.items.category -%}
+        <td>{{- include.item.category -}}</td>
+    {%- endif -%}
 </tr>
