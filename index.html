@@ -14,6 +14,7 @@ title: Store
 {%- assign traitsForDisplay = '' | split: ',' -%}
 {%- assign kindsForDisplay = site.data.ShopExt.races | where: "enabled", "true" | sort: "name" -%}
 {%- assign weaponsForDisplay = '' | split: ',' -%}
+{%- assign apparelForDisplay = '' | split: ',' -%}
 
 {%- for item in site.data.StoreItems.items -%}
     {%- if item.price <= 0 -%}
@@ -22,6 +23,11 @@ title: Store
 
     {%- if site.data.itemdata[item.defname].IsWeapon -%}
         {%- assign weaponsForDisplay = weaponsForDisplay | push: item | sort: "abr" -%}
+        {%- continue -%}
+    {%- endif -%}
+    
+    {%- if site.data.itemdata[item.defname].IsWearable -%}
+        {%- assign apparelForDisplay = apparelForDisplay | push: item | sort: "abr" -%}
         {%- continue -%}
     {%- endif -%}
                          
@@ -63,6 +69,10 @@ title: Store
 
     {%- if weaponsForDisplay.size > 0 -%}
         {%- include tab.html id='weapons' -%}
+    {%- endif -%}
+    
+    {%- if apparelForDisplay.size > 0 -%}
+        {%- include tab.html id='apparel' -%}
     {%- endif -%}
 
     {%- if animalsForDisplay.size > 0 -%}
@@ -127,6 +137,21 @@ title: Store
         priceDataHeaders=site.data.language.cost_header
         displayData=weaponsForDisplay
         placeholder=site.data.language.search_weapons -%}
+{%- endif -%}
+
+{%- if apparelForDisplay.size > 0 -%}
+    {% capture headers %}
+        {{ site.data.language.name_header }},{{ site.data.language.cost_header }}
+    {% endcapture %}
+
+    {%- include store_tab.html
+        id='apparel'
+        type='Apparel'
+        buyName=buy
+        headers=headers
+        priceDataHeaders=site.data.language.cost_header
+        displayData=apparelForDisplay
+        placeholder=site.data.language.search_apparel -%}
 {%- endif -%}
 
 {%- if animalsForDisplay.size > 0 -%}
