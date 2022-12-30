@@ -149,8 +149,8 @@ title: Store
     {%- endif -%}
 
     {%- if site.store.apparel.layer and site.store.apparel.bodypart -%}
-        {%- assign headers = headers | push: site.data.language.category_layer -%}
-        {%- assign headers = headers | push: site.data.language.category_bodypart -%}
+        {%- assign headers = headers | push: site.data.language.layer_header -%}
+        {%- assign headers = headers | push: site.data.language.bodypart_header -%}
     {%- endif -%}
 
     {%- assign headers = headers | join: ',' -%}
