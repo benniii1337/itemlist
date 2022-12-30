@@ -140,15 +140,14 @@ title: Store
 {%- endif -%}
 
 {%- if apparelForDisplay.size > 0 -%}
+    {%- assign headers = '' | split: ',' -%}
+    {%- assign headers = headers | push: site.data.language.name_header -%}
+    {%- assign headers = headers | push: site.data.language.cost_header -%}
 
     {%- if site.store.apparel.category -%}
         {%- assign headers = headers | push: site.data.language.category_header -%}
     {%- endif -%}
-    
-    {% capture headers %}
-        {{ site.data.language.name_header }},{{ site.data.language.cost_header }}
-    {% endcapture %}
-    
+
     {%- assign headers = headers | join: ',' -%}
 
     {%- include store_tab.html
