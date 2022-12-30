@@ -42,6 +42,10 @@ store:
     quantity: true
     mod: true
     usage: true
+  apparel:
+    category: true
+    mod: true
+    usage: true
   events:
     usage: true
     mod: true
