@@ -44,6 +44,8 @@ store:
     usage: true
   apparel:
     category: true
+    bodypart: true
+    layer: true
     mod: true
     usage: true
   events:
