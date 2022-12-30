@@ -1242,7 +1242,7 @@
     "abr": "cowboyhat",
     "price": 94,
     "category": "Headgear",
-    "layer": "Headgeaer",
+    "layer": "Headgear",
     "bodypart": "Head, ears",
     "defname": "Apparel_CowboyHat"
   },
@@ -1250,7 +1250,7 @@
     "abr": "bowlerhat",
     "price": 77,
     "category": "Headgear",
-    "layer": "Headgeaer",
+    "layer": "Headgear",
     "bodypart": "Head, ears",
     "defname": "Apparel_BowlerHat"
   },
@@ -1258,7 +1258,7 @@
     "abr": "tribalheaddress",
     "price": 203,
     "category": "Headgear",
-    "layer": "Headgeaer",
+    "layer": "Headgear",
     "bodypart": "Head, ears",
     "defname": "Apparel_TribalHeaddress"
   },
@@ -1266,7 +1266,7 @@
     "abr": "tuque",
     "price": 74,
     "category": "Headgear",
-    "layer": "Headgeaer",
+    "layer": "Headgear",
     "bodypart": "Head, ears",
     "defname": "Apparel_Tuque"
   },
@@ -1274,7 +1274,7 @@
     "abr": "warmask",
     "price": 101,
     "category": "Headgear",
-    "layer": "Headgeaer",
+    "layer": "Headgear",
     "bodypart": "Head, eyes, ears, nose, jaw",
     "defname": "Apparel_WarMask"
   },
@@ -1282,7 +1282,7 @@
     "abr": "veil",
     "price": 75,
     "category": "Headgear",
-    "layer": "Headgeaer",
+    "layer": "Headgear",
     "bodypart": "Head, eyes, ears, nose, jaw",
     "defname": "Apparel_WarVeil"
   },
@@ -1290,7 +1290,7 @@
     "abr": "simplehelmet",
     "price": 153,
     "category": "Headgear",
-    "layer": "Headgeaer",
+    "layer": "Headgear",
     "bodypart": "Head, ears",
     "defname": "Apparel_SimpleHelmet"
   },
@@ -1298,7 +1298,7 @@
     "abr": "flakhelmet",
     "price": 442,
     "category": "Headgear",
-    "layer": "Headgeaer",
+    "layer": "Headgear",
     "bodypart": "Head, ears",
     "defname": "Apparel_AdvancedHelmet"
   },
@@ -1306,7 +1306,7 @@
     "abr": "marinehelmet",
     "price": 1058,
     "category": "Headgear",
-    "layer": "Headgeaer",
+    "layer": "Headgear",
     "bodypart": "Head, eyes, ears, nose, jaw",
     "defname": "Apparel_PowerArmorHelmet"
   },
@@ -1314,7 +1314,7 @@
     "abr": "reconhelmet",
     "price": 875,
     "category": "Headgear",
-    "layer": "Headgeaer",
+    "layer": "Headgear",
     "bodypart": "Head, eyes, ears, nose, jaw",
     "defname": "Apparel_ArmorHelmetRecon"
   },
@@ -1322,7 +1322,7 @@
     "abr": "psychicfoilhelmet",
     "price": 417,
     "category": "Headgear",
-    "layer": "Headgeaer",
+    "layer": "Headgear",
     "bodypart": "Head, ears",
     "defname": "Apparel_PsychicFoilHelmet"
   },
@@ -1330,7 +1330,7 @@
     "abr": "hood",
     "price": 203,
     "category": "Headgear",
-    "layer": "Headgeaer",
+    "layer": "Headgear",
     "bodypart": "Head, ears",
     "defname": "Apparel_HatHood"
   },
