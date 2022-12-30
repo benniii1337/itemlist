@@ -148,6 +148,11 @@ title: Store
         {%- assign headers = headers | push: site.data.language.category_header -%}
     {%- endif -%}
 
+    {%- if site.store.apparel.layer and site.store.apparel.bodypart -%}
+        {%- assign headers = headers | push: site.data.language.category_layer -%}
+        {%- assign headers = headers | push: site.data.language.category_bodypart -%}
+    {%- endif -%}
+
     {%- assign headers = headers | join: ',' -%}
 
     {%- include store_tab.html
