@@ -108,7 +108,7 @@ Wear apparel or armor: <br/>
 Let's start with buying a weapon and some clothings for your pawn. You may had a look already in the
 [commands]({{- "/commands" | relative_url -}}) to have an idea which commands will come in handy now.
 It's `!buy equip <weaponname>` and `!buy wear <item>` (Tip: We can substitute `!buy` commands to a simple `$`)
-Choose a suitable weapon in the [store]({{- "/" | relative_url -}}). It has to be researched and you
+Choose a suitable weapon in the [store]({{- "/?tab=weapons" | relative_url -}}). It has to be researched and you
 need enough coins. Check it with `{{ bal }}`. We will use a shortbow for now. Go into chat and try it out:
  `$equip shortbow`
 
