@@ -1354,6 +1354,8 @@
 		"abr": "t-shirt",
 		"price": 143,
 		"category": "Misc",
+    "bodypart": "Torso, Shoulders",
+    "layer": " "OnSkin",
 		"defname": "Apparel_BasicShirt"
 	},
 	{
