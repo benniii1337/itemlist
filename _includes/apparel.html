@@ -73,4 +73,9 @@
         <td>{{- include.item.category -}}</td>
     {%- endif -%}
     
+    {%- if site.store.apparel.layer and site.store.apparel.bodypart -%}
+      <td>{{- include.item.layer -}}</td>
+      <td>{{- include.item.bodypart -}}</td>
+    {%- endif -%}
+    
 </tr>
