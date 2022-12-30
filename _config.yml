@@ -43,7 +43,7 @@ store:
     mod: true
     usage: true
   apparel:
-    category: true
+    category: false
     bodypart: true
     layer: true
     mod: true
