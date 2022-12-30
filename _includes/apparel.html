@@ -11,7 +11,7 @@
         {{- name -}}
 
 
-        {%- if site.store.items.mod -%}
+        {%- if site.store.apparel.mod -%}
             <br/>
             <span class="metadata">
                 {{- site.data.language.from | | replace: '%s', include.itemdata.Mod -}}
@@ -19,7 +19,7 @@
         {%- endif -%}
 
 
-        {%- if site.store.items.usage -%}
+        {%- if site.store.apparel.usage -%}
             <br/>
             <span class="metadata">
                 {% capture usage %}
@@ -35,7 +35,7 @@
     <td>
         {{- include.item.price -}}
 
-        {%- if site.store.items.weight and include.itemdata.Weight != 1 -%}
+        {%- if site.store.apparel.weight and include.itemdata.Weight != 1 -%}
             <br/>
             <span class="metadata">
                 {% capture weight %}
@@ -46,7 +46,7 @@
             </span>
         {%- endif -%}
 
-        {%- if site.store.items.quantity and include.itemdata.HasQuantityLimit == true -%}
+        {%- if site.store.apparel.quantity and include.itemdata.HasQuantityLimit == true -%}
             <br/>
             <span class="metadata">
                 {% capture quantityLimit %}
@@ -69,8 +69,8 @@
         {%- endif -%}
     </td>
     
-    
-    {%- if site.store.items.category -%}
+    {%- if site.store.apparel.category -%}
         <td>{{- include.item.category -}}</td>
     {%- endif -%}
+    
 </tr>
