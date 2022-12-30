@@ -148,6 +148,8 @@ title: Store
     {% capture headers %}
         {{ site.data.language.name_header }},{{ site.data.language.cost_header }}
     {% endcapture %}
+    
+    {%- assign headers = headers | join: ',' -%}
 
     {%- include store_tab.html
         id='apparel'
