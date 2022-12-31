@@ -50,7 +50,7 @@ Woody = Wood
 
 <div class="box">
   <div class="drops">
-    <select id="select_apparel" style="width: 100%">
+    <select id="select_apparel" data-placeholder="Apparel" data-allow-clear="true" style="width: 100%">
       <option></option>
         {%- for item in include.displayData -%}
           {%- if type == "Apparel" -%}
@@ -61,7 +61,7 @@ Woody = Wood
     </select>
   </div>
   <div class="drops">
-    <select id="select_material" style="width: 100%">
+    <select id="select_material" data-placeholder="Material" data-allow-clear="true" style="width: 100%">
       <option></option>
         {%- for item in Fabrics -%}
           <option category="Fabric" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
@@ -83,7 +83,7 @@ Woody = Wood
     </select>
   </div>
   <div class="drops">
-    <select id="select_quality" style="width: 100%">
+    <select id="select_quality" data-placeholder="Quality" data-allow-clear="true" style="width: 100%">
       <option></option>
       <option value="awful">Awful</option>
       <option value="poor">Poor</option>
@@ -106,24 +106,9 @@ Woody = Wood
 <script>
   $(document).ready(function () {
     //change selectboxes to selectize mode to be searchable
-    $("select").select2();
+    $("select").select2()
   })
-       
-  $("#select_apparel").select2({
-    placeholder: "Apparel",
-    allowClear: true
-  });
-  
-  $("#select_material").select2({
-    placeholder: "Material",
-    allowClear: true
-  });
-  
-  $("#select_quality").select2({
-    placeholder: "Quality",
-    allowClear: true
-  });
-  
+
   document.getElementById("#select_apparel").addEventListener("change", function() {
      const categoryId = $(this).find(':selected').attr('category');
      $('#select_material option').hide();      
