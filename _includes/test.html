@@ -131,7 +131,7 @@ Stone:
           {%- assign count = count | plus: 1 -%}
           if (app == "{{- item.abr -}}") {
             {%- assign stuff = item.ingredients | split: ',' | downcase -%}
-              {%- if item.ingredients contains "fabric" -%}
+              {%- if stuff contains "fabric" -%}
                 {%- for item in Fabrics -%}
                   $("#select_material").html("<option value='{{- item.abr -}}'>{{- item.abr -}}</option>");
                   {%- continue -%}
@@ -162,7 +162,7 @@ Stone:
           } 
         {%- endif -%}
         {%- if type == "Apparel" and count != 0 -%}
-          if (app == "{{- item.abr - }}") {
+          else if (app == "{{- item.abr - }}") {
             {%- for item in Fabrics -%}
               {%- assign count = count | plus: 1 -%}
               $("#select_material").html("<option value='{{- item.abr -}}'>{{- count -}}</option>");
