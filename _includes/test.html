@@ -1,8 +1,9 @@
-{%- assign Fabrics = site.data.StoreItems.items -%}
-{%- assign Leathers = site.data.StoreItems.items -%}
-{%- assign Metals = site.data.StoreItems.items -%}
-{%- assign Stone = site.data.StoreItems.items -%}
+{%- assign Fabrics = site.data.StoreItems.items | where: "category", "Textiles" | sort: "abr" -%}
+{%- assign Leathers = site.data.StoreItems.items | where: "item", "item.category == 'Leathers'" | sort: "abr" -%}
+{%- assign Metals = site.data.StoreItems.items | where: "item", "item.category == 'Raw resources' or item.abr == 'jade'" | sort: "abr" -%}
+{%- assign Stone = '' -%}
 {%- assign type = include.type -%}
+
 {%- assign count = 0 -%}
 
 {%- for item in site.data.StoreItems.items -%}
