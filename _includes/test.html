@@ -1,4 +1,4 @@
-{%- assign Fabrics = site.data.StoreItems.items | where: "item", "item.category == 'Textiles' or item.category == 'Wools'" | sort: "price" -%}
+{%- assign Fabrics = site.data.StoreItems.items | where: "category", "Textiles" | sort: "abr" -%}
 {%- assign Leathers = site.data.StoreItems.items | where: "item", "item.category == 'Leathers'" | sort: "price" -%}
 {%- assign Metals = site.data.StoreItems.items | where: "item", "item.category == 'Raw resources' or item.abr == 'jade'" | sort: "price" -%}
 {%- assign Stone = site.data.StoreItems.items | where: "item", "item.category == 'Stone blocks'" | sort: "price" -%}
