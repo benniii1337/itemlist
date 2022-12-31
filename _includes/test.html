@@ -5,12 +5,11 @@
   });
 </script>
 
-<select id="select_page" style="width:200px;" class="operator"> 
-  <option value="">Select a Page...</option>
-  <option value="alpha">alpha</option> 
-  <option value="beta">beta</option>
-  <option value="theta">theta</option>
-  <option value="omega">omega</option>
+<select id="select_apparel" style="width:200px;" class="operator"> 
+  <option value="">Select an apparel...</option>
+    {%- for item in include.displayData -%}
+        {%- if type contains Apparel -%}
+            <option value="{{- include.item.abr -}}">{{- include.item.abr -}}</option>
+        {%- endif -%}
+    {%- endfor -%}
 </select>
-
-{{- include.itemdata -}}
