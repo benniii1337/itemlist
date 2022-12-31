@@ -7,27 +7,27 @@
 {%- assign count = 0 -%}
 
 {%- for item in site.data.StoreItems.items -%}
-    {%- if category == "Textiles" -%}
+    {%- if item.category == "Textiles" -%}
         {%- assign Fabrics = Fabrics | push: item | sort: "abr" -%}
         {%- continue -%}
     {%- endif -%}
     
-    {%- if category == "Wools" -%}
+    {%- if item.category == "Wools" -%}
         {%- assign Fabrics = Fabrics | push: item | sort: "abr" -%}
         {%- continue -%}
     {%- endif -%}
     
-    {%- if category == "Leathers" -%}
+    {%- if item.category == "Leathers" -%}
         {%- assign Leathers = Leathers | push: item | sort: "abr" -%}
         {%- continue -%}
     {%- endif -%}
     
-    {%- if category == "Stone blocks" -%}
+    {%- if item.category == "Stone blocks" -%}
         {%- assign Stone = Stone | push: item | sort: "abr" -%}
         {%- continue -%}
     {%- endif -%}
     
-    {%- if category == "Raw resources" -%}
+    {%- if item.category == "Raw resources" -%}
         {%- if item.abr == "wood" -%}
           {%- continue -%}
         {%- elsif item.abr == "jade" -%}
@@ -64,10 +64,6 @@ Stone:
   <div class="drops">
     <select id="select_material" style="width: 100%" onchange="showCommand()">
       <option value=""></option>
-        {%- for item in Fabrics -%}
-            <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
-            {%- continue -%}
-        {%- endfor -%}
     </select>
   </div>
   <div class="drops">
