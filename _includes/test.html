@@ -109,12 +109,14 @@ Woody = Wood
     $("select").select2()
   })
   
-  document.getElementById("select_apparel").addEventListener("change", function() {
-     const categoryId = $(this).find(':selected').attr('category');
-     $('#select_material option').hide();      
-     $('#select_material').val("");
-     $('#select_material option[category=' + categoryId + ']').show();
-    })
+  var $eventSelect = $("select_apparel");
+  $eventSelect.select2();
+  $eventSelect.on("change", function () {  
+    const categoryId = $(this).find(':selected').attr('category');
+    $('#select_material option').hide();      
+    $('#select_material').val("");
+    $('#select_material option[category=' + categoryId + ']').show();
+  });
 
   function showCommand() {
     var part1 = document.getElementById('select_apparel').value;
