@@ -54,7 +54,7 @@ Woody = Wood
       <option></option>
         {%- for item in include.displayData -%}
           {%- if type == "Apparel" -%}
-            <option category="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            <option data-category="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
             {%- continue -%}
           {%- endif -%}
         {%- endfor -%}
@@ -64,22 +64,22 @@ Woody = Wood
     <select id="select_material" data-placeholder="Material" data-allow-clear="true" style="width: 100%">
       <option></option>
         {%- for item in Fabrics -%}
-          <option category="Fabric" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          <option data-category="Fabric" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
         {%- for item in Leathers -%}
-          <option category="Leathery" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          <option data-category="Leathery" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
         {%- for item in Stone -%}
-          <option category="Stony" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          <option data-category="Stony" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
         {%- for item in Metals -%}
-          <option category="Metallic" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          <option data-category="Metallic" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
-          <option category="Woody" value="wood">Wood</option>
+          <option data-category="Woody" value="wood">Wood</option>
     </select>
   </div>
   <div class="drops">
@@ -108,6 +108,18 @@ Woody = Wood
     //change selectboxes to selectize mode to be searchable
     $("select").select2()
   })
+  
+  $('select[id=select_apparel]').on('change', function() {
+    var val = $(this).find('option:selected').data('category');
+    $('select[id=select_material] option').each(function() {
+      var self = $(this);
+      if (self.attr("data-category") == val) {
+        $("select[id=select_material] option[data-category='" + val + "']").prop('disabled', false);
+      } else {
+        $("select[id=select_material] option:not(:contains('" + val + "'))").prop('disabled', true);
+      }
+    });
+  });
   
   var $eventSelect = $("select_apparel");
   $eventSelect.select2();
