@@ -108,14 +108,14 @@ Woody = Wood
     //change selectboxes to selectize mode to be searchable
     $("select").select2()
   })
-
-  document.getElementById("#select_apparel").addEventListener("change", function() {
+  
+  document.getElementById("select_apparel").addEventListener("change", function() {
      const categoryId = $(this).find(':selected').attr('category');
      $('#select_material option').hide();      
      $('#select_material').val("");
      $('#select_material option[category=' + categoryId + ']').show();
-  })
-  
+    })
+
   function showCommand() {
     var part1 = document.getElementById('select_apparel').value;
     var part2 = document.getElementById('select_material').value;
