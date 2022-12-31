@@ -48,9 +48,10 @@ Metallic = Metals (Raw resources)
 Woody = Wood
 {% endcomment %}
 
+WORK IN PROGRESS
 <div class="box">
   <div class="drops">
-    <select id="select_apparel" data-placeholder="Apparel" data-allow-clear="true" style="width: 100%">
+    <select id="select_apparel" name="parent" data-placeholder="Apparel" data-allow-clear="true" style="width: 100%">
       <option></option>
         {%- for item in include.displayData -%}
           {%- if type == "Apparel" -%}
@@ -61,7 +62,7 @@ Woody = Wood
     </select>
   </div>
   <div class="drops">
-    <select id="select_material" data-placeholder="Material" data-allow-clear="true" style="width: 100%">
+    <select id="select_material" name="child" data-placeholder="Material" data-allow-clear="true" style="width: 100%">
       <option></option>
         {%- for item in Fabrics -%}
           <option category="Fabric" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
@@ -109,14 +110,14 @@ Woody = Wood
     $("select").select2()
   })
   
-  $('select[id=select_apparel]').on('change', function() {
+  $('select[name=parent]').on('change', function() {
     var val = $(this).find('option:selected').data('category');
-    $('select[id=select_material] option').each(function() {
+    $('select[name=child] option').each(function() {
       var self = $(this);
       if (self.attr("category") == val) {
-        $("select[id=select_material] option[category='" + val + "']").prop('disabled', false);
+        $("select[name=child] option[category='" + val + "']").prop('disabled', false);
       } else {
-        $("select[id=select_material] option:not(:contains('" + val + "'))").prop('disabled', true);
+        $("select[name=child] option:not(:contains('" + val + "'))").prop('disabled', true);
       }
     });
   });
