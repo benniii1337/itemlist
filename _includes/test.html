@@ -1,29 +1,29 @@
-{%- assign Fabrics = site.data.StoreItems.items | where: "category", "Textiles" | sort: "abr" -%}
-{%- assign Leathers = site.data.StoreItems.items | where: "item", "item.category == 'Leathers'" | sort: "price" -%}
-{%- assign Metals = site.data.StoreItems.items | where: "item", "item.category == 'Raw resources' or item.abr == 'jade'" | sort: "price" -%}
-{%- assign Stone = site.data.StoreItems.items | where: "item", "item.category == 'Stone blocks'" | sort: "price" -%}
+{%- assign Fabrics = site.data.StoreItems.items | where: "category", "'Textiles' or 'Wools'" | sort: "abr" -%}
+{%- assign Leathers = site.data.StoreItems.items | where: "item", "item.category == 'Leathers'" | sort: "abr" -%}
+{%- assign Metals = site.data.StoreItems.items | where: "item", "item.category == 'Raw resources' or item.abr == 'jade'" | sort: "abr" -%}
+{%- assign Stone = site.data.StoreItems.items | where: "item", "item.category == 'Stone blocks'" | sort: "abr" -%}
 {%- assign type = include.type -%}
 {%- assign category = item.category -%}
 {%- assign count = 0 -%}
 
 {%- for item in site.data.StoreItems.items -%}
     {%- if category == "Textiles" -%}
-        {%- assign Fabrics = Fabrics | push: item | sort: "price" -%}
+        {%- assign Fabrics = Fabrics | push: item | sort: "abr" -%}
         {%- continue -%}
     {%- endif -%}
     
     {%- if category == "Wools" -%}
-        {%- assign Fabrics = Fabrics | push: item | sort: "price" -%}
+        {%- assign Fabrics = Fabrics | push: item | sort: "abr" -%}
         {%- continue -%}
     {%- endif -%}
     
     {%- if category == "Leathers" -%}
-        {%- assign Leathers = Leathers | push: item | sort: "price" -%}
+        {%- assign Leathers = Leathers | push: item | sort: "abr" -%}
         {%- continue -%}
     {%- endif -%}
     
     {%- if category == "Stone blocks" -%}
-        {%- assign Stone = Stone | push: item | sort: "price" -%}
+        {%- assign Stone = Stone | push: item | sort: "abr" -%}
         {%- continue -%}
     {%- endif -%}
     
@@ -31,10 +31,10 @@
         {%- if item.abr == "wood" -%}
           {%- continue -%}
         {%- elsif item.abr == "jade" -%}
-          {%- assign Stone = Stone | push: item | sort: "price" -%}
+          {%- assign Stone = Stone | push: item | sort: "abr" -%}
           {%- continue -%}
         {% else %}
-          {%- assign Metals = Metals | push: item | sort: "price" -%}
+          {%- assign Metals = Metals | push: item | sort: "abr" -%}
           {%- continue -%}
         {%- endif -%}
     {%- endif -%}
