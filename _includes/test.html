@@ -51,49 +51,12 @@ Woody = Wood
 WORK IN PROGRESS
 <div class="box">
   <div class="drops">
-    <select id="select_apparel" name="parent" data-placeholder="Apparel" data-allow-clear="true" style="width: 100%">
-      <option></option>
-        {%- for item in include.displayData -%}
-          {%- if type == "Apparel" -%}
-            <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
-            {%- continue -%}
-          {%- endif -%}
-        {%- endfor -%}
-    </select>
+    <div id="select_apparel"></div>
+  <div class="drops">
+    <div id="select_material"></div>
   </div>
   <div class="drops">
-    <select id="select_material" name="child" data-placeholder="Material" data-allow-clear="true" style="width: 100%">
-      <option></option>
-        {%- for item in Fabrics -%}
-          <option data-cat="Fabric" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
-          {%- continue -%}
-        {%- endfor -%}
-        {%- for item in Leathers -%}
-          <option data-cat="Leathery" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
-          {%- continue -%}
-        {%- endfor -%}
-        {%- for item in Stone -%}
-          <option data-cat="Stony" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
-          {%- continue -%}
-        {%- endfor -%}
-        {%- for item in Metals -%}
-          <option data-cat="Metallic" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
-          {%- continue -%}
-        {%- endfor -%}
-          <option data-cat="Woody" value="wood">Wood</option>
-    </select>
-  </div>
-  <div class="drops">
-    <select id="select_quality" data-placeholder="Quality" data-allow-clear="true" style="width: 100%">
-      <option></option>
-      <option value="awful">Awful</option>
-      <option value="poor">Poor</option>
-      <option value="normal">Normal</option>
-      <option value="good">Good</option>
-      <option value="excellent">Excellent</option>
-      <option value="masterwork">Masterwork</option>
-      <option value="legendary">Legendary</option>
-    </select>
+    <div id="select_quality"></div>
   </div>
   <div class="copy">
     <input type="textbox" value="" class= "inoutput" id="output" style="width: 350px"/> 
@@ -105,23 +68,35 @@ WORK IN PROGRESS
 
 
 <script>
-  $(document).ready(function () {
-    //change selectboxes to selectize mode to be searchable
-    $("select").select2()
-  })
-  
-  $('select[name=parent]').on('change', function() {
-    var val = $(this).find('option:selected').data('cat');
-    $('select[name=child] option').each(function() {
-      var self = $(this);
-      if (self.attr("data-cat") == val) {
-        $("select[name=child] option[data-cat='" + val + "']").prop('disabled', false);
-      } else {
-        $("select[name=child] option:not(:contains('" + val + "'))").prop('disabled', true);
-      }
-    });
+
+  VirtualSelect.init({
+    ele: '#select_apparel',
+    search: true,
+    options: [
+      { label: 'Options 1', value: '1' },
+      { label: 'Options 2', value: '2' },
+      { label: 'Options 3', value: '3' },
+    ],
+  }
+  {
+    ele: '#select_material',
+    search: true,
+    options: [
+      { label: 'Options 1', value: '1' },
+      { label: 'Options 2', value: '2' },
+      { label: 'Options 3', value: '3' },
+    ],
+  }
+  {
+    ele: '#select_quality',
+    search: true,
+    options: [
+      { label: 'Options 1', value: '1' },
+      { label: 'Options 2', value: '2' },
+      { label: 'Options 3', value: '3' },
+    ],
   });
-  
+
   function showCommand() {
     var part1 = document.getElementById('select_apparel').value;
     var part2 = document.getElementById('select_material').value;
