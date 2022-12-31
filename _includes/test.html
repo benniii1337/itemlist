@@ -3,7 +3,7 @@
 
 <div id="selections">
   <div id="left">
-    <select id="select_apparel" style="width:100%;" class="operator">
+    <select id="select_apparel" onchange="showCommand()">
       <option value=""></option>
         {%- for item in include.displayData -%}
             {%- if type == "Apparel" -%}
@@ -14,12 +14,12 @@
     </select>
   </div>
   <div id="center">
-    <select id="select_material" style="width:100%;" class="operator">
+    <select id="select_material" onchange="showCommand()">
       <option value=""></option>
     </select>
   </div>
   <div id="right">
-    <select id="select_quality" style="width:100%;" class="operator">
+    <select id="select_quality" onchange="showCommand()">
       <option value=""></option>
       <option value="awful">Awful</option>
       <option value="poor">Poor</option>
@@ -30,6 +30,7 @@
       <option value="legendary">Legendary</option>
     </select>
   </div>
+  <input type="textbox" id="output"/> <button onclick="copyText()">Copy</button>
 </div>
 
 <script>
@@ -51,24 +52,41 @@
     placeholder: "Quality",
     allowClear: true
   });
-     
-    $("#select_apparel").change(function() {
-      var app = $(this).val();
-        {%- for item in include.displayData -%}
-            {%- if type == "Apparel" and count == 0 -%}
-                {%- assign count = count | plus: 1 -%}
-                if (app == "{{- item.abr -}}") {
-                  $("#select_material").html("<option value='test'>item1: test 1</option><option value='test2'>item1: test 2</option>");
-                }
-                {%- continue -%}
-            {%- endif -%}
-            {%- if type == "Apparel" and count != 0 -%}
-                else if (app == "{{- item.abr -}}") {
-                  $("#select_material").html("<option value='test'>item1: test 1</option><option value='test2'>item1: test 2</option>"); 
-                }
-                {%- continue -%}
-            {%- endif -%}
-        {%- endfor -%}
+  
+  function showCommand() {
+    var part1 = document.getElementById('select_apparel').value;
+    var part2 = document.getElementById('select_material').value;
+    var part3 = document.getElementById('select_quality').value;
+    result = "$wear " + part1.concat("[", part2, ",", part3, "]");
+    document.getElementById('output').value = result;
+  }
+  
+  function copyText() {
+    var copyText = document.getElementById("output");
+
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+
+    navigator.clipboard.writeText(copyText.value);
+  }
+   
+  $("#select_apparel").change(function() {
+    var app = $(this).val();
+      {%- for item in include.displayData -%}
+        {%- if type == "Apparel" and count == 0 -%}
+          {%- assign count = count | plus: 1 -%}
+          if (app == "{{- item.abr -}}") {
+            $("#select_material").html("<option value='test'>item1: test 1</option><option value='test2'>item1: test 2</option>");
+          }
+          {%- continue -%}
+        {%- endif -%}
+        {%- if type == "Apparel" and count != 0 -%}
+          else if (app == "{{- item.abr -}}") {
+          $("#select_material").html("<option value='test'>item1: test 1</option><option value='test2'>item1: test 2</option>"); 
+          }
+          {%- continue -%}
+        {%- endif -%}
+      {%- endfor -%}
   });
 });
 </script>
