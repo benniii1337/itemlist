@@ -1,8 +1,8 @@
     {%- assign type = include.type -%}
     {%- assign count = 0 -%}
 
-<div id="selections">
-  <div id="left">
+<div id="box">
+  <div id="drops">
     <select id="select_apparel" onchange="showCommand()">
       <option value=""></option>
         {%- for item in include.displayData -%}
@@ -13,12 +13,12 @@
         {%- endfor -%}
     </select>
   </div>
-  <div id="center">
+  <div id="drops">
     <select id="select_material" onchange="showCommand()">
       <option value=""></option>
     </select>
   </div>
-  <div id="right">
+  <div id="drops">
     <select id="select_quality" onchange="showCommand()">
       <option value=""></option>
       <option value="awful">Awful</option>
@@ -30,9 +30,12 @@
       <option value="legendary">Legendary</option>
     </select>
   </div>
-</div>
-<div id="outputText">
-  <input type="textbox" id="output"/> <button onclick="copyText()">Copy</button>
+  <div id="copy">
+    <input type="textbox" id="output"/> 
+  </div>
+  <div id="copy">
+    <button onclick="copyText()">COPY TO CLIPBOARD</button>
+  </div>
 </div>
 
 <script>
