@@ -3,7 +3,7 @@
 
 <div class="box">
   <div class="drops">
-    <select id="select_apparel" style="width: 100%">
+    <select id="select_apparel" style="width: 100%" onchange="showCommand()">
       <option value=""></option>
         {%- for item in include.displayData -%}
           {%- if type == "Apparel" -%}
@@ -14,12 +14,12 @@
     </select>
   </div>
   <div class="drops">
-    <select id="select_material" style="width: 100%">
+    <select id="select_material" style="width: 100%" onchange="showCommand()">
       <option value=""></option>
     </select>
   </div>
   <div class="drops">
-    <select id="select_quality" style="width: 100%">
+    <select id="select_quality" style="width: 100%" onchange="showCommand()">
       <option value=""></option>
       <option value="awful">Awful</option>
       <option value="poor">Poor</option>
@@ -34,7 +34,7 @@
     <input type="textbox" id="output" style="width: 350px" /> 
   </div>
   <div class="copy">
-    <button onclick="showCommand()">BUILD COMMAND</button>
+    <button onclick="copyText()">COPY TO CLIPBOARD</button>
   </div>
 </div>
 
@@ -43,6 +43,7 @@
   $(document).ready(function () {
   //change selectboxes to selectize mode to be searchable
     $("select").select2();
+  });
     
   $("#select_apparel").select2({
     placeholder: "Apparel",
@@ -85,5 +86,4 @@
         {%- endif -%}
       {%- endfor -%}
   });
-});
 </script>
