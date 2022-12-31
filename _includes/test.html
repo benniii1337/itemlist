@@ -1,25 +1,25 @@
     {%- assign type = include.type -%}
     {%- assign count = 0 -%}
 
-<div id="box">
-  <div id="drops">
-    <select id="select_apparel" onchange="showCommand()">
+<div class="box">
+  <div class="drops">
+    <select id="select_apparel" style="width: 100%" onchange="showCommand()">
       <option value=""></option>
         {%- for item in include.displayData -%}
-            {%- if type == "Apparel" -%}
-                <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
-                {%- continue -%}
-            {%- endif -%}
+          {%- if type == "Apparel" -%}
+            <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            {%- continue -%}
+          {%- endif -%}
         {%- endfor -%}
     </select>
   </div>
-  <div id="drops">
-    <select id="select_material" onchange="showCommand()">
+  <div class="drops">
+    <select id="select_material" style="width: 100%" onchange="showCommand()">
       <option value=""></option>
     </select>
   </div>
-  <div id="drops">
-    <select id="select_quality" onchange="showCommand()">
+  <div class="drops">
+    <select id="select_quality" style="width: 100%" onchange="showCommand()">
       <option value=""></option>
       <option value="awful">Awful</option>
       <option value="poor">Poor</option>
@@ -30,13 +30,14 @@
       <option value="legendary">Legendary</option>
     </select>
   </div>
-  <div id="copy">
-    <input type="textbox" id="output"/> 
+  <div class="copy">
+    <input type="textbox" id="output" style="width: 350px" /> 
   </div>
-  <div id="copy">
+  <div class="copy">
     <button onclick="copyText()">COPY TO CLIPBOARD</button>
   </div>
 </div>
+
 
 <script>
   $(document).ready(function () {
