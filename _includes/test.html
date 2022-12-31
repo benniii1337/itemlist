@@ -131,25 +131,25 @@ Stone:
           {%- assign count = count | plus: 1 -%}
           if (app == "{{- item.abr -}}") {
             {%- assign stuff = item.ingredients | split: ',' | downcase -%}
-              {% if item.ingredients contains "fabric" %}
+              {%- if item.ingredients contains "fabric" -%}
                 {%- for item in Fabrics -%}
                   $("#select_material").html("<option value='{{- item.abr -}}'>{{- item.abr -}}</option>");
                   {%- continue -%}
                 {%- endfor -%}
               {%- endif -%}
-              {% if stuff contains "leathery" %}
+              {%- if stuff contains "leathery" -%}
                 {%- for item in Leathers -%}
                   $("#select_material").html("<option value='{{- item.abr -}}'>{{- item.abr -}}</option>");
                   {%- continue -%}
                 {%- endfor -%}
               {%- endif -%}
-              {% if stuff contains "metallic" %}
+              {%- if stuff contains "metallic" -%}
                 {%- for item in Metals -%}
                   $("#select_material").html("<option value='{{- item.abr -}}'>{{- item.abr -}}</option>");
                   {%- continue -%}
                 {%- endfor -%}
               {%- endif -%}
-              {% if stuff contains "stony" %}
+              {%- if stuff contains "stony" -%}
                 {%- for item in Stone -%}
                   $("#select_material").html("<option value='{{- item.abr -}}'>{{- item.abr -}}</option>");
                   {%- continue -%}
@@ -157,14 +157,18 @@ Stone:
               {%- endif -%}
               {% if stuff contains "woody" %}
                 $("#select_material").html("<option value='wood'>wood</option>");
+                {%- continue -%}
               {%- endif -%}
           } 
-          {%- continue -%}
         {%- endif -%}
         {%- if type == "Apparel" and count != 0 -%}
-          {%- assign count = count | plus: 1 -%}
           if (app == "{{- item.abr - }}") {
-            <option value="{{- item.abr -}}">{{- count -}}</option>
+            {%- for item in Fabrics -%}
+              {%- assign count = count | plus: 1 -%}
+              $("#select_material").html("<option value='{{- item.abr -}}'>{{- count -}}</option>");
+              {%- continue -%}
+              {%- endif -%}
+            {%- endfor -%}
           {%- continue -%}
         {%- endif -%}
         }
