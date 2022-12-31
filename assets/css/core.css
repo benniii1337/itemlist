@@ -42,6 +42,12 @@
     margin-bottom: 12px;
 }
 
+.inoutput {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: none !important;
+}
+
 * {
   box-sizing: border-box;
 }
