@@ -40,6 +40,15 @@
     {%- endif -%}
 {%- endfor -%}
 
+Fabrics:
+<pre>{{- Fabrics | inspect -}}</pre>
+Leathers:
+<pre>{{- Leathers | inspect -}}</pre>
+Metals:
+<pre>{{- Metals | inspect -}}</pre>
+Stone:
+<pre>{{- Stone | inspect -}}</pre>
+
 <div class="box">
   <div class="drops">
     <select id="select_apparel" style="width: 100%" onchange="showCommand()">
