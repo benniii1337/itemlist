@@ -1245,7 +1245,7 @@
     "category": "Headgear",
     "layer": "Headgear",
     "bodypart": "Head, ears",
-    "ingredients": "Fabrics, leathers",
+    "ingredients": "Fabric, leathery",
     "defname": "Apparel_CowboyHat"
   },
   {
@@ -1254,7 +1254,7 @@
     "category": "Headgear",
     "layer": "Headgear",
     "bodypart": "Head, ears",
-    "ingredients": "Fabrics, leathers",
+    "ingredients": "Fabric, leathery",
     "defname": "Apparel_BowlerHat"
   },
   {
@@ -1263,7 +1263,7 @@
     "category": "Headgear",
     "layer": "Headgear",
     "bodypart": "Head, ears",
-    "ingredients": "Fabrics",
+    "ingredients": "Fabric",
     "defname": "Apparel_TribalHeaddress"
   },
   {
@@ -1272,7 +1272,7 @@
     "category": "Headgear",
     "layer": "Headgear",
     "bodypart": "Head, ears",
-    "ingredients": "Fabrics",
+    "ingredients": "Fabric",
     "defname": "Apparel_Tuque"
   },
   {
@@ -1290,7 +1290,7 @@
     "category": "Headgear",
     "layer": "Headgear",
     "bodypart": "Head, eyes, ears, nose, jaw",
-    "ingredients": "Fabrics",
+    "ingredients": "Fabric",
     "defname": "Apparel_WarVeil"
   },
   {
@@ -1344,7 +1344,7 @@
     "category": "Headgear",
     "layer": "Headgear",
     "bodypart": "Head, ears",
-    "ingredients": "Fabrics, leathers",
+    "ingredients": "Fabric, leathery",
     "defname": "Apparel_HatHood"
   },
   {
@@ -1389,7 +1389,7 @@
     "category": "Misc",
     "layer": "Skin",
     "bodypart": "Torso, legs",
-    "ingredients": "Fabrics, leathers",
+    "ingredients": "Fabric, leathery",
     "defname": "Apparel_TribalA"
   },
   {
@@ -1398,7 +1398,7 @@
     "category": "Misc",
     "layer": "Outer",
     "bodypart": "Torso, neck, shoulders, arms",
-    "ingredients": "Fabrics, leathers",
+    "ingredients": "Fabric, leathery",
     "defname": "Apparel_Parka"
   },
   {
@@ -1407,7 +1407,7 @@
     "category": "Misc",
     "layer": "Skin",
     "bodypart": "Legs",
-    "ingredients": "Fabrics, leathers",
+    "ingredients": "Fabric, leathery",
     "defname": "Apparel_Pants"
   },
   {
@@ -1416,7 +1416,7 @@
     "category": "Misc",
     "layer": "Skin",
     "bodypart": "Torso, shoulders",
-    "ingredients": "Fabrics, leathers",
+    "ingredients": "Fabric, leathery",
     "defname": "Apparel_BasicShirt"
   },
   {
@@ -1425,7 +1425,7 @@
     "category": "Misc",
     "layer": "Skin",
     "bodypart": "Torso, neck, shoulders, arms",
-    "ingredients": "Fabrics, leathers",
+    "ingredients": "Fabric, leathery",
     "defname": "Apparel_CollarShirt"
   },
   {
@@ -1434,7 +1434,7 @@
     "category": "Misc",
     "layer": "Outer",
     "bodypart": "Torso, neck, shoulders, arms, legs",
-    "ingredients": "Fabrics, leathers",
+    "ingredients": "Fabric, leathery",
     "defname": "Apparel_Duster"
   },
   {
@@ -1443,7 +1443,7 @@
     "category": "Misc",
     "layer": "Outer",
     "bodypart": "Torso, neck, shoulders, arms",
-    "ingredients": "Fabrics, leathers",
+    "ingredients": "Fabric, leathery",
     "defname": "Apparel_Jacket"
   },
   {
@@ -1452,7 +1452,7 @@
     "category": "Armor",
     "layer": "Middle, outer",
     "bodypart": "Torso, neck, shoulders, arms, legs",
-    "ingredients": "Metallic, wood",
+    "ingredients": "Metallic, woody",
     "defname": "Apparel_PlateArmor"
   },
   {
@@ -1506,7 +1506,7 @@
     "category": "Noble apparel",
     "layer": "Outer",
     "bodypart": "Torso, neck, shoulders, arms, legs",
-    "ingredients": "Fabrics, leathers",
+    "ingredients": "Fabric, leathery",
     "defname": "Apparel_Cape"
   },
   {
