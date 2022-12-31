@@ -10,8 +10,8 @@
 <select id="select_apparel" style="width:200px;" class="operator"> 
   <option value="">Select an apparel...</option>
     {%- for item in include.displayData -%}
-        {%- if type contains Apparel -%}
-            <option value="{{- include.item.abr -}}">{{- include.item.abr -}}</option>
+        {%- if type == "Apparel" -%}
+            <option value="{{- item.abr -}}">{{- item.abr -}}</option>
             {%- continue -%}
         {%- endif -%}
     {%- endfor -%}
