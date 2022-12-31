@@ -51,7 +51,7 @@ Woody = Wood
 <div class="box">
   <div class="drops">
     <select id="select_apparel" style="width: 100%" onchange="showCommand()" required>
-      <option value=""></option>
+      <option></option>
         {%- for item in include.displayData -%}
           {%- if type == "Apparel" -%}
             <option category="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
@@ -62,7 +62,7 @@ Woody = Wood
   </div>
   <div class="drops">
     <select id="select_material" style="width: 100%" onchange="showCommand()" required>
-      <option value=""></option>
+      <option></option>
         {%- for item in Fabrics -%}
           <option category="Fabric" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
@@ -84,7 +84,7 @@ Woody = Wood
   </div>
   <div class="drops">
     <select id="select_quality" style="width: 100%" onchange="showCommand()">
-      <option value=""></option>
+      <option></option>
       <option value="awful">Awful</option>
       <option value="poor">Poor</option>
       <option value="normal">Normal</option>
@@ -109,22 +109,22 @@ Woody = Wood
     $("select").select2();
   })
        
-  $("select_apparel").select2({
+  $("#select_apparel").select2({
     placeholder: "Apparel",
     allowClear: true
   });
   
-  $("select_material").select2({
+  $("#select_material").select2({
     placeholder: "Material",
     allowClear: true
   });
   
-  $("select_quality").select2({
+  $("#select_quality").select2({
     placeholder: "Quality",
     allowClear: true
   });
   
-  document.getElementById("select_apparel").addEventListener("change", function() {
+  document.getElementById("#select_apparel").addEventListener("change", function() {
      const categoryId = $(this).find(':selected').attr('category');
      $('#select_material option').hide();      
      $('#select_material').val("");
