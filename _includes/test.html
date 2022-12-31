@@ -1,7 +1,7 @@
 {%- assign Fabrics = site.data.StoreItems.items | where: "category", "Textiles" | sort: "abr" -%}
 {%- assign Leathers = site.data.StoreItems.items | where: "item", "item.category == 'Leathers'" | sort: "abr" -%}
 {%- assign Metals = site.data.StoreItems.items | where: "item", "item.category == 'Raw resources' or item.abr == 'jade'" | sort: "abr" -%}
-{%- assign Stone = '' -%}
+{%- assign Stone = '' | split: ',' -%}
 {%- assign type = include.type -%}
 
 {%- assign count = 0 -%}
