@@ -55,6 +55,10 @@
   <div class="drops">
     <select id="select_material" style="width: 100%" onchange="showCommand()">
       <option value=""></option>
+        {%- for item in Fabrics -%}
+            <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            {%- continue -%}
+        {%- endfor -%}
     </select>
   </div>
   <div class="drops">
