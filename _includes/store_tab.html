@@ -11,7 +11,8 @@
 
     {%- include search.html id=id type=type placeholder=placeholder -%}
     {%- if id == "apparel" -%}
-        {%- include test.html -%}
+        {%- include test.html
+            displayData=displayData -%}
     {%- endif -%}
     {%- include content.html
         type=type
