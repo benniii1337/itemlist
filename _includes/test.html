@@ -50,7 +50,7 @@ Woody = Wood
 
 <div class="box">
   <div class="drops">
-    <select id="select_apparel" style="width: 100%" onchange="showCommand()" required>
+    <select id="select_apparel" style="width: 100%">
       <option></option>
         {%- for item in include.displayData -%}
           {%- if type == "Apparel" -%}
@@ -61,7 +61,7 @@ Woody = Wood
     </select>
   </div>
   <div class="drops">
-    <select id="select_material" style="width: 100%" onchange="showCommand()" required>
+    <select id="select_material" style="width: 100%">
       <option></option>
         {%- for item in Fabrics -%}
           <option category="Fabric" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
@@ -83,7 +83,7 @@ Woody = Wood
     </select>
   </div>
   <div class="drops">
-    <select id="select_quality" style="width: 100%" onchange="showCommand()">
+    <select id="select_quality" style="width: 100%">
       <option></option>
       <option value="awful">Awful</option>
       <option value="poor">Poor</option>
