@@ -42,25 +42,27 @@
     margin-bottom: 12px;
 }
 
-#selections {
-    width:100%;
-    text-align:center;
+* {
+  box-sizing: border-box;
 }
 
-#left {
-    float:left;
-    width:33%;
+.drops {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
 }
 
-#center {
-    display: inline-block;
-    margin:0 auto;
-    width:33%;
+.copy {
+    margin: auto;
+    width: 50%;
+    padding: 5px;
+    text-align: center;
 }
 
-#right {
-    float:right;
-    width:33%;
+.box:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 table {
