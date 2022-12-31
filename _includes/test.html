@@ -32,7 +32,7 @@
     $("select").select2();
      
     $("#select_apparel").change(function() {
-      var app = $(this).app();
+      var app = $(this).val();
         {%- for item in include.displayData -%}
             {%- if type == "Apparel" and count == 0 -%}
                 {%- assign count = count | plus: 1 -%}
