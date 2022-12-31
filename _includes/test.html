@@ -167,7 +167,6 @@ Stone:
               {%- assign count = count | plus: 1 -%}
               $("#select_material").html("<option value='{{- item.abr -}}'>{{- count -}}</option>");
               {%- continue -%}
-              {%- endif -%}
             {%- endfor -%}
           {%- continue -%}
         {%- endif -%}
