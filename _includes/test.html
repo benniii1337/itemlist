@@ -35,7 +35,7 @@
       var app = $(this).app();
         {%- for item in include.displayData -%}
             {%- if type == "Apparel" and count == 0 -%}
-                {%- count = count | plus: 1 -%}
+                {%- assign count = count | plus: 1 -%}
                 if (app == "{{- item.abr -}}") {
                   $("#select_material").html("<option value='test'>item1: test 1</option><option value='test2'>item1: test 2</option>");
                 }
