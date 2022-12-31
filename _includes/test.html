@@ -31,10 +31,10 @@
     </select>
   </div>
   <div class="copy">
-    <input type="textbox" id="output" style="width: 350px" /> 
+    <input type="textbox" value="" id="output" style="width: 350px" /> 
   </div>
   <div class="copy">
-    <button onclick="copyText()">COPY TO CLIPBOARD</button>
+    <button onclick="copyOutput()">COPY TO CLIPBOARD</button>
   </div>
 </div>
 
@@ -66,6 +66,13 @@
     var part3 = document.getElementById('select_quality').value;
     result = "$wear " + part1.concat("[", part2, ",", part3, "]");
     document.getElementById('output').value = result;
+  }
+  
+  function copyOutput() {
+    var copyText = document.getElementById("output");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
   }
    
   $("#select_apparel").change(function() {
