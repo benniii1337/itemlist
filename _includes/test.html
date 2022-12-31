@@ -5,11 +5,14 @@
   });
 </script>
 
+    {%- assign type = include.type -%}
+
 <select id="select_apparel" style="width:200px;" class="operator"> 
   <option value="">Select an apparel...</option>
     {%- for item in include.displayData -%}
         {%- if type contains Apparel -%}
             <option value="{{- include.item.abr -}}">{{- include.item.abr -}}</option>
+            {%- continue -%}
         {%- endif -%}
     {%- endfor -%}
 </select>
