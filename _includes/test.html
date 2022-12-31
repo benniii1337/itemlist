@@ -54,7 +54,7 @@ Woody = Wood
       <option></option>
         {%- for item in include.displayData -%}
           {%- if type == "Apparel" -%}
-            <option data-category="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            <option category="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
             {%- continue -%}
           {%- endif -%}
         {%- endfor -%}
@@ -64,22 +64,22 @@ Woody = Wood
     <select id="select_material" data-placeholder="Material" data-allow-clear="true" style="width: 100%">
       <option></option>
         {%- for item in Fabrics -%}
-          <option data-category="Fabric" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          <option category="Fabric" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
         {%- for item in Leathers -%}
-          <option data-category="Leathery" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          <option category="Leathery" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
         {%- for item in Stone -%}
-          <option data-category="Stony" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          <option category="Stony" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
         {%- for item in Metals -%}
-          <option data-category="Metallic" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          <option category="Metallic" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
-          <option data-category="Woody" value="wood">Wood</option>
+          <option category="Woody" value="wood">Wood</option>
     </select>
   </div>
   <div class="drops">
@@ -113,23 +113,14 @@ Woody = Wood
     var val = $(this).find('option:selected').data('category');
     $('select[id=select_material] option').each(function() {
       var self = $(this);
-      if (self.attr("data-category") == val) {
-        $("select[id=select_material] option[data-category='" + val + "']").prop('disabled', false);
+      if (self.attr("category") == val) {
+        $("select[id=select_material] option[category='" + val + "']").prop('disabled', false);
       } else {
         $("select[id=select_material] option:not(:contains('" + val + "'))").prop('disabled', true);
       }
     });
   });
   
-  var $eventSelect = $("select_apparel");
-  $eventSelect.select2();
-  $eventSelect.on("change", function () {  
-    const categoryId = $(this).find(':selected').attr('category');
-    $('#select_material option').hide();      
-    $('#select_material').val("");
-    $('#select_material option[category=' + categoryId + ']').show();
-  });
-
   function showCommand() {
     var part1 = document.getElementById('select_apparel').value;
     var part2 = document.getElementById('select_material').value;
