@@ -158,7 +158,7 @@ Stone:
               {% if stuff contains "woody" %}
                 $("#select_material").html("<option value='wood'>wood</option>");
               {%- endif -%}
-            } 
+          } 
           {%- continue -%}
         {%- endif -%}
         {%- if type == "Apparel" and count != 0 -%}
@@ -167,6 +167,7 @@ Stone:
             <option value="{{- item.abr -}}">{{- count -}}</option>
           {%- continue -%}
         {%- endif -%}
+        }
       {%- endfor -%}
   });
 </script>
