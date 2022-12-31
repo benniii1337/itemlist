@@ -3,30 +3,31 @@
 {%- assign Metals = '' | split: ',' -%}
 {%- assign Stone = '' | split: ',' -%}
 {%- assign type = include.type -%}
+{%- assign category = item.category -%}
 {%- assign count = 0 -%}
 
-{%- for item in include.displayData -%}
-    {%- if item.category == "Textiles" -%}
+{%- for item in site.data.StoreItems.items -%}
+    {%- if category == "Textiles" -%}
         {%- assign Fabrics = Fabrics | push: item | sort: "price" -%}
         {%- continue -%}
     {%- endif -%}
     
-    {%- if item.category == "Wools" -%}
+    {%- if category == "Wools" -%}
         {%- assign Fabrics = Fabrics | push: item | sort: "price" -%}
         {%- continue -%}
     {%- endif -%}
     
-    {%- if item.category == "Leathers" -%}
+    {%- if category == "Leathers" -%}
         {%- assign Leathers = Leathers | push: item | sort: "price" -%}
         {%- continue -%}
     {%- endif -%}
     
-    {%- if item.category == "Stone blocks" -%}
+    {%- if category == "Stone blocks" -%}
         {%- assign Stone = Stone | push: item | sort: "price" -%}
         {%- continue -%}
     {%- endif -%}
     
-    {%- if item.category == "Raw resources" -%}
+    {%- if category == "Raw resources" -%}
         {%- if item.abr == "wood" -%}
           {%- continue -%}
         {%- elsif item.abr == "jade" -%}
