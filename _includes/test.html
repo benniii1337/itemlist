@@ -1,8 +1,8 @@
     {%- assign type = include.type -%}
     {%- assign count = 0 -%}
 
-<select id="select_apparel" style="width:200px;" class="operator">
-  <option value="">Apparel</option>
+<select id="select_apparel" style="width:100%;" class="operator">
+  <option value=""></option>
     {%- for item in include.displayData -%}
         {%- if type == "Apparel" -%}
             <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
@@ -11,12 +11,12 @@
     {%- endfor -%}
 </select>
 
-<select id="select_material" style="width:200px;" class="operator">
-  <option value="">Material</option>
+<select id="select_material" style="width:100%;" class="operator">
+  <option value=""></option>
 </select>
 
-<select id="select_quality" style="width:200px;" class="operator">
-  <option value="">Quality</option>
+<select id="select_quality" style="width:100%;" class="operator">
+  <option value=""></option>
   <option value="awful">Awful</option>
   <option value="poor">Poor</option>
   <option value="normal">Normal</option>
@@ -30,6 +30,21 @@
   $(document).ready(function () {
   //change selectboxes to selectize mode to be searchable
     $("select").select2();
+    
+  $("#select_apparel").select2({
+    placeholder: "Apparel",
+    allowClear: true
+  });
+  
+  $("#select_material").select2({
+    placeholder: "Material",
+    allowClear: true
+  });
+  
+  $("#select_quality").select2({
+    placeholder: "Quality",
+    allowClear: true
+  });
      
     $("#select_apparel").change(function() {
       var app = $(this).val();
