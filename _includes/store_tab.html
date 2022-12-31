@@ -10,6 +10,9 @@
     {%- assign priceDataHeaders = include.priceDataHeaders -%}
 
     {%- include search.html id=id type=type placeholder=placeholder -%}
+    {%- if id == "apparel" -%}
+        include test.html
+    {%- endif -%}
     {%- include content.html
         type=type
         buyName=buyName
