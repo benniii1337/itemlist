@@ -1,7 +1,7 @@
-{%- assign Fabrics = '' | split: ',' -%}
-{%- assign Leathers = '' | split: ',' -%}
-{%- assign Metals = '' | split: ',' -%}
-{%- assign Stone = '' | split: ',' -%}
+{%- assign Fabrics = site.data.StoreItems.items | where: "item", "item.category == 'Textiles' or item.category == 'Wools'" | sort: "price" -%}
+{%- assign Leathers = site.data.StoreItems.items | where: "item", "item.category == 'Leathers'" | sort: "price" -%}
+{%- assign Metals = site.data.StoreItems.items | where: "item", "item.category == 'Raw resources' or item.abr == 'jade'" | sort: "price" -%}
+{%- assign Stone = site.data.StoreItems.items | where: "item", "item.category == 'Stone blocks'" | sort: "price" -%}
 {%- assign type = include.type -%}
 {%- assign category = item.category -%}
 {%- assign count = 0 -%}
