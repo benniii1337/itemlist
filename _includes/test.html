@@ -115,62 +115,12 @@ Stone:
     var part3 = document.getElementById('select_quality').value;
     result = "$wear " + part1.concat("[", part2, ",", part3, "]");
     document.getElementById('output').value = result;
-  }
+  };
   
   function copyOutput() {
     var copyText = document.getElementById("output");
     copyText.select();
     copyText.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(copyText.value);
-  }
-   
-  $("#select_apparel").change(function() {
-    var app = $(this).val();
-      {%- for item in include.displayData -%}
-        {%- if type == "Apparel" and count == 0 -%}
-          {%- assign count = count | plus: 1 -%}
-          if (app == "{{- item.abr -}}") {
-            {%- assign stuff = item.ingredients | split: ',' | downcase -%}
-              {%- if stuff contains "fabric" -%}
-                {%- for item in Fabrics -%}
-                  $("#select_material").html("<option value='{{- item.abr -}}'>{{- item.abr -}}</option>");
-                  {%- continue -%}
-                {%- endfor -%}
-              {%- endif -%}
-              {%- if stuff contains "leathery" -%}
-                {%- for item in Leathers -%}
-                  $("#select_material").html("<option value='{{- item.abr -}}'>{{- item.abr -}}</option>");
-                  {%- continue -%}
-                {%- endfor -%}
-              {%- endif -%}
-              {%- if stuff contains "metallic" -%}
-                {%- for item in Metals -%}
-                  $("#select_material").html("<option value='{{- item.abr -}}'>{{- item.abr -}}</option>");
-                  {%- continue -%}
-                {%- endfor -%}
-              {%- endif -%}
-              {%- if stuff contains "stony" -%}
-                {%- for item in Stone -%}
-                  $("#select_material").html("<option value='{{- item.abr -}}'>{{- item.abr -}}</option>");
-                  {%- continue -%}
-                {%- endfor -%}
-              {%- endif -%}
-              {% if stuff contains "woody" %}
-                $("#select_material").html("<option value='wood'>wood</option>");
-                {%- continue -%}
-              {%- endif -%}
-          } 
-        {%- endif -%}
-        {%- if type == "Apparel" and count != 0 -%}
-          else if (app == "{{- item.abr - }}") {
-            {%- for item in Fabrics -%}
-              {%- assign count = count | plus: 1 -%}
-              $("#select_material").html("<option value='{{- item.abr -}}'>{{- count -}}</option>");
-              {%- continue -%}
-            {%- endfor -%}
-          {%- continue -%}
-        {%- endif -%}
-        }
-      {%- endfor -%}
-  });
+  };
 </script>
