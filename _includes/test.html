@@ -55,7 +55,7 @@ WORK IN PROGRESS
       <option></option>
         {%- for item in include.displayData -%}
           {%- if type == "Apparel" -%}
-            <option category="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
             {%- continue -%}
           {%- endif -%}
         {%- endfor -%}
@@ -65,22 +65,22 @@ WORK IN PROGRESS
     <select id="select_material" name="child" data-placeholder="Material" data-allow-clear="true" style="width: 100%">
       <option></option>
         {%- for item in Fabrics -%}
-          <option category="Fabric" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          <option data-cat="Fabric" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
         {%- for item in Leathers -%}
-          <option category="Leathery" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          <option data-cat="Leathery" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
         {%- for item in Stone -%}
-          <option category="Stony" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          <option data-cat="Stony" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
         {%- for item in Metals -%}
-          <option category="Metallic" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          <option data-cat="Metallic" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
-          <option category="Woody" value="wood">Wood</option>
+          <option data-cat="Woody" value="wood">Wood</option>
     </select>
   </div>
   <div class="drops">
@@ -111,11 +111,11 @@ WORK IN PROGRESS
   })
   
   $('select[name=parent]').on('change', function() {
-    var val = $(this).find('option:selected').data('category');
+    var val = $(this).find('option:selected').data('cat');
     $('select[name=child] option').each(function() {
       var self = $(this);
-      if (self.attr("category") == val) {
-        $("select[name=child] option[category='" + val + "']").prop('disabled', false);
+      if (self.attr("data-cat") == val) {
+        $("select[name=child] option[data-cat='" + val + "']").prop('disabled', false);
       } else {
         $("select[name=child] option:not(:contains('" + val + "'))").prop('disabled', true);
       }
