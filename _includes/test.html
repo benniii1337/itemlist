@@ -1,30 +1,36 @@
     {%- assign type = include.type -%}
     {%- assign count = 0 -%}
 
-<select id="select_apparel" style="width:100%;" class="operator">
-  <option value=""></option>
-    {%- for item in include.displayData -%}
-        {%- if type == "Apparel" -%}
-            <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
-            {%- continue -%}
-        {%- endif -%}
-    {%- endfor -%}
-</select>
-
-<select id="select_material" style="width:100%;" class="operator">
-  <option value=""></option>
-</select>
-
-<select id="select_quality" style="width:100%;" class="operator">
-  <option value=""></option>
-  <option value="awful">Awful</option>
-  <option value="poor">Poor</option>
-  <option value="normal">Normal</option>
-  <option value="good">Good</option>
-  <option value="excellent">Excellent</option>
-  <option value="masterwork">Masterwork</option>
-  <option value="legendary">Legendary</option>
-  </select>
+<div id="selections">
+  <div id="left">
+    <select id="select_apparel" style="width:100%;" class="operator">
+      <option value=""></option>
+        {%- for item in include.displayData -%}
+            {%- if type == "Apparel" -%}
+                <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+                {%- continue -%}
+            {%- endif -%}
+        {%- endfor -%}
+    </select>
+  </div>
+  <div id="center">
+    <select id="select_material" style="width:100%;" class="operator">
+      <option value=""></option>
+    </select>
+  </div>
+  <div id="right">
+    <select id="select_quality" style="width:100%;" class="operator">
+      <option value=""></option>
+      <option value="awful">Awful</option>
+      <option value="poor">Poor</option>
+      <option value="normal">Normal</option>
+      <option value="good">Good</option>
+      <option value="excellent">Excellent</option>
+      <option value="masterwork">Masterwork</option>
+      <option value="legendary">Legendary</option>
+    </select>
+  </div>
+</div>
 
 <script>
   $(document).ready(function () {
