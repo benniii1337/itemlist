@@ -56,7 +56,7 @@ Stone:
       <option value=""></option>
         {%- for item in include.displayData -%}
           {%- if type == "Apparel" -%}
-            <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            <option value="{{- item.ingredients -}}">{{- item.abr | capitalize -}}</option>
             {%- continue -%}
           {%- endif -%}
         {%- endfor -%}
