@@ -1,18 +1,53 @@
-<script>
-  $(document).ready(function () {
-  //change selectboxes to selectize mode to be searchable
-     $("select").select2();
-  });
-</script>
-
     {%- assign type = include.type -%}
+    {%- assign count = 0 %}
 
-<select id="select_apparel" style="width:200px;" class="operator"> 
-  <option value="">Select an apparel...</option>
+<select id="select_apparel" style="width:200px;" class="operator">
+  <option value="">Apparel</option>
     {%- for item in include.displayData -%}
         {%- if type == "Apparel" -%}
-            <option value="{{- item.abr -}}">{{- item.abr -}}</option>
+            <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
             {%- continue -%}
         {%- endif -%}
     {%- endfor -%}
 </select>
+
+<select id="select_material" style="width:200px;" class="operator">
+  <option value="">Material</option>
+</select>
+
+<select id="select_quality" style="width:200px;" class="operator">
+  <option value="">Quality</option>
+  <option value="awful">Awful</option>
+  <option value="poor">Poor</option>
+  <option value="normal">Normal</option>
+  <option value="good">Good</option>
+  <option value="excellent">Excellent</option>
+  <option value="masterwork">Masterwork</option>
+  <option value="legendary">Legendary</option>
+  </select>
+
+<script>
+  $(document).ready(function () {
+  //change selectboxes to selectize mode to be searchable
+    $("select").select2();
+     
+    $("#select_apparel").change(function() {
+      var app = $(this).app();
+        {%- for item in include.displayData -%}
+            {%- if type == "Apparel" and count == 0 -%}
+                {%- count = count | plus: 1 -%}
+                if (app == "{{- item.abr -}}") {
+                  $("#select_material").html("<option value='test'>item1: test 1</option><option value='test2'>item1: test 2</option>");
+                }
+                {%- continue -%}
+            {%- endif -%}
+            {%- if type == "Apparel" and count != 0 -%}
+                else if (app == "{{- item.abr -}}") {
+                  $("#select_material").html("<option value='test'>item1: test 1</option><option value='test2'>item1: test 2</option>"); 
+                }
+                {%- continue -%}
+            {%- endif -%}
+        {%- endfor -%}
+  });
+});
+</script>
