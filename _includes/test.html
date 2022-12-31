@@ -65,6 +65,7 @@ Stone:
   <div class="drops">
     <select id="select_material" style="width: 100%" onchange="showCommand()">
       <option value=""></option>
+      <option value="wood">Wood</option>
     </select>
   </div>
   <div class="drops">
@@ -123,4 +124,13 @@ Stone:
     copyText.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(copyText.value);
   };
+  
+  $("#select_apparel").change(function() {
+    if ($(this).data('options') == undefined) {
+      $(this).data('options', $('#select_material option').clone());
+    }
+    var id = $(this).val();
+    var options = $(this).data('options').filter('[value=' + id + ']');
+    $('#select_material').html(options);
+  });
 </script>
