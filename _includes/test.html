@@ -1,5 +1,43 @@
-    {%- assign type = include.type -%}
-    {%- assign count = 0 -%}
+{%- assign Fabrics = '' | split: ',' -%}
+{%- assign Leathers = '' | split: ',' -%}
+{%- assign Metals = '' | split: ',' -%}
+{%- assign Stone = '' | split: ',' -%}
+{%- assign type = include.type -%}
+{%- assign count = 0 -%}
+
+{%- for item in include.displayData -%}
+    {%- if item.category == "Textiles" -%}
+        {%- assign Fabrics = Fabrics | push: item | sort: "price" -%}
+        {%- continue -%}
+    {%- endif -%}
+    
+    {%- if item.category == "Wools" -%}
+        {%- assign Fabrics = Fabrics | push: item | sort: "price" -%}
+        {%- continue -%}
+    {%- endif -%}
+    
+    {%- if item.category == "Leathers" -%}
+        {%- assign Leathers = Leathers | push: item | sort: "price" -%}
+        {%- continue -%}
+    {%- endif -%}
+    
+    {%- if item.category == "Stone blocks" -%}
+        {%- assign Stone = Stone | push: item | sort: "price" -%}
+        {%- continue -%}
+    {%- endif -%}
+    
+    {%- if item.category == "Raw resources" -%}
+        {%- if item.abr == "wood" -%}
+          {%- continue -%}
+        {%- elsif item.abr == "jade" -%}
+          {%- assign Stone = Stone | push: item | sort: "price" -%}
+          {%- continue -%}
+        {% else %}
+          {%- assign Metals = Metals | push: item | sort: "price" -%}
+          {%- continue -%}
+        {%- endif -%}
+    {%- endif -%}
+{%- endfor -%}
 
 <div class="box">
   <div class="drops">
@@ -81,14 +119,67 @@
         {%- if type == "Apparel" and count == 0 -%}
           {%- assign count = count | plus: 1 -%}
           if (app == "{{- item.abr -}}") {
-            $("#select_material").html("<option value='test'>item1: test 1</option><option value='test2'>item1: test 2</option>");
-          }
+            {%- assign stuff = item.ingredients | split: ',' | downcase -%}
+            {% if stuff contains "fabric" %}
+              {%- for item in Fabrics -%}
+                $("#select_material").html("<option value='{{- item.abr -}}'>{{- item.abr -}}</option>");
+                {%- continue -%}
+              {%- endfor -%}
+            {%- endif -%}
+            {% if stuff contains "leathery" %}
+              {%- for item in Leathers -%}
+                $("#select_material").html("<option value='{{- item.abr -}}'>{{- item.abr -}}</option>");
+                {%- continue -%}
+              {%- endfor -%}
+            {%- endif -%}
+            {% if stuff contains "metallic" %}
+              {%- for item in Metals -%}
+                $("#select_material").html("<option value='{{- item.abr -}}'>{{- item.abr -}}</option>");
+                {%- continue -%}
+              {%- endfor -%}
+            {%- endif -%}
+            {% if stuff contains "stony" %}
+              {%- for item in Stone -%}
+                $("#select_material").html("<option value='{{- item.abr -}}'>{{- item.abr -}}</option>");
+                {%- continue -%}
+              {%- endfor -%}
+            {%- endif -%}
+            {% if stuff contains "woody" %}
+              $("#select_material").html("<option value='wood'>wood</option>");
+            {%- endif -%}
+            } 
           {%- continue -%}
-        {%- endif -%}
         {%- if type == "Apparel" and count != 0 -%}
           else if (app == "{{- item.abr -}}") {
-          $("#select_material").html("<option value='test'>item1: test 1</option><option value='test2'>item1: test 2</option>"); 
-          }
+            {%- assign stuff = item.ingredients | split: ',' | downcase -%}
+            {% if stuff contains "fabric" %}
+              {%- for item in Fabrics -%}
+                $("#select_material").html("<option value='{{- item.abr -}}'>{{- item.abr -}}</option>");
+                {%- continue -%}
+              {%- endfor -%}
+            {%- endif -%}
+            {% if stuff contains "leathery" %}
+              {%- for item in Leathers -%}
+                $("#select_material").html("<option value='{{- item.abr -}}'>{{- item.abr -}}</option>");
+                {%- continue -%}
+              {%- endfor -%}
+            {%- endif -%}
+            {% if stuff contains "metallic" %}
+              {%- for item in Metals -%}
+                $("#select_material").html("<option value='{{- item.abr -}}'>{{- item.abr -}}</option>");
+                {%- continue -%}
+              {%- endfor -%}
+            {%- endif -%}
+            {% if stuff contains "stony" %}
+              {%- for item in Stone -%}
+                $("#select_material").html("<option value='{{- item.abr -}}'>{{- item.abr -}}</option>");
+                {%- continue -%}
+              {%- endfor -%}
+            {%- endif -%}
+            {% if stuff contains "woody" %}
+              $("#select_material").html("<option value='wood'>wood</option>");
+            {%- endif -%}
+            } 
           {%- continue -%}
         {%- endif -%}
       {%- endfor -%}
