@@ -49,9 +49,62 @@ Woody = Wood
 {% endcomment %}
 
 WORK IN PROGRESS
+<div class="box">
+  <div class="drops">
+    <select id="select_apparel" style="width: 100%">
+      <option value="" data-placeholder>Apparel</option>
+        {%- for item in include.displayData -%}
+          {%- if type == "Apparel" -%}
+            <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            {%- continue -%}
+          {%- endif -%}
+        {%- endfor -%}
+    </select>
+  </div>
+  <div class="drops">
+    <select id="select_material" style="width: 100%">
+      <option value="" data-placeholder>Material</option>
+        {%- for item in Fabrics -%}
+          <option data-cat="Fabric" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          {%- continue -%}
+        {%- endfor -%}
+        {%- for item in Leathers -%}
+          <option data-cat="Leathery" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          {%- continue -%}
+        {%- endfor -%}
+        {%- for item in Stone -%}
+          <option data-cat="Stony" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          {%- continue -%}
+        {%- endfor -%}
+        {%- for item in Metals -%}
+          <option data-cat="Metallic" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          {%- continue -%}
+        {%- endfor -%}
+          <option data-cat="Woody" value="wood">Wood</option>
+    </select>
+  </div>
+  <div class="drops">
+    <select id="select_quality" style="width: 100%">
+      <option value="" data-placeholder>Quality</option>
+      <option value="awful">Awful</option>
+      <option value="poor">Poor</option>
+      <option value="normal">Normal</option>
+      <option value="good">Good</option>
+      <option value="excellent">Excellent</option>
+      <option value="masterwork">Masterwork</option>
+      <option value="legendary">Legendary</option>
+    </select>
+  </div>
+  <div class="copy">
+    <input type="textbox" value="" class= "inoutput" id="output" style="width: 350px"/> 
+  </div>
+  <div class="copy">
+    <button onclick="copyOutput()">COPY TO CLIPBOARD</button>
+  </div>
+</div>
 
-    <div id="select_apparel"></div>
+<script>
 
-    <div id="select_material"></div>
-
-    <div id="select_quality"></div>
+easydropdown.all();
+  
+</script>
