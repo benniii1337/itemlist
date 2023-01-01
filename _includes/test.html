@@ -122,17 +122,17 @@ WORK IN PROGRESS
     },
     callbacks: {
       onSelect: function() {
-      	var val = $('#select_apparel').find(':selected').data('cat');
+        var val = $('#select_apparel').find(':selected').data('cat');
         val = val.split(", ");
-				val = val.map(function(elem) { return elem.toLowerCase(); }); 
-				$("#select_material")[0].selectedIndex = 0;
-				document.querySelectorAll("#select_material optgroup").forEach(opt => {
+        val = val.map(function(elem) { return elem.toLowerCase(); }); 
+        $("#select_material")[0].selectedIndex = 0;
+        document.querySelectorAll("#select_material optgroup").forEach(opt => {
           if ($.inArray(opt.id, val) != -1) {
             opt.disabled = false; 
           } else {
-          	opt.disabled = true;
+            opt.disabled = true;
           }
-				});
+        });
       },
     }
   });
