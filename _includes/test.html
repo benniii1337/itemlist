@@ -64,23 +64,33 @@ WORK IN PROGRESS
   <div class="drops">
     <select id="select_material" style="width: 100%">
       <option value="" data-placeholder>Material</option>
+      <optgroup id="Fabrics" label="Fabrics">
         {%- for item in Fabrics -%}
           <option data-cat="Fabric" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
+      </optgroup>
+      <optgroup id="Leathers" label="Leathers">
         {%- for item in Leathers -%}
           <option data-cat="Leathery" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
+      </optgroup>
+      <optgroup id="Stone" label="Stone">
         {%- for item in Stone -%}
           <option data-cat="Stony" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
+      </optgroup>
+      <optgroup id="Metals" label="Metals">
         {%- for item in Metals -%}
           <option data-cat="Metallic" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
+      </optgroup>
+      <optgroup id="Wood" label="Wood">
           <option data-cat="Woody" value="wood">Wood</option>
+      </optgroup>
     </select>
   </div>
   <div class="drops">
@@ -109,6 +119,20 @@ WORK IN PROGRESS
     behavior: {
       liveUpdates: true,
       showPlaceholderWhenOpen: true
+    },
+    callbacks: {
+      onOpen: function() {
+          console.log('open');
+      },
+      onClose: function() {
+          console.log('close');
+      },
+      onSelect: function(value) {
+          alert("Hast " + value + " ausgewählt!");
+      },
+      onOptionClick: function(value) {
+          console.log('click option', value);
+      }
     }
   });
   
