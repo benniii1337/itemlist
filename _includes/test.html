@@ -105,10 +105,13 @@ WORK IN PROGRESS
 
 <script>
 
-  easydropdown('#select_apparel', {
+  const edd = easydropdown.all({
     behavior: {
       liveUpdates: true
     }
+  });
+  
+  easydropdown('#select_apparel', {
     callbacks: {
       onOpen: function() {
           console.log('open');
@@ -122,18 +125,6 @@ WORK IN PROGRESS
       onOptionClick: function(value) {
           console.log('click option', value);
       }
-    }
-  });
-  
-  easydropdown('#select_material', {
-    behavior: {
-      liveUpdates: true
-    }
-  });
-  
-  easydropdown('#select_quality', {
-    behavior: {
-      liveUpdates: true
     }
   });
   
