@@ -14,7 +14,7 @@
 .edd-root {
     display: inline-block;
     position: relative;
-    width: 180px;
+    width: 100%;
     user-select: none;
     font-family: 'Roboto', arial, helvetica, sans-serif;
     font-weight: 300;
