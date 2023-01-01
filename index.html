@@ -6,12 +6,9 @@ title: Store
 <link rel="stylesheet" href="{{- 'assets/css/core.css' | relative_url -}} "/>
 <script src="{{- 'assets/js/tabs.js' | relative_url -}}"></script>
 <script src="{{- 'assets/js/filter.js' | relative_url -}}"></script>
-<link rel="stylesheet" href="{{- 'assets/css/virtual-select.min.css' | relative_url -}} "/>
-<script src="{{- 'assets/js/virtual-select.min.js' | relative_url -}}"></script>
-<script src="{{- 'assets/js/scripts.js' | relative_url -}}"></script>
+<script src="{{- 'assets/js/easydropdown.js' | relative_url -}}"></script>
 <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 
 {%- assign itemsForDisplay = '' | split: ',' -%}
 {%- assign eventsForDisplay = site.data.StoreIncidents.incitems | where_exp: "incident", "incident.price > 0" | sort: "abr" -%}
