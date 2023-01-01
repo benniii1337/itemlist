@@ -49,25 +49,19 @@ Woody = Wood
 {% endcomment %}
 
 WORK IN PROGRESS
-<div class="box">
-  <div class="drops">
-    <div id="select_apparel"></div>
-  <div class="drops">
-    <div id="select_material"></div>
-  </div>
-  <div class="drops">
-    <div id="select_quality"></div>
-  </div>
-  <div class="copy">
-    <input type="textbox" value="" class= "inoutput" id="output" style="width: 350px"/> 
-  </div>
-  <div class="copy">
-    <button onclick="copyOutput()">COPY TO CLIPBOARD</button>
-  </div>
-</div>
 
+    <div id="select_apparel"></div>
+
+    <div id="select_material"></div>
+
+    <div id="select_quality"></div>
 
 <script>
+
+  initVirtualSelect({
+    ele: '#sample-multi-select',
+    multiple: true,
+  });
 
   VirtualSelect.init({
     ele: '#select_apparel',
@@ -78,6 +72,7 @@ WORK IN PROGRESS
       { label: 'Options 3', value: '3' },
     ],
   });
+    
   VirtualSelect.init({
     ele: '#select_material',
     search: true,
@@ -87,6 +82,7 @@ WORK IN PROGRESS
       { label: 'Options 3', value: '3' },
     ],
   });
+  
   VirtualSelect.init({
     ele: '#select_quality',
     search: true,
@@ -96,19 +92,4 @@ WORK IN PROGRESS
       { label: 'Options 3', value: '3' },
   });
 
-
-  function showCommand() {
-    var part1 = document.getElementById('select_apparel').value;
-    var part2 = document.getElementById('select_material').value;
-    var part3 = document.getElementById('select_quality').value;
-    result = "$wear " + part1.concat("[", part2, ",", part3, "]");
-    document.getElementById('output').value = result;
-  };
-  
-  function copyOutput() {
-    var copyText = document.getElementById("output");
-    copyText.select();
-    copyText.setSelectionRange(0, 99999);
-    navigator.clipboard.writeText(copyText.value);
-  };
 </script>
