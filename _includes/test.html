@@ -49,46 +49,12 @@ Woody = Wood
 {% endcomment %}
 
 WORK IN PROGRESS
-<div class="box">
-  <div class="drops">
-    <div id="select_apparel"></div>
-  <div class="drops">
-    <div id="select_material"></div>
-  </div>
-  <div class="drops">
-    <div id="select_quality"></div>
-  </div>
-  <div class="copy">
-    <input type="textbox" value="" class= "inoutput" id="output" style="width: 350px"/> 
-  </div>
-  <div class="copy">
-    <button onclick="copyOutput()">COPY TO CLIPBOARD</button>
-  </div>
-</div>
-
+  <div id="select_apparel"></div>
 
 <script>
 
   VirtualSelect.init({
     ele: '#select_apparel',
-    search: true,
-    options: [
-      { label: 'Options 1', value: '1' },
-      { label: 'Options 2', value: '2' },
-      { label: 'Options 3', value: '3' },
-    ],
-  };
-  {
-    ele: '#select_material',
-    search: true,
-    options: [
-      { label: 'Options 1', value: '1' },
-      { label: 'Options 2', value: '2' },
-      { label: 'Options 3', value: '3' },
-    ],
-  };
-  {
-    ele: '#select_quality',
     search: true,
     options: [
       { label: 'Options 1', value: '1' },
