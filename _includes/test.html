@@ -51,7 +51,7 @@ Woody = Wood
 WORK IN PROGRESS
 <div class="box">
   <div class="drops">
-    <select id="select_apparel" class="easy" style="width: 100%">
+    <select id="select_apparel" style="width: 100%">
       <option value="" data-placeholder>Apparel</option>
         {%- for item in include.displayData -%}
           {%- if type == "Apparel" -%}
@@ -62,7 +62,7 @@ WORK IN PROGRESS
     </select>
   </div>
   <div class="drops">
-    <select id="select_material" class="easy" style="width: 100%">
+    <select id="select_material" style="width: 100%">
       <option value="" data-placeholder>Material</option>
         {%- for item in Fabrics -%}
           <option data-cat="Fabric" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
@@ -84,7 +84,7 @@ WORK IN PROGRESS
     </select>
   </div>
   <div class="drops">
-    <select id="select_quality" class="easy" style="width: 100%">
+    <select id="select_quality" style="width: 100%">
       <option value="" data-placeholder>Quality</option>
       <option value="awful">Awful</option>
       <option value="poor">Poor</option>
@@ -105,7 +105,7 @@ WORK IN PROGRESS
 
 <script>
 
-  const edd = easydropdown('.my-select', {
+  const edd = easydropdown.all({
       behavior: {
           liveUpdates: true
       }
