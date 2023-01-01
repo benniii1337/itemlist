@@ -64,32 +64,32 @@ WORK IN PROGRESS
   <div class="drops">
     <select id="select_material" style="width: 100%">
       <option value="" data-placeholder>Material</option>
-      <optgroup id="Fabrics" label="Fabrics">
+      <optgroup id="fabric" label="Fabrics">
         {%- for item in Fabrics -%}
-          <option data-cat="Fabric" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="Leathers" label="Leathers">
+      <optgroup id="leathery" label="Leathers">
         {%- for item in Leathers -%}
-          <option data-cat="Leathery" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="Stone" label="Stone">
+      <optgroup id="stony" label="Stone">
         {%- for item in Stone -%}
-          <option data-cat="Stony" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="Metals" label="Metals">
+      <optgroup id="metallic" label="Metals">
         {%- for item in Metals -%}
-          <option data-cat="Metallic" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="Wood" label="Wood">
-          <option data-cat="Woody" value="wood">Wood</option>
+      <optgroup id="woody" label="Wood">
+          <option value="wood">Wood</option>
       </optgroup>
     </select>
   </div>
@@ -121,18 +121,19 @@ WORK IN PROGRESS
       showPlaceholderWhenOpen: true
     },
     callbacks: {
-      onOpen: function() {
-          console.log('open');
+      onSelect: function() {
+      	var val = $('#select_apparel').find(':selected').data('cat');
+        val = val.split(", ");
+				val = val.map(function(elem) { return elem.toLowerCase(); }); 
+				$("#select_material")[0].selectedIndex = 0;
+				document.querySelectorAll("#select_material optgroup").forEach(opt => {
+          if ($.inArray(opt.id, val) != -1) {
+            opt.disabled = false; 
+          } else {
+          	opt.disabled = true;
+          }
+				});
       },
-      onClose: function() {
-          console.log('close');
-      },
-      onSelect: function(value) {
-          alert("Hast " + value + " ausgewählt!");
-      },
-      onOptionClick: function(value) {
-          console.log('click option', value);
-      }
     }
   });
   
