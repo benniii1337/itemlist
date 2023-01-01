@@ -109,9 +109,8 @@ WORK IN PROGRESS
     behavior: {
       liveUpdates: true
     }
-  });
-  
-  easydropdown('#select_apparel', {
+  }
+    easydropdown('#select_apparel', {
       callbacks: {
           onOpen: function() {
               console.log('open');
@@ -120,12 +119,14 @@ WORK IN PROGRESS
               console.log('close');
           },
           onSelect: function(value) {
-              alert("Hast was ausgewählt!");
+              alert("Hast " + value + " ausgewählt!");
           },
           onOptionClick: function(value) {
               console.log('click option', value);
           }
       }
   });
+  
+  );
   
 </script>
