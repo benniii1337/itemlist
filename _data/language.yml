@@ -42,6 +42,10 @@ search_events: 'Search for events...'
 search_weapons: 'Search for weapons...'
 search_apparel: 'Search for apparel...'
 
+# Respective chat commands
+cmd_apparel: $wear
+cmd_weapons: $equip
+
 # Metadata
 usage: 'Usage: %s'
 shortcut: 'This is a shortcut for %s'
