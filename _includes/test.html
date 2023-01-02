@@ -1,55 +1,126 @@
+{%- assign type = include.type -%}
+{%- assign count = 0 -%}
+
 {%- assign Fabrics = '' | split: ',' -%}
 {%- assign Leathers = '' | split: ',' -%}
 {%- assign Metals = '' | split: ',' -%}
 {%- assign Stone = '' | split: ',' -%}
-{%- assign type = include.type -%}
-
-{%- assign count = 0 -%}
 
 {%- for item in site.data.StoreItems.items -%}
-    {%- if item.category == "Textiles" -%}
-        {%- assign Fabrics = Fabrics | push: item | sort: "abr" -%}
-        {%- continue -%}
+  {%- if item.category == "Textiles" -%}
+    {%- assign Fabrics = Fabrics | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.category == "Wools" -%}
+    {%- assign Fabrics = Fabrics | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.category == "Leathers" -%}
+    {%- assign Leathers = Leathers | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.category == "Stone blocks" -%}
+    {%- assign Stone = Stone | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.category == "Raw resources" -%}
+    {%- if item.abr == "wood" -%}
+      {%- continue -%}
+    {%- elsif item.abr == "jade" -%}
+      {%- assign Stone = Stone | push: item | sort: "abr" -%}
+      {%- continue -%}
+    {% else %}
+      {%- assign Metals = Metals | push: item | sort: "abr" -%}
+      {%- continue -%}
+    {%- endif -%}
+  {%- endif -%}  
+{%- endfor -%}
+
+{%- assign ApparelNeolithic = '' | split: ',' -%}
+{%- assign ApparelMedieval = '' | split: ',' -%}
+{%- assign ApparelIndustrial = '' | split: ',' -%}
+{%- assign ApparelSpacer = '' | split: ',' -%}
+{%- assign ApparelUltratech = '' | split: ',' -%}
+{%- assign ApparelArchotech = '' | split: ',' -%}
+
+{%- for item in include.displayData  -%}
+  {%- if type == "Apparel" -%}
+    {%- if item.tech == "Neolithic" -%}
+      {%- assign ApparelNeolithic = ApparelNeolithic | push: item | sort: "abr" -%}
+      {%- continue -%}
     {%- endif -%}
     
-    {%- if item.category == "Wools" -%}
-        {%- assign Fabrics = Fabrics | push: item | sort: "abr" -%}
-        {%- continue -%}
+    {%- if item.tech == "Medieval" -%}
+      {%- assign ApparelMedieval = ApparelMedieval | push: item | sort: "abr" -%}
+      {%- continue -%}
     {%- endif -%}
     
-    {%- if item.category == "Leathers" -%}
-        {%- assign Leathers = Leathers | push: item | sort: "abr" -%}
-        {%- continue -%}
+    {%- if item.tech == "Industrial" -%}
+      {%- assign ApparelIndustrial = ApparelIndustrial | push: item | sort: "abr" -%}
+      {%- continue -%}
     {%- endif -%}
     
-    {%- if item.category == "Stone blocks" -%}
-        {%- assign Stone = Stone | push: item | sort: "abr" -%}
-        {%- continue -%}
+    {%- if item.tech == "Spacer" -%}
+      {%- assign ApparelSpacer = ApparelSpacer | push: item | sort: "abr" -%}
+      {%- continue -%}
     {%- endif -%}
     
-    {%- if item.category == "Raw resources" -%}
-        {%- if item.abr == "wood" -%}
-          {%- continue -%}
-        {%- elsif item.abr == "jade" -%}
-          {%- assign Stone = Stone | push: item | sort: "abr" -%}
-          {%- continue -%}
-        {% else %}
-          {%- assign Metals = Metals | push: item | sort: "abr" -%}
-          {%- continue -%}
-        {%- endif -%}
+    {%- if item.tech == "Ultratech" -%}
+      {%- assign ApparelUltratech = ApparelUltratech | push: item | sort: "abr" -%}
+      {%- continue -%}
     {%- endif -%}
+    
+    {%- if item.tech == "Archotech" -%}
+      {%- assign ApparelArchotech = ApparelArchotech | push: item | sort: "abr" -%}
+      {%- continue -%}
+    {%- endif -%}
+  {%- endif -%}  
 {%- endfor -%}
 
 <div class="box">
   <div class="drops">
     <select id="select_apparel" style="width: 100%">
       <option value="" data-placeholder>Apparel</option>
-        {%- for item in include.displayData -%}
-          {%- if type == "Apparel" -%}
-            <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
-            {%- continue -%}
-          {%- endif -%}
+      <optgroup id="neolithic" label="Neolithic">
+        {%- for item in ApparelNeolithic -%}
+          <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          {%- continue -%}
         {%- endfor -%}
+      </optgroup>
+      <optgroup id="medieval" label="Medieval">
+        {%- for item in ApparelMedieval -%}
+          <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          {%- continue -%}
+        {%- endfor -%}
+      </optgroup>
+      <optgroup id="industrial" label="Industrial">
+        {%- for item in ApparelIndustrial -%}
+          <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          {%- continue -%}
+        {%- endfor -%}
+      </optgroup>
+      <optgroup id="spacer" label="Spacer">
+        {%- for item in ApparelSpacer -%}
+          <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          {%- continue -%}
+        {%- endfor -%}
+      </optgroup>
+      <optgroup id="ultratech" label="Ultratech">
+        {%- for item in ApparelUltratech -%}
+          <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          {%- continue -%}
+        {%- endfor -%}
+      </optgroup>
+      <optgroup id="archotech" label="Archotech">
+        {%- for item in ApparelArchotech -%}
+          <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          {%- continue -%}
+        {%- endfor -%}
+      </optgroup>
     </select>
   </div>
   <div class="drops">
