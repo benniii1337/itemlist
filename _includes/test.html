@@ -194,13 +194,18 @@
         clearDrops();
         srch.value = $('#select_apparel').find(':selected').val();
         srch.onkeyup();
-        document.querySelectorAll("#select_material optgroup").forEach(opt => {
-          if ($.inArray(opt.id, val) != -1) {
-            opt.disabled = false; 
-          } else {
-            opt.disabled = true;
-          }
-        });
+        if (val == "") {
+          $('#select_material').attr("disabled", "disabled");
+        } else {
+          $('#select_material').removeAttr("disabled");
+          document.querySelectorAll("#select_material optgroup").forEach(opt => {
+            if ($.inArray(opt.id, val) != -1) {
+              opt.disabled = false; 
+            } else {
+              opt.disabled = true;
+            }
+          });
+        }
         showCommand();
       },
     }
