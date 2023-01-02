@@ -1,5 +1,6 @@
 <div class="tabContent" id="{{- include.id -}}">
     {%- assign id = include.id -%}
+    {%- assign cmd = include.cmd -%}
     {%- assign type = include.type -%}
     {%- assign buyName = include.buyName -%}
     {%- assign headers = include.headers -%}
@@ -13,6 +14,7 @@
     {%- if id == "apparel" -%}
         {%- include test.html
             id=id
+            cmd=cmd
             type=type
             displayData=displayData -%}
     {%- endif -%}
