@@ -4431,7 +4431,7 @@
       "defname": "VAEA_Apparel_RessurectorBelt",
       "layer": "Utility",
       "bodypart": "Utility slot",
-      "tech": "Ultra"
+      "tech": "Ultratech"
     },
     {
       "abr": "rhinocerosmeat",
@@ -5302,5 +5302,5 @@
       "defname": "TableSyrProsthetics"
     }
   ],
-  "total": 872
+  "total": 809
 }
