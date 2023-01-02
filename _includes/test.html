@@ -1,6 +1,3 @@
-{%- assign type = include.type -%}
-{%- assign count = 0 -%}
-
 {%- assign Fabrics = '' | split: ',' -%}
 {%- assign Leathers = '' | split: ',' -%}
 {%- assign Metals = '' | split: ',' -%}
@@ -40,83 +37,81 @@
   {%- endif -%}  
 {%- endfor -%}
 
-{%- assign ApparelNeolithic = '' | split: ',' -%}
-{%- assign ApparelMedieval = '' | split: ',' -%}
-{%- assign ApparelIndustrial = '' | split: ',' -%}
-{%- assign ApparelSpacer = '' | split: ',' -%}
-{%- assign ApparelUltratech = '' | split: ',' -%}
-{%- assign ApparelArchotech = '' | split: ',' -%}
+{%- assign techNeolithic = '' | split: ',' -%}
+{%- assign techMedieval = '' | split: ',' -%}
+{%- assign techIndustrial = '' | split: ',' -%}
+{%- assign techSpacer = '' | split: ',' -%}
+{%- assign techUltratech = '' | split: ',' -%}
+{%- assign techArchotech = '' | split: ',' -%}
 
 {%- for item in include.displayData  -%}
-  {%- if type == "Apparel" -%}
-    {%- if item.tech == "Neolithic" -%}
-      {%- assign ApparelNeolithic = ApparelNeolithic | push: item | sort: "abr" -%}
-      {%- continue -%}
-    {%- endif -%}
-    
-    {%- if item.tech == "Medieval" -%}
-      {%- assign ApparelMedieval = ApparelMedieval | push: item | sort: "abr" -%}
-      {%- continue -%}
-    {%- endif -%}
-    
-    {%- if item.tech == "Industrial" -%}
-      {%- assign ApparelIndustrial = ApparelIndustrial | push: item | sort: "abr" -%}
-      {%- continue -%}
-    {%- endif -%}
-    
-    {%- if item.tech == "Spacer" -%}
-      {%- assign ApparelSpacer = ApparelSpacer | push: item | sort: "abr" -%}
-      {%- continue -%}
-    {%- endif -%}
-    
-    {%- if item.tech == "Ultratech" -%}
-      {%- assign ApparelUltratech = ApparelUltratech | push: item | sort: "abr" -%}
-      {%- continue -%}
-    {%- endif -%}
-    
-    {%- if item.tech == "Archotech" -%}
-      {%- assign ApparelArchotech = ApparelArchotech | push: item | sort: "abr" -%}
-      {%- continue -%}
-    {%- endif -%}
-  {%- endif -%}  
+  {%- if item.tech == "Neolithic" -%}
+    {%- assign techNeolithic = techNeolithic | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.tech == "Medieval" -%}
+    {%- assign techMedieval = techMedieval | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.tech == "Industrial" -%}
+    {%- assign techIndustrial = techIndustrial | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.tech == "Spacer" -%}
+    {%- assign techSpacer = techSpacer | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.tech == "Ultratech" -%}
+    {%- assign techUltratech = techUltratech | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.tech == "Archotech" -%}
+    {%- assign techArchotech = techArchotech | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
 {%- endfor -%}
 
 <div class="box">
   <div class="drops">
-    <select id="select_apparel" style="width: 100%">
-      <option value="" data-placeholder>Apparel</option>
+    <select id="select_item" style="width: 100%">
+      <option value="" data-placeholder>{{- include.type -}}</option>
       <optgroup id="neolithic" label="Neolithic">
-        {%- for item in ApparelNeolithic -%}
+        {%- for item in techNeolithic -%}
           <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
       <optgroup id="medieval" label="Medieval">
-        {%- for item in ApparelMedieval -%}
+        {%- for item in techMedieval -%}
           <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
       <optgroup id="industrial" label="Industrial">
-        {%- for item in ApparelIndustrial -%}
+        {%- for item in techIndustrial -%}
           <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
       <optgroup id="spacer" label="Spacer">
-        {%- for item in ApparelSpacer -%}
+        {%- for item in techSpacer -%}
           <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
       <optgroup id="ultratech" label="Ultratech">
-        {%- for item in ApparelUltratech -%}
+        {%- for item in techUltratech -%}
           <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
       <optgroup id="archotech" label="Archotech">
-        {%- for item in ApparelArchotech -%}
+        {%- for item in techArchotech -%}
           <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
@@ -180,19 +175,19 @@
 
 <script>
 
-  easydropdown('#select_apparel', {
+  easydropdown('#select_item', {
     behavior: {
       liveUpdates: true,
       showPlaceholderWhenOpen: true
     },
     callbacks: {
       onSelect: function() {
-        var val = $('#select_apparel').find(':selected').data('cat');
+        var val = $('#select_item').find(':selected').data('cat');
         val = val.split(", ");
         val = val.map(function(elem) { return elem.toLowerCase(); }); 
         var srch = document.getElementById('{{- include.id -}}Input');
         clearDrops();
-        srch.value = $('#select_apparel').find(':selected').val();
+        srch.value = $('#select_item').find(':selected').val();
         srch.onkeyup();
         if (val == "") {
           $('#select_material').attr("disabled", "disabled");
@@ -252,7 +247,7 @@
   }
   
   function showCommand() {
-    var part1 = document.getElementById('select_apparel').value;
+    var part1 = document.getElementById('select_item').value;
     var part2 = document.getElementById('select_material').value;
     var part3 = document.getElementById('select_quality').value;
        
