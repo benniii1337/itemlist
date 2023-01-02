@@ -99,9 +99,8 @@ Equip a primary weapon: <br/>
 `!buy equip <item>[material,quality]` or `$equip <item>[material,quality]`
 
 Wear apparel or armor: <br/>
-`!buy wear <item>[material,quality]` or `$wear <item>[material,quality]`
-
-ℹ️ declaring material and quality is optional
+`!buy wear <item>[material,quality]` or `$wear <item>[material,quality]` <br/>
+[_Create command here_]({{- "/?tab=apparel" | relative_url -}})
 
 #### Beginner
 
