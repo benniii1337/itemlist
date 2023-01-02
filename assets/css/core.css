@@ -49,6 +49,10 @@
   text-align: center;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 input[type="text"] {
   font: 14px/24px 'Roboto', arial, helvetica, sans-serif;
   color: #333;
@@ -62,7 +66,7 @@ input[type="text"] {
 }
 
 .ei-box {
-  width: 50%;
+  width: 40%;
   margin: 5px auto;
   position: relative;
 }
@@ -98,9 +102,19 @@ input[type="text"] {
   left: 0;
 }
 
+.ei-btn {
+  border: none;
+  background-color: inherit;
+  color: #45bce7;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-block;
+}
 
-* {
-  box-sizing: border-box;
+.ei-btn:hover {
+  background: #45bce7;
+  color: #ddd;
 }
 
 .drops {
