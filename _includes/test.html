@@ -107,11 +107,12 @@ WORK IN PROGRESS
   </div>
 </div>
 <div class="ei-box">
-  <input id="cmdout" class="ei-out" type="text" placeholder="Chatcommand" readonly>
+  <input id="cmdout" class="ei-out" type="text" placeholder="Chatcommand" onclick="this.select()" readonly>
   <span class="focus-border"></span>
 </div>
 <div class="copy">
-  <button onclick="copyOutput()">COPY TO CLIPBOARD</button>
+  <button class="ei-btn" onclick="copyOutput()">COPY</button>
+  <button class="ei-btn" onclick="clearDrops()">CLEAR</button>    
 </div>
 
 <script>
@@ -126,8 +127,7 @@ WORK IN PROGRESS
         var val = $('#select_apparel').find(':selected').data('cat');
         val = val.split(", ");
         val = val.map(function(elem) { return elem.toLowerCase(); }); 
-        $("#select_material")[0].selectedIndex = 0;
-        $("#select_quality")[0].selectedIndex = 0;
+        clearDrops();
         document.querySelectorAll("#select_material optgroup").forEach(opt => {
           if ($.inArray(opt.id, val) != -1) {
             opt.disabled = false; 
@@ -135,7 +135,7 @@ WORK IN PROGRESS
             opt.disabled = true;
           }
         });
-        showCommand()
+        showCommand();
       },
     }
   });
@@ -147,7 +147,7 @@ WORK IN PROGRESS
     },
     callbacks: {
       onSelect: function() {
-        showCommand()
+        showCommand();
       },
     }
   });
@@ -159,17 +159,31 @@ WORK IN PROGRESS
     },
     callbacks: {
       onSelect: function() {
-        showCommand()
+        showCommand();
       },
     }
   });
+  
+  function clearDrops() {
+    $("#select_material")[0].selectedIndex = 0;
+    $("#select_quality")[0].selectedIndex = 0;
+  }
   
   function showCommand() {
     var part1 = document.getElementById('select_apparel').value;
     var part2 = document.getElementById('select_material').value;
     var part3 = document.getElementById('select_quality').value;
-    result = "$wear " + part1.concat("[", part2, ",", part3, "]");
-    document.getElementById('cmdout').value = result;
+    
+    if (part1) {
+      if (!part2 && !part3) {
+        result = "$wear " +part1;
+      } else if (!part2 || !part3) {
+        result = "$wear " +part1.concat("[", part2, part3, "]");
+      } else {
+        result = "$wear " + part1.concat("[", part2, ",", part3, "]");
+      };
+      document.getElementById('cmdout').value = result
+    };
   };
   
   function copyOutput() {
