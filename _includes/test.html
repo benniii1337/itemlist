@@ -105,12 +105,13 @@ WORK IN PROGRESS
       <option value="legendary">Legendary</option>
     </select>
   </div>
-  <div class="copy">
-    <input type="textbox" value="" class= "inoutput" id="output" style="width: 350px"/> 
-  </div>
-  <div class="copy">
-    <button onclick="copyOutput()">COPY TO CLIPBOARD</button>
-  </div>
+</div>
+<div class="ei-box">
+  <input id="cmdout" class="ei-out" type="text" placeholder="Chatcommand" readonly>
+  <span class="focus-border"></span>
+</div>
+<div class="copy">
+  <button onclick="copyOutput()">COPY TO CLIPBOARD</button>
 </div>
 
 <script>
@@ -150,5 +151,20 @@ WORK IN PROGRESS
       showPlaceholderWhenOpen: true
     }
   });
+  
+  function showCommand() {
+    var part1 = document.getElementById('select_apparel').value;
+    var part2 = document.getElementById('select_material').value;
+    var part3 = document.getElementById('select_quality').value;
+    result = "$wear " + part1.concat("[", part2, ",", part3, "]");
+    document.getElementById('cmdout').value = result;
+  };
+  
+  function copyOutput() {
+    var copyText = document.getElementById("cmdout");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+  };
   
 </script>
