@@ -127,6 +127,7 @@ WORK IN PROGRESS
         val = val.split(", ");
         val = val.map(function(elem) { return elem.toLowerCase(); }); 
         $("#select_material")[0].selectedIndex = 0;
+        $("#select_quality")[0].selectedIndex = 0;
         document.querySelectorAll("#select_material optgroup").forEach(opt => {
           if ($.inArray(opt.id, val) != -1) {
             opt.disabled = false; 
@@ -134,6 +135,7 @@ WORK IN PROGRESS
             opt.disabled = true;
           }
         });
+        showCommand()
       },
     }
   });
@@ -142,6 +144,11 @@ WORK IN PROGRESS
     behavior: {
       liveUpdates: true,
       showPlaceholderWhenOpen: true
+    },
+    callbacks: {
+      onSelect: function() {
+        showCommand()
+      },
     }
   });
   
@@ -149,6 +156,11 @@ WORK IN PROGRESS
     behavior: {
       liveUpdates: true,
       showPlaceholderWhenOpen: true
+    },
+    callbacks: {
+      onSelect: function() {
+        showCommand()
+      },
     }
   });
   
