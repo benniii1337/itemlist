@@ -4,6 +4,7 @@ events_tab: 'Events'
 traits_tab: 'Traits'
 animals_tab: 'Animals'
 weapons_tab: 'Weapons'
+apparel_tab: 'Apparel'
 pawn_kinds_tab: 'Pawn Kinds'
 
 # Table headers
@@ -15,6 +16,8 @@ user_level_header: User Level
 description_header: Description
 cost_header: Cost
 category_header: Category
+bodypart_header: Covers
+layer_header: Layer
 karma_type_header: Karma Type
 add_cost_header: Add Cost
 remove_cost_header: Remove Cost
@@ -37,6 +40,7 @@ search_commands: 'Search for commands...'
 search_animals: 'Search for animals...'
 search_events: 'Search for events...'
 search_weapons: 'Search for weapons...'
+search_apparel: 'Search for apparel...'
 
 # Metadata
 usage: 'Usage: %s'

@@ -6,7 +6,10 @@ title: Store
 <link rel="stylesheet" href="{{- 'assets/css/core.css' | relative_url -}} "/>
 <script src="{{- 'assets/js/tabs.js' | relative_url -}}"></script>
 <script src="{{- 'assets/js/filter.js' | relative_url -}}"></script>
+<script src="{{- 'assets/js/easydropdown.js' | relative_url -}}"></script>
+<link id="theme-sheet" href="{{- 'assets/css/flax.css' | relative_url -}}" rel="stylesheet">
 <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 {%- assign itemsForDisplay = '' | split: ',' -%}
 {%- assign eventsForDisplay = site.data.StoreIncidents.incitems | where_exp: "incident", "incident.price > 0" | sort: "abr" -%}
@@ -14,6 +17,7 @@ title: Store
 {%- assign traitsForDisplay = '' | split: ',' -%}
 {%- assign kindsForDisplay = site.data.ShopExt.races | where: "enabled", "true" | sort: "name" -%}
 {%- assign weaponsForDisplay = '' | split: ',' -%}
+{%- assign apparelForDisplay = '' | split: ',' -%}
 
 {%- for item in site.data.StoreItems.items -%}
     {%- if item.price <= 0 -%}
@@ -22,6 +26,11 @@ title: Store
 
     {%- if site.data.itemdata[item.defname].IsWeapon -%}
         {%- assign weaponsForDisplay = weaponsForDisplay | push: item | sort: "abr" -%}
+        {%- continue -%}
+    {%- endif -%}
+    
+    {%- if site.data.itemdata[item.defname].IsWearable -%}
+        {%- assign apparelForDisplay = apparelForDisplay | push: item | sort: "abr" -%}
         {%- continue -%}
     {%- endif -%}
                          
@@ -63,6 +72,10 @@ title: Store
 
     {%- if weaponsForDisplay.size > 0 -%}
         {%- include tab.html id='weapons' -%}
+    {%- endif -%}
+    
+    {%- if apparelForDisplay.size > 0 -%}
+        {%- include tab.html id='apparel' -%}
     {%- endif -%}
 
     {%- if animalsForDisplay.size > 0 -%}
@@ -127,6 +140,32 @@ title: Store
         priceDataHeaders=site.data.language.cost_header
         displayData=weaponsForDisplay
         placeholder=site.data.language.search_weapons -%}
+{%- endif -%}
+
+{%- if apparelForDisplay.size > 0 -%}
+    {%- assign headers = '' | split: ',' -%}
+    {%- assign headers = headers | push: site.data.language.name_header -%}
+    {%- assign headers = headers | push: site.data.language.cost_header -%}
+
+    {%- if site.store.apparel.category -%}
+        {%- assign headers = headers | push: site.data.language.category_header -%}
+    {%- endif -%}
+
+    {%- if site.store.apparel.layer and site.store.apparel.bodypart -%}
+        {%- assign headers = headers | push: site.data.language.layer_header -%}
+        {%- assign headers = headers | push: site.data.language.bodypart_header -%}
+    {%- endif -%}
+
+    {%- assign headers = headers | join: ',' -%}
+
+    {%- include store_tab.html
+        id='apparel'
+        type='Apparel'
+        buyName=buy
+        headers=headers
+        priceDataHeaders=site.data.language.cost_header
+        displayData=apparelForDisplay
+        placeholder=site.data.language.search_apparel -%}
 {%- endif -%}
 
 {%- if animalsForDisplay.size > 0 -%}
@@ -229,4 +268,5 @@ title: Store
 
         return document.getElementsByClassName("tabLinks")[0].click();
     });
+    
 </script>

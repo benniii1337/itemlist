@@ -1,0 +1,187 @@
+{%- assign Fabrics = '' | split: ',' -%}
+{%- assign Leathers = '' | split: ',' -%}
+{%- assign Metals = '' | split: ',' -%}
+{%- assign Stone = '' | split: ',' -%}
+{%- assign type = include.type -%}
+
+{%- assign count = 0 -%}
+
+{%- for item in site.data.StoreItems.items -%}
+    {%- if item.category == "Textiles" -%}
+        {%- assign Fabrics = Fabrics | push: item | sort: "abr" -%}
+        {%- continue -%}
+    {%- endif -%}
+    
+    {%- if item.category == "Wools" -%}
+        {%- assign Fabrics = Fabrics | push: item | sort: "abr" -%}
+        {%- continue -%}
+    {%- endif -%}
+    
+    {%- if item.category == "Leathers" -%}
+        {%- assign Leathers = Leathers | push: item | sort: "abr" -%}
+        {%- continue -%}
+    {%- endif -%}
+    
+    {%- if item.category == "Stone blocks" -%}
+        {%- assign Stone = Stone | push: item | sort: "abr" -%}
+        {%- continue -%}
+    {%- endif -%}
+    
+    {%- if item.category == "Raw resources" -%}
+        {%- if item.abr == "wood" -%}
+          {%- continue -%}
+        {%- elsif item.abr == "jade" -%}
+          {%- assign Stone = Stone | push: item | sort: "abr" -%}
+          {%- continue -%}
+        {% else %}
+          {%- assign Metals = Metals | push: item | sort: "abr" -%}
+          {%- continue -%}
+        {%- endif -%}
+    {%- endif -%}
+{%- endfor -%}
+
+<div class="box">
+  <div class="drops">
+    <select id="select_apparel" style="width: 100%">
+      <option value="" data-placeholder>Apparel</option>
+        {%- for item in include.displayData -%}
+          {%- if type == "Apparel" -%}
+            <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            {%- continue -%}
+          {%- endif -%}
+        {%- endfor -%}
+    </select>
+  </div>
+  <div class="drops">
+    <select id="select_material" style="width: 100%">
+      <option value="" data-placeholder>Material</option>
+      <optgroup id="fabric" label="Fabrics">
+        {%- for item in Fabrics -%}
+          <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          {%- continue -%}
+        {%- endfor -%}
+      </optgroup>
+      <optgroup id="leathery" label="Leathers">
+        {%- for item in Leathers -%}
+          <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          {%- continue -%}
+        {%- endfor -%}
+      </optgroup>
+      <optgroup id="stony" label="Stone">
+        {%- for item in Stone -%}
+          <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          {%- continue -%}
+        {%- endfor -%}
+      </optgroup>
+      <optgroup id="metallic" label="Metals">
+        {%- for item in Metals -%}
+          <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          {%- continue -%}
+        {%- endfor -%}
+      </optgroup>
+      <optgroup id="woody" label="Wood">
+          <option value="wood">Wood</option>
+      </optgroup>
+    </select>
+  </div>
+  <div class="drops">
+    <select id="select_quality" style="width: 100%">
+      <option value="" data-placeholder>Quality</option>
+      <option value="awful">Awful</option>
+      <option value="poor">Poor</option>
+      <option value="normal">Normal</option>
+      <option value="good">Good</option>
+      <option value="excellent">Excellent</option>
+      <option value="masterwork">Masterwork</option>
+      <option value="legendary">Legendary</option>
+    </select>
+  </div>
+</div>
+<div class="ei-box">
+  <input id="cmdout" class="ei-out" type="text" placeholder="Chatcommand" onclick="this.select()" readonly>
+  <span class="focus-border"></span>
+</div>
+<div class="copy">
+  <button class="ei-btn" onclick="copyOutput()">COPY</button>
+  <button class="ei-btn" onclick="clearDrops()">CLEAR</button>    
+</div>
+
+<script>
+
+  easydropdown('#select_apparel', {
+    behavior: {
+      liveUpdates: true,
+      showPlaceholderWhenOpen: true
+    },
+    callbacks: {
+      onSelect: function() {
+        var val = $('#select_apparel').find(':selected').data('cat');
+        val = val.split(", ");
+        val = val.map(function(elem) { return elem.toLowerCase(); }); 
+        clearDrops();
+        document.querySelectorAll("#select_material optgroup").forEach(opt => {
+          if ($.inArray(opt.id, val) != -1) {
+            opt.disabled = false; 
+          } else {
+            opt.disabled = true;
+          }
+        });
+        showCommand();
+      },
+    }
+  });
+  
+  easydropdown('#select_material', {
+    behavior: {
+      liveUpdates: true,
+      showPlaceholderWhenOpen: true
+    },
+    callbacks: {
+      onSelect: function() {
+        showCommand();
+      },
+    }
+  });
+  
+  easydropdown('#select_quality', {
+    behavior: {
+      liveUpdates: true,
+      showPlaceholderWhenOpen: true
+    },
+    callbacks: {
+      onSelect: function() {
+        showCommand();
+      },
+    }
+  });
+  
+  function clearDrops() {
+    $("#select_material")[0].selectedIndex = 0;
+    $("#select_quality")[0].selectedIndex = 0;
+  }
+  
+  function showCommand() {
+    var part1 = document.getElementById('select_apparel').value;
+    var part2 = document.getElementById('select_material').value;
+    var part3 = document.getElementById('select_quality').value;
+    
+    if (part1) {
+      if (!part2 && !part3) {
+        result = "$wear " +part1;
+      } else if (!part2 || !part3) {
+        result = "$wear " +part1.concat("[", part2, part3, "]");
+      } else {
+        result = "$wear " + part1.concat("[", part2, ",", part3, "]");
+      };
+      document.getElementById('cmdout').value = result
+    };
+  };
+  
+  function copyOutput() {
+    var copyText = document.getElementById("cmdout");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+  };
+  
+</script>

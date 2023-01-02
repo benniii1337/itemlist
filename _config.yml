@@ -42,6 +42,12 @@ store:
     quantity: true
     mod: true
     usage: true
+  apparel:
+    category: false
+    bodypart: true
+    layer: true
+    mod: true
+    usage: true
   events:
     usage: true
     mod: true
