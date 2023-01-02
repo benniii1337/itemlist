@@ -174,6 +174,7 @@
 </div>
 <div class="copy">
   <button class="ei-btn" onclick="copyOutput()">COPY</button>
+  <button class="ei-btn" onclick="toggleCmd()">SWITCH</button>
   <button class="ei-btn" onclick="clearDrops()">CLEAR</button>    
 </div>
 
@@ -234,18 +235,29 @@
     $("#select_quality")[0].selectedIndex = 0;
   }
   
+  var cmd = "$wear ";
+
+  function toggleCmd() {
+    if (!cmd || cmd == "$wear ") {
+      cmd = "$"
+    } else {
+      cmd = "$wear "
+    };
+    showCommand();
+  }
+  
   function showCommand() {
     var part1 = document.getElementById('select_apparel').value;
     var part2 = document.getElementById('select_material').value;
     var part3 = document.getElementById('select_quality').value;
-    
+       
     if (part1) {
       if (!part2 && !part3) {
-        result = "$wear " +part1;
+        result = cmd + part1;
       } else if (!part2 || !part3) {
-        result = "$wear " +part1.concat("[", part2, part3, "]");
+        result = cmd + part1.concat("[", part2, part3, "]");
       } else {
-        result = "$wear " + part1.concat("[", part2, ",", part3, "]");
+        result = cmd + part1.concat("[", part2, ",", part3, "]");
       };
       document.getElementById('cmdout').value = result
     };
