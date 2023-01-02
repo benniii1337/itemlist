@@ -189,8 +189,10 @@
         var val = $('#select_apparel').find(':selected').data('cat');
         val = val.split(", ");
         val = val.map(function(elem) { return elem.toLowerCase(); }); 
+        var srch = document.getElementById('apparelInput');
         clearDrops();
-        document.getElementById('apparelInput').value = $('#select_apparel').find(':selected').val();
+        srch.value = $('#select_apparel').find(':selected').val();
+        srch.onkeyup();
         document.querySelectorAll("#select_material optgroup").forEach(opt => {
           if ($.inArray(opt.id, val) != -1) {
             opt.disabled = false; 
