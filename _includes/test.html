@@ -76,8 +76,6 @@
   {%- endif -%}
 {%- endfor -%}
 
-Test:   {{- include.cmd -}}
-
 <div class="box">
   <div class="drops">
     <select id="select_item" style="width: 100%">
@@ -236,14 +234,14 @@ Test:   {{- include.cmd -}}
     $("#select_material")[0].selectedIndex = 0;
     $("#select_quality")[0].selectedIndex = 0;
   }
-    
-  var cmd = "$wear ";
+
+  var cmd = "{{- include.cmd | append: ' ' -}}";
 
   function toggleCmd() {
-    if (!cmd || cmd == "$wear ") {
+    if (!cmd || cmd == "{{- include.cmd | append: ' ' -}}") {
       cmd = "$"
     } else {
-      cmd = "$wear "
+      cmd = "{{- include.cmd | append: ' ' -}}"
     };
     showCommand();
   }
