@@ -76,6 +76,8 @@
   {%- endif -%}
 {%- endfor -%}
 
+Test:   {{- include.cmd -}}
+
 <div class="box">
   <div class="drops">
     <select id="select_item" style="width: 100%">
@@ -234,7 +236,7 @@
     $("#select_material")[0].selectedIndex = 0;
     $("#select_quality")[0].selectedIndex = 0;
   }
-  
+    
   var cmd = "$wear ";
 
   function toggleCmd() {
