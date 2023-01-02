@@ -190,7 +190,7 @@
         var val = $('#select_apparel').find(':selected').data('cat');
         val = val.split(", ");
         val = val.map(function(elem) { return elem.toLowerCase(); }); 
-        var srch = document.getElementById('apparelInput');
+        var srch = document.getElementById('{{- include.id -}}Input');
         clearDrops();
         srch.value = $('#select_apparel').find(':selected').val();
         srch.onkeyup();
