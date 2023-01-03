@@ -1,6 +1,6 @@
 {
   "items": [
-  	{
+    {
       "abr": "beer",
       "price": 20,
       "category": "Drugs",
@@ -1561,187 +1561,226 @@
       "abr": "breachaxe",
       "price": 197,
       "category": "Melee weapons",
-      "defname": "MeleeWeapon_BreachAxe"
+      "defname": "MeleeWeapon_BreachAxe",
+      "ingredients": "Metallic",
+      "tech": "Neolithic"
     },
     {
       "abr": "mace",
       "price": 203,
       "category": "Melee weapons",
-      "defname": "MeleeWeapon_Mace"
+      "defname": "MeleeWeapon_Mace",
+      "ingredients": "Metallic, Woody",
+      "tech": "Medieval"
     },
     {
       "abr": "gladius",
       "price": 239,
       "category": "Melee weapons",
-      "defname": "MeleeWeapon_Gladius"
+      "defname": "MeleeWeapon_Gladius",
+      "ingredients": "Metallic, Woody",
+      "tech": "Medieval"
     },
     {
       "abr": "longsword",
       "price": 442,
       "category": "Melee weapons",
-      "defname": "MeleeWeapon_LongSword"
+      "defname": "MeleeWeapon_LongSword",
+      "ingredients": "Metallic, Woody",
+      "tech": "Medieval"
     },
     {
       "abr": "club",
       "price": 141,
       "category": "Melee weapons",
-      "defname": "MeleeWeapon_Club"
+      "defname": "MeleeWeapon_Club",
+      "ingredients": "Metallic, Woody, Stony",
+      "tech": "Neolithic"
     },
     {
       "abr": "knife",
       "price": 111,
       "category": "Melee weapons",
-      "defname": "MeleeWeapon_Knife"
+      "defname": "MeleeWeapon_Knife",
+      "ingredients": "Metallic",
+      "tech": "Neolithic"
     },
     {
       "abr": "ikwa",
       "price": 197,
       "category": "Melee weapons",
-      "defname": "MeleeWeapon_Ikwa"
+      "defname": "MeleeWeapon_Ikwa",
+      "ingredients": "Metallic, Woody",
+      "tech": "Neolithic"
     },
     {
       "abr": "spear",
       "price": 322,
       "category": "Melee weapons",
-      "defname": "MeleeWeapon_Spear"
+      "defname": "MeleeWeapon_Spear",
+      "ingredients": "Metallic, Woody",
+      "tech": "Neolithic"
     },
     {
       "abr": "revolver",
       "price": 226,
       "category": "Ranged weapons",
-      "defname": "Gun_Revolver"
+      "defname": "Gun_Revolver",
+      "tech": "Industrial"
     },
     {
       "abr": "autopistol",
       "price": 232,
       "category": "Ranged weapons",
-      "defname": "Gun_Autopistol"
+      "defname": "Gun_Autopistol",
+      "tech": "Industrial"
     },
     {
       "abr": "machinepistol",
       "price": 367,
       "category": "Ranged weapons",
-      "defname": "Gun_MachinePistol"
+      "defname": "Gun_MachinePistol",
+      "tech": "Industrial"
     },
     {
       "abr": "incendiarylauncher",
       "price": 567,
       "category": "Ranged weapons",
-      "defname": "Gun_IncendiaryLauncher"
+      "defname": "Gun_IncendiaryLauncher",
+      "tech": "Industrial"
     },
     {
       "abr": "smokelauncher",
       "price": 633,
       "category": "Ranged weapons",
-      "defname": "Gun_SmokeLauncher"
+      "defname": "Gun_SmokeLauncher",
+      "tech": "Industrial"
     },
     {
       "abr": "emplauncher",
       "price": 842,
       "category": "Ranged weapons",
-      "defname": "Gun_EmpLauncher"
+      "defname": "Gun_EmpLauncher",
+      "tech": "Industrial"
     },
     {
       "abr": "bolt-actionrifle",
       "price": 425,
       "category": "Ranged weapons",
-      "defname": "Gun_BoltActionRifle"
+      "defname": "Gun_BoltActionRifle",
+      "tech": "Industrial"
     },
     {
       "abr": "pumpshotgun",
       "price": 425,
       "category": "Ranged weapons",
-      "defname": "Gun_PumpShotgun"
+      "defname": "Gun_PumpShotgun",
+      "tech": "Industrial"
     },
     {
       "abr": "chainshotgun",
       "price": 675,
       "category": "Ranged weapons",
-      "defname": "Gun_ChainShotgun"
+      "defname": "Gun_ChainShotgun",
+      "tech": "Industrial"
     },
     {
       "abr": "heavysmg",
       "price": 592,
       "category": "Ranged weapons",
-      "defname": "Gun_HeavySMG"
+      "defname": "Gun_HeavySMG",
+      "tech": "Industrial"
     },
     {
       "abr": "lmg",
       "price": 708,
       "category": "Ranged weapons",
-      "defname": "Gun_LMG"
+      "defname": "Gun_LMG",
+      "tech": "Industrial"
     },
     {
       "abr": "assaultrifle",
       "price": 800,
       "category": "Ranged weapons",
-      "defname": "Gun_AssaultRifle"
+      "defname": "Gun_AssaultRifle",
+      "tech": "Industrial"
     },
     {
       "abr": "sniperrifle",
       "price": 883,
       "category": "Ranged weapons",
-      "defname": "Gun_SniperRifle"
+      "defname": "Gun_SniperRifle",
+      "tech": "Industrial"
     },
     {
       "abr": "minigun",
       "price": 1933,
       "category": "Ranged weapons",
-      "defname": "Gun_Minigun"
+      "defname": "Gun_Minigun",
+      "tech": "Industrial"
     },
     {
       "abr": "fraggrenades",
       "price": 442,
       "category": "Grenades",
-      "defname": "Weapon_GrenadeFrag"
+      "defname": "Weapon_GrenadeFrag",
+      "tech": "Industrial"
     },
     {
       "abr": "molotovcocktails",
       "price": 408,
       "category": "Grenades",
-      "defname": "Weapon_GrenadeMolotov"
+      "defname": "Weapon_GrenadeMolotov",
+      "tech": "Industrial"
     },
     {
       "abr": "empgrenades",
       "price": 525,
       "category": "Grenades",
-      "defname": "Weapon_GrenadeEMP"
+      "defname": "Weapon_GrenadeEMP",
+      "tech": "Industrial"
     },
     {
       "abr": "shortbow",
       "price": 74,
       "category": "Ranged weapons",
-      "defname": "Bow_Short"
+      "defname": "Bow_Short",
+      "tech": "Neolithic"
     },
     {
       "abr": "pila",
       "price": 182,
       "category": "Ranged weapons",
-      "defname": "Pila"
+      "defname": "Pila",
+      "tech": "Neolithic"
     },
     {
       "abr": "recurvebow",
       "price": 110,
       "category": "Ranged weapons",
-      "defname": "Bow_Recurve"
+      "defname": "Bow_Recurve",
+      "tech": "Neolithic"
     },
     {
       "abr": "greatbow",
       "price": 174,
       "category": "Ranged weapons",
-      "defname": "Bow_Great"
+      "defname": "Bow_Great",
+      "tech": "Neolithic"
     },
     {
       "abr": "chargerifle",
       "price": 1683,
       "category": "Ranged weapons",
-      "defname": "Gun_ChargeRifle"
+      "defname": "Gun_ChargeRifle",
+      "tech": "Spacer"
     },
     {
       "abr": "chargelance",
       "price": 2258,
       "category": "Ranged weapons",
-      "defname": "Gun_ChargeLance"
+      "defname": "Gun_ChargeLance",
+      "tech": "Spacer"
     },
     {
       "abr": "orbitalbombardmenttargeter",
@@ -2575,19 +2614,22 @@
       "abr": "toxbomblauncher",
       "price": 633,
       "category": "Ranged weapons",
-      "defname": "Gun_ToxbombLauncher"
+      "defname": "Gun_ToxbombLauncher",
+      "tech": "Industrial"
     },
     {
       "abr": "toxgrenades",
       "price": 525,
       "category": "Grenades",
-      "defname": "Weapon_GrenadeTox"
+      "defname": "Weapon_GrenadeTox",
+      "tech": "Industrial"
     },
     {
       "abr": "flamebow",
       "price": 75,
       "category": "Ranged weapons",
-      "defname": "Flamebow"
+      "defname": "Flamebow",
+      "tech": "Neolithic"
     },
     {
       "abr": "poluxseed",
@@ -2611,13 +2653,15 @@
       "abr": "triplerocketlauncher",
       "price": 1667,
       "category": "Ranged weapons",
-      "defname": "Gun_TripleRocket"
+      "defname": "Gun_TripleRocket",
+      "tech": "Spacer"
     },
     {
       "abr": "doomsdayrocketlauncher",
       "price": 1667,
       "category": "Ranged weapons",
-      "defname": "Gun_DoomsdayRocket"
+      "defname": "Gun_DoomsdayRocket",
+      "tech": "Spacer"
     },
     {
       "abr": "advancedbattery",
@@ -2680,7 +2724,8 @@
       "abr": "anti-materialrifle",
       "price": 1717,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_AntiMaterialRifle"
+      "defname": "VWE_Gun_AntiMaterialRifle",
+      "tech": "Industrial"
     },
     {
       "abr": "apron",
@@ -2732,7 +2777,8 @@
       "abr": "automaticpistol",
       "price": 333,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_AutomaticPistol"
+      "defname": "VWE_Gun_AutomaticPistol",
+      "tech": "Industrial"
     },
     {
       "abr": "backpack",
@@ -2774,13 +2820,17 @@
       "abr": "baton",
       "price": 206,
       "category": "Melee weapons",
-      "defname": "VWE_MeleeWeapon_Baton"
+      "defname": "VWE_MeleeWeapon_Baton",
+      "ingredients": "Metallic, Woody",
+      "tech": "Industrial"
     },
     {
       "abr": "battleaxe",
       "price": 442,
       "category": "Melee weapons",
-      "defname": "VWE_MeleeWeapon_BattleAxe"
+      "defname": "VWE_MeleeWeapon_BattleAxe",
+      "ingredients": "Metallic",
+      "tech": "Medieval"
     },
     {
       "abr": "battlebanner",
@@ -2796,7 +2846,8 @@
       "abr": "battlerifle",
       "price": 800,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_BattleRifle"
+      "defname": "VWE_Gun_BattleRifle",
+      "tech": "Industrial"
     },
     {
       "abr": "bearmeat",
@@ -2933,13 +2984,15 @@
       "abr": "bullpupdmr",
       "price": 1692,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_BullpupDMR"
+      "defname": "VWE_Gun_BullpupDMR",
+      "tech": "Industrial"
     },
     {
       "abr": "bullpuprifle",
       "price": 1158,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_BullpupRifle"
+      "defname": "VWE_Gun_BullpupRifle",
+      "tech": "Industrial"
     },
     {
       "abr": "capybarameat",
@@ -2951,7 +3004,8 @@
       "abr": "carbine",
       "price": 800,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_Carbine"
+      "defname": "VWE_Gun_Carbine",
+      "tech": "Industrial"
     },
     {
       "abr": "cariboumeat",
@@ -2995,43 +3049,50 @@
       "abr": "chargelmg",
       "price": 2833,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_ChargeLMG"
+      "defname": "VWE_Gun_ChargeLMG",
+      "tech": "Spacer"
     },
     {
       "abr": "chargeminigun",
       "price": 5458,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_ChargeMinigun"
+      "defname": "VWE_Gun_ChargeMinigun",
+      "tech": "Spacer"
     },
     {
       "abr": "chargepistol",
       "price": 1008,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_ChargePistol"
+      "defname": "VWE_Gun_ChargePistol",
+      "tech": "Spacer"
     },
     {
       "abr": "chargerocketlauncher",
       "price": 11667,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_ChargeRocketLauncher"
+      "defname": "VWE_Gun_ChargeRocketLauncher",
+      "tech": "Spacer"
     },
     {
       "abr": "chargeshotgun",
       "price": 1683,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_ChargeShotgun"
+      "defname": "VWE_Gun_ChargeShotgun",
+      "tech": "Spacer"
     },
     {
       "abr": "chargesmg",
       "price": 1508,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_ChargeSMG"
+      "defname": "VWE_Gun_ChargeSMG",
+      "tech": "Spacer"
     },
     {
       "abr": "chargesniperrifle",
       "price": 2050,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_ChargeSniperRifle"
+      "defname": "VWE_Gun_ChargeSniperRifle",
+      "tech": "Spacer"
     },
     {
       "abr": "chargeturret",
@@ -3115,19 +3176,23 @@
       "abr": "combathandgun",
       "price": 291,
       "category": "Ranged weapons",
-      "defname": "VWE_CombatHandgun"
+      "defname": "VWE_CombatHandgun",
+      "tech": "Industrial"
     },
     {
       "abr": "combatknife",
       "price": 205,
       "category": "Melee weapons",
-      "defname": "VWE_MeleeWeapon_CombatKnife"
+      "defname": "VWE_MeleeWeapon_CombatKnife",
+      "ingredients": "Metallic",
+      "tech": "Industrial"
     },
     {
       "abr": "compoundbow",
       "price": 240,
       "category": "Ranged weapons",
-      "defname": "VWE_Bow_Compound"
+      "defname": "VWE_Bow_Compound",
+      "tech": "Industrial"
     },
     {
       "abr": "cougarmeat",
@@ -3145,7 +3210,8 @@
       "abr": "crossbow",
       "price": 358,
       "category": "Ranged weapons",
-      "defname": "VWE_Bow_Crossbow"
+      "defname": "VWE_Bow_Crossbow",
+      "tech": "Medieval"
     },
     {
       "abr": "cryptosleepsuspender",
@@ -3181,7 +3247,8 @@
       "abr": "derringer",
       "price": 392,
       "category": "Ranged weapons",
-      "defname": "VWEFT_Gun_Derringer"
+      "defname": "VWEFT_Gun_Derringer",
+      "tech": "Industrial"
     },
     {
       "abr": "doctorscrubs",
@@ -3368,13 +3435,15 @@
       "abr": "firebombs",
       "price": 314,
       "category": "Grenades",
-      "defname": "VWE_Weapon_FireBomb"
+      "defname": "VWE_Weapon_FireBomb",
+      "tech": "Neolithic"
     },
     {
       "abr": "fireextinguisher",
       "price": 508,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_FireExtinguisher"
+      "defname": "VWE_Gun_FireExtinguisher",
+      "tech": "Industrial"
     },
     {
       "abr": "flameturret",
@@ -3386,7 +3455,8 @@
       "abr": "flamethrower",
       "price": 667,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_Flamethrower"
+      "defname": "VWE_Gun_Flamethrower",
+      "tech": "Industrial"
     },
     {
       "abr": "flashgrenadebelt",
@@ -3417,7 +3487,8 @@
       "abr": "flintlock",
       "price": 275,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_Flintlock"
+      "defname": "VWE_Gun_Flintlock",
+      "tech": "Medieval"
     },
     {
       "abr": "foodbasket",
@@ -3444,7 +3515,8 @@
       "abr": "frontierpistol",
       "price": 318,
       "category": "Ranged weapons",
-      "defname": "VWEFT_Gun_FrontierPistol"
+      "defname": "VWEFT_Gun_FrontierPistol",
+      "tech": "Industrial"
     },
     {
       "abr": "fueledjamstove",
@@ -3533,7 +3605,8 @@
       "abr": "grenadelauncher",
       "price": 508,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_GrenadeLauncher"
+      "defname": "VWE_Gun_GrenadeLauncher",
+      "tech": "Industrial"
     },
     {
       "abr": "guineapigmeat",
@@ -3545,13 +3618,17 @@
       "abr": "halberd",
       "price": 483,
       "category": "Melee weapons",
-      "defname": "VWE_MeleeWeapon_Halberd"
+      "defname": "VWE_MeleeWeapon_Halberd",
+      "ingredients": "Metallic",
+      "tech": "Medieval"
     },
     {
       "abr": "hammer",
       "price": 281,
       "category": "Melee weapons",
-      "defname": "VWE_MeleeWeapon_Hammer"
+      "defname": "VWE_MeleeWeapon_Hammer",
+      "ingredients": "Metallic, Woody, Stony",
+      "tech": "Medieval"
     },
     {
       "abr": "hampers",
@@ -3563,7 +3640,8 @@
       "abr": "handcannon",
       "price": 232,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_HandCannon"
+      "defname": "VWE_Gun_HandCannon",
+      "tech": "Industrial"
     },
     {
       "abr": "hardhat",
@@ -3584,7 +3662,9 @@
       "abr": "hatchet",
       "price": 147,
       "category": "Melee weapons",
-      "defname": "VWE_MeleeWeapon_Axe"
+      "defname": "VWE_MeleeWeapon_Axe",
+      "ingredients": "Metallic, Woody, Stony",
+      "tech": "Neolithic"
     },
     {
       "abr": "hayloft",
@@ -3616,19 +3696,23 @@
       "abr": "heavyclub",
       "price": 244,
       "category": "Melee weapons",
-      "defname": "VWE_MeleeWeapon_HeavyClub"
+      "defname": "VWE_MeleeWeapon_HeavyClub",
+      "ingredients": "Metallic, Woody, Stony",
+      "tech": "Neolithic"
     },
     {
       "abr": "heavyrevolver",
       "price": 375,
       "category": "Ranged weapons",
-      "defname": "VWEFT_Gun_HeavyRevolver"
+      "defname": "VWEFT_Gun_HeavyRevolver",
+      "tech": "Industrial"
     },
     {
       "abr": "hmg",
       "price": 800,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_HMG"
+      "defname": "VWE_Gun_HMG",
+      "tech": "Industrial"
     },
     {
       "abr": "hologrambase",
@@ -3841,19 +3925,23 @@
       "abr": "lever-actionrifle",
       "price": 408,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_LeverActionRifle"
+      "defname": "VWE_Gun_LeverActionRifle",
+      "tech": "Industrial"
     },
     {
       "abr": "lever-actionshotgun",
       "price": 583,
       "category": "Ranged weapons",
-      "defname": "VWEFT_Gun_LeverActionShotgun"
+      "defname": "VWEFT_Gun_LeverActionShotgun",
+      "tech": "Industrial"
     },
     {
       "abr": "lightclub",
       "price": 89,
       "category": "Melee weapons",
-      "defname": "VWE_MeleeWeapon_LightClub"
+      "defname": "VWE_MeleeWeapon_LightClub",
+      "ingredients": "Metallic, Woody, Stony",
+      "tech": "Neolithic"
     },
     {
       "abr": "lightplatearmor",
@@ -3869,7 +3957,8 @@
       "abr": "lightsmg",
       "price": 383,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_LightSMG"
+      "defname": "VWE_Gun_LightSMG",
+      "tech": "Industrial"
     },
     {
       "abr": "linkeddoormat",
@@ -3911,7 +4000,8 @@
       "abr": "longbow",
       "price": 197,
       "category": "Ranged weapons",
-      "defname": "VWE_Bow_Long"
+      "defname": "VWE_Bow_Long",
+      "tech": "Neolithic"
     },
     {
       "abr": "longwaveradio",
@@ -3947,31 +4037,36 @@
       "abr": "makeshiftlmg",
       "price": 297,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_MakeshiftLMG"
+      "defname": "VWE_Gun_MakeshiftLMG",
+      "tech": "Industrial"
     },
     {
       "abr": "makeshiftpistol",
       "price": 113,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_MakeshiftPistol"
+      "defname": "VWE_Gun_MakeshiftPistol",
+      "tech": "Industrial"
     },
     {
       "abr": "makeshiftrifle",
       "price": 243,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_MakeshiftRifle"
+      "defname": "VWE_Gun_MakeshiftRifle",
+      "tech": "Industrial"
     },
     {
       "abr": "makeshiftshotgun",
       "price": 178,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_MakeshiftShotgun"
+      "defname": "VWE_Gun_MakeshiftShotgun",
+      "tech": "Industrial"
     },
     {
       "abr": "makeshiftsmg",
       "price": 172,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_MakeshiftSMG"
+      "defname": "VWE_Gun_MakeshiftSMG",
+      "tech": "Industrial"
     },
     {
       "abr": "managerdesk",
@@ -4001,7 +4096,8 @@
       "abr": "marksmanrifle",
       "price": 1183,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_MarksmanRifle"
+      "defname": "VWE_Gun_MarksmanRifle",
+      "tech": "Industrial"
     },
     {
       "abr": "martialartstarget",
@@ -4172,7 +4268,8 @@
       "abr": "musket",
       "price": 383,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_Musket"
+      "defname": "VWE_Gun_Musket",
+      "tech": "Medieval"
     },
     {
       "abr": "obelisk",
@@ -4236,7 +4333,8 @@
       "abr": "pdw",
       "price": 892,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_PDW"
+      "defname": "VWE_Gun_PDW",
+      "tech": "Industrial"
     },
     {
       "abr": "peltcoat",
@@ -4422,7 +4520,8 @@
       "abr": "repeatingshotgun",
       "price": 550,
       "category": "Ranged weapons",
-      "defname": "VWEFT_Gun_RepeatingShotgun"
+      "defname": "VWEFT_Gun_RepeatingShotgun",
+      "tech": "Industrial"
     },
     {
       "abr": "ressurectorbelt",
@@ -4443,13 +4542,15 @@
       "abr": "rocketlauncher",
       "price": 1667,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_RocketLauncher"
+      "defname": "VWE_Gun_RocketLauncher",
+      "tech": "Spacer"
     },
     {
       "abr": "rollingblockrifle",
       "price": 608,
       "category": "Ranged weapons",
-      "defname": "VWEFT_Gun_RollingBlockRifle"
+      "defname": "VWEFT_Gun_RollingBlockRifle",
+      "tech": "Industrial"
     },
     {
       "abr": "roulettetable",
@@ -4527,7 +4628,8 @@
       "abr": "sawed-offshotgun",
       "price": 297,
       "category": "Ranged weapons",
-      "defname": "VWE_SawedOffShotgun"
+      "defname": "VWE_SawedOffShotgun",
+      "tech": "Industrial"
     },
     {
       "abr": "scarecrow",
@@ -4555,7 +4657,8 @@
       "abr": "semi-automaticrifle",
       "price": 408,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_SemiAutomaticRifle"
+      "defname": "VWE_Gun_SemiAutomaticRifle",
+      "tech": "Industrial"
     },
     {
       "abr": "sentrygun",
@@ -4567,7 +4670,8 @@
       "abr": "servicerifle",
       "price": 800,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_ServiceRifle"
+      "defname": "VWE_Gun_ServiceRifle",
+      "tech": "Industrial"
     },
     {
       "abr": "sheepmeat",
@@ -4599,7 +4703,9 @@
       "abr": "shiv",
       "price": 72,
       "category": "Melee weapons",
-      "defname": "VWE_MeleeWeapon_Shiv"
+      "defname": "VWE_MeleeWeapon_Shiv",
+      "ingredients": "Metallic, Woody, Stony",
+      "tech": "Neolithic"
     },
     {
       "abr": "shoes",
@@ -4631,7 +4737,9 @@
       "abr": "shovel",
       "price": 327,
       "category": "Melee weapons",
-      "defname": "VWE_MeleeWeapon_Shovel"
+      "defname": "VWE_MeleeWeapon_Shovel",
+      "ingredients": "Metallic",
+      "tech": "Industrial"
     },
     {
       "abr": "siegebreakerarmor",
@@ -4767,7 +4875,8 @@
       "abr": "sling",
       "price": 26,
       "category": "Ranged weapons",
-      "defname": "VWE_Sling"
+      "defname": "VWE_Sling",
+      "tech": "Neolithic"
     },
     {
       "abr": "smallbattery",
@@ -4809,7 +4918,8 @@
       "abr": "smg",
       "price": 558,
       "category": "Ranged weapons",
-      "defname": "VWE_Gun_SMG"
+      "defname": "VWE_Gun_SMG",
+      "tech": "Industrial"
     },
     {
       "abr": "smithingcabinet",
@@ -4919,19 +5029,25 @@
       "abr": "throwingknives",
       "price": 161,
       "category": "Ranged weapons",
-      "defname": "VWE_Throwing_Knives"
+      "defname": "VWE_Throwing_Knives",
+      "ingredients": "Metallic",
+      "tech": "Medieval"
     },
     {
       "abr": "throwingrocks",
       "price": 11,
       "category": "Ranged weapons",
-      "defname": "VWE_Throwing_Rocks"
+      "defname": "VWE_Throwing_Rocks",
+      "ingredients": "Stony",
+      "tech": "Neolithic"
     },
     {
       "abr": "throwingshards",
       "price": 88,
       "category": "Ranged weapons",
-      "defname": "VWE_Throwing_Shards"
+      "defname": "VWE_Throwing_Shards",
+      "ingredients": "Metallic, Stony",
+      "tech": "Neolithic"
     },
     {
       "abr": "thrumbomeat",
@@ -4973,7 +5089,9 @@
       "abr": "tribalaxe",
       "price": 176,
       "category": "Melee weapons",
-      "defname": "VWE_MeleeWeapon_TribalAxe"
+      "defname": "VWE_MeleeWeapon_TribalAxe",
+      "ingredients": "Woody, Stony",
+      "tech": "Neolithic"
     },
     {
       "abr": "tribalkilt",
@@ -5067,7 +5185,8 @@
       "abr": "volcanicpistol",
       "price": 350,
       "category": "Ranged weapons",
-      "defname": "VWEFT_Gun_VolcanicPistol"
+      "defname": "VWEFT_Gun_VolcanicPistol",
+      "tech": "Industrial"
     },
     {
       "abr": "walldualrefrigerator",
@@ -5133,7 +5252,8 @@
       "abr": "whip",
       "price": 203,
       "category": "Ranged weapons",
-      "defname": "VWE_Tool_Whip"
+      "defname": "VWE_Tool_Whip",
+      "tech": "Medieval"
     },
     {
       "abr": "wolfmeat",
