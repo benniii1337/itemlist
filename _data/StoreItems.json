@@ -5,7 +5,6 @@
       "price": 20,
       "category": "Drugs",
       "defname": "Beer",
-      "tech": "Neolithic"
     },
     {
       "abr": "wort",
@@ -702,14 +701,12 @@
       "price": 1333,
       "category": "Misc",
       "defname": "ThrumboHorn",
-      "tech": "Neolithic"
     },
     {
       "abr": "elephanttusk",
       "price": 133,
       "category": "Misc",
       "defname": "ElephantTusk",
-      "tech": "Neolithic"
     },
     {
       "abr": "packagedsurvivalmeal",
@@ -1046,7 +1043,6 @@
       "price": 2,
       "category": "Raw resources",
       "defname": "WoodLog",
-      "tech": "Neolithic"
     },
     {
       "abr": "uranium",
