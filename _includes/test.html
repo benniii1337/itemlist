@@ -84,42 +84,54 @@
   <div class="drops">
     <select id="select_item{{- id -}}" style="width: 100%">
       <option value="" data-placeholder>{{- type -}}</option>
-      <optgroup id="neolithic{{- id -}}" label="Neolithic">
-        {%- for item in techNeolithic -%}
-          <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
-          {%- continue -%}
-        {%- endfor -%}
-      </optgroup>
-      <optgroup id="medieval{{- id -}}" label="Medieval">
-        {%- for item in techMedieval -%}
-          <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
-          {%- continue -%}
-        {%- endfor -%}
-      </optgroup>
-      <optgroup id="industrial{{- id -}}" label="Industrial">
-        {%- for item in techIndustrial -%}
-          <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
-          {%- continue -%}
-        {%- endfor -%}
-      </optgroup>
-      <optgroup id="spacer{{- id -}}" label="Spacer">
-        {%- for item in techSpacer -%}
-          <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
-          {%- continue -%}
-        {%- endfor -%}
-      </optgroup>
-      <optgroup id="ultratech{{- id -}}" label="Ultratech">
-        {%- for item in techUltratech -%}
-          <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
-          {%- continue -%}
-        {%- endfor -%}
-      </optgroup>
-      <optgroup id="archotech{{- id -}}" label="Archotech">
-        {%- for item in techArchotech -%}
-          <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
-          {%- continue -%}
-        {%- endfor -%}
-      </optgroup>
+      {%- if techNeolithic.size > 0 -%}
+        <optgroup id="neolithic{{- id -}}" label="Neolithic">
+          {%- for item in techNeolithic -%}
+            <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            {%- continue -%}
+          {%- endfor -%}
+        </optgroup>
+      {%- endif -%}
+      {%- if techMedieval.size > 0 -%}
+        <optgroup id="medieval{{- id -}}" label="Medieval">
+          {%- for item in techMedieval -%}
+            <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            {%- continue -%}
+          {%- endfor -%}
+        </optgroup>
+      {%- endif -%}
+      {%- if techIndustrial.size > 0 -%}
+        <optgroup id="industrial{{- id -}}" label="Industrial">
+          {%- for item in techIndustrial -%}
+            <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            {%- continue -%}
+          {%- endfor -%}
+        </optgroup>
+      {%- endif -%}
+      {%- if techSpacer.size > 0 -%}
+        <optgroup id="spacer{{- id -}}" label="Spacer">
+          {%- for item in techSpacer -%}
+            <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            {%- continue -%}
+          {%- endfor -%}
+        </optgroup>
+      {%- endif -%}
+      {%- if techUltratech.size > 0 -%}
+        <optgroup id="ultratech{{- id -}}" label="Ultratech">
+          {%- for item in techUltratech -%}
+            <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            {%- continue -%}
+          {%- endfor -%}
+        </optgroup>
+      {%- endif -%}
+      {%- if techArchotech.size > 0 -%}
+        <optgroup id="archotech{{- id -}}" label="Archotech">
+          {%- for item in techArchotech -%}
+            <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            {%- continue -%}
+          {%- endfor -%}
+        </optgroup>
+      {%- endif -%}
     </select>
   </div>
   <div class="drops">
