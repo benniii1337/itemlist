@@ -155,14 +155,14 @@
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="woody{{- id -}}" label="Wood">
-          <option value="wood">Wood</option>
-      </optgroup>
       <optgroup id="stony{{- id -}}" label="Stone">
         {%- for item in Stone -%}
           <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
+      </optgroup>
+      <optgroup id="woody{{- id -}}" label="Wood">
+          <option value="wood">Wood</option>
       </optgroup>
     </select>
   </div>
