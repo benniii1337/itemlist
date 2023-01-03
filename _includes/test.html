@@ -235,14 +235,21 @@
     $("#select_quality")[0].selectedIndex = 0;
   }
 
-  var cmd = "{{- include.cmd | append: ' ' -}}";
+  {%- assign cmd = {{- include.cmd | append: ' ' -}} -%}
 
+  var cmdArray = ["{{- cmd -}}", "$", "!price "];
+  var cmd = "{{- cmd -}}";
+  
   function toggleCmd() {
-    if (!cmd || cmd == "{{- include.cmd | append: ' ' -}}") {
-      cmd = "$"
-    } else {
-      cmd = "{{- include.cmd | append: ' ' -}}"
-    };
+    cmd = $.inArray(cmd, cmdArray) + 1;
+    if (cmd < cmdArray.length) {
+      cmd = cmdArray[cmd];
+      console.log(cmd);
+    }
+    else {
+      cmd = "{{- cmd -}}";
+      console.log(cmd);
+    }
     showCommand();
   }
   
