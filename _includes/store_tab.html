@@ -11,7 +11,7 @@
     {%- assign priceDataHeaders = include.priceDataHeaders -%}
 
     {%- include search.html id=id type=type placeholder=placeholder -%}
-    {%- if id == "apparel" -%}
+    {%- if id == "apparel" or if id == "weapons" -%}
         {%- include test.html
             id=id
             cmd=cmd
