@@ -1,5 +1,6 @@
 {%- assign cmd = include.cmd | append: ' ' -%}
 {%- assign type = include.type -%}
+{%- assign id = include.id -%}
 
 {%- assign Fabrics = '' | split: ',' -%}
 {%- assign Leathers = '' | split: ',' -%}
@@ -81,39 +82,39 @@
 
 <div class="box">
   <div class="drops">
-    <select id="select_item{{- type -}}" style="width: 100%">
+    <select id="select_item{{- id -}}" style="width: 100%">
       <option value="" data-placeholder>{{- type -}}</option>
-      <optgroup id="neolithic" label="Neolithic">
+      <optgroup id="neolithic{{- id -}}" label="Neolithic">
         {%- for item in techNeolithic -%}
           <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="medieval" label="Medieval">
+      <optgroup id="medieval{{- id -}}" label="Medieval">
         {%- for item in techMedieval -%}
           <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="industrial" label="Industrial">
+      <optgroup id="industrial{{- id -}}" label="Industrial">
         {%- for item in techIndustrial -%}
           <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="spacer" label="Spacer">
+      <optgroup id="spacer{{- id -}}" label="Spacer">
         {%- for item in techSpacer -%}
           <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="ultratech" label="Ultratech">
+      <optgroup id="ultratech{{- id -}}" label="Ultratech">
         {%- for item in techUltratech -%}
           <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="archotech" label="Archotech">
+      <optgroup id="archotech{{- id -}}" label="Archotech">
         {%- for item in techArchotech -%}
           <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
@@ -122,39 +123,39 @@
     </select>
   </div>
   <div class="drops">
-    <select id="select_material{{- type -}}" style="width: 100%">
+    <select id="select_material{{- id -}}" style="width: 100%">
       <option value="" data-placeholder>Material</option>
-      <optgroup id="fabric" label="Fabrics">
+      <optgroup id="fabric{{- id -}}" label="Fabrics">
         {%- for item in Fabrics -%}
           <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="leathery" label="Leathers">
+      <optgroup id="leathery{{- id -}}" label="Leathers">
         {%- for item in Leathers -%}
           <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="stony" label="Stone">
+      <optgroup id="stony{{- id -}}" label="Stone">
         {%- for item in Stone -%}
           <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="metallic" label="Metals">
+      <optgroup id="metallic{{- id -}}" label="Metals">
         {%- for item in Metals -%}
           <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="woody" label="Wood">
+      <optgroup id="woody{{- id -}}" label="Wood">
           <option value="wood">Wood</option>
       </optgroup>
     </select>
   </div>
   <div class="drops">
-    <select id="select_quality{{- type -}}" style="width: 100%">
+    <select id="select_quality{{- id -}}" style="width: 100%">
       <option value="" data-placeholder>Quality</option>
       <option value="awful">Awful</option>
       <option value="poor">Poor</option>
@@ -167,7 +168,7 @@
   </div>
 </div>
 <div class="ei-box">
-  <input id="cmdout{{- type -}}" class="ei-out" type="text" placeholder="Chatcommand" onclick="this.select()" readonly>
+  <input id="cmdout{{- id -}}" class="ei-out" type="text" placeholder="Chatcommand" onclick="this.select()" readonly>
   <span class="focus-border"></span>
 </div>
 <div class="copy">
@@ -178,25 +179,28 @@
 
 <script>
 
-  easydropdown('#select_item{{- type -}}', {
+  easydropdown('#select_item{{- id -}}', {
     behavior: {
       liveUpdates: true,
       showPlaceholderWhenOpen: true
     },
     callbacks: {
       onSelect: function() {
-        var val = $('#select_item{{- type -}}').find(':selected').data('cat');
+        var val = $('#select_item{{- id -}}').find(':selected').data('cat');
         val = val.split(", ");
         val = val.map(function(elem) { return elem.toLowerCase(); }); 
-        var srch = document.getElementById('{{- include.id -}}Input');
+        var srch = document.getElementById('{{- id -}}Input');
         clearDrops();
-        srch.value = $('#select_item{{- type -}}').find(':selected').val();
+        srch.value = $('#select_item{{- id -}}').find(':selected').val();
         srch.onkeyup();
         if (val == "") {
-          $('#select_material{{- type -}}').attr("disabled", "disabled");
+          $('#select_material{{- id -}}').attr("disabled", "disabled");
         } else {
-          $('#select_material{{- type -}}').removeAttr("disabled");
-          document.querySelectorAll("#select_material{{- type -}} optgroup").forEach(opt => {
+          for (var i = 0; i < val.length; i++) {
+            val[i] = val[i] + "{{- id -}}";
+          }
+          $('#select_material{{- id -}}').removeAttr("disabled");
+          document.querySelectorAll("#select_material{{- id -}} optgroup").forEach(opt => {
             if ($.inArray(opt.id, val) != -1) {
               opt.disabled = false; 
             } else {
@@ -209,7 +213,7 @@
     }
   });
   
-  easydropdown('#select_material{{- type -}}', {
+  easydropdown('#select_material{{- id -}}', {
     behavior: {
       liveUpdates: true,
       showPlaceholderWhenOpen: true
@@ -221,7 +225,7 @@
     }
   });
   
-  easydropdown('#select_quality{{- type -}}', {
+  easydropdown('#select_quality{{- id -}}', {
     behavior: {
       liveUpdates: true,
       showPlaceholderWhenOpen: true
@@ -234,8 +238,8 @@
   });
   
   function clearDrops() {
-    $("#select_material{{- type -}}")[0].selectedIndex = 0;
-    $("#select_quality{{- type -}}")[0].selectedIndex = 0;
+    $("#select_material{{- id -}}")[0].selectedIndex = 0;
+    $("#select_quality{{- id -}}")[0].selectedIndex = 0;
   }
 
   var cmdArray = ["{{- cmd -}}", "$", "!price "];
@@ -255,9 +259,9 @@
   }
   
   function showCommand() {
-    var part1 = document.getElementById('select_item{{- type -}}').value;
-    var part2 = document.getElementById('select_material{{- type -}}').value;
-    var part3 = document.getElementById('select_quality{{- type -}}').value;
+    var part1 = document.getElementById('select_item{{- id -}}').value;
+    var part2 = document.getElementById('select_material{{- id -}}').value;
+    var part3 = document.getElementById('select_quality{{- id -}}').value;
        
     if (part1) {
       if (!part2 && !part3) {
@@ -267,12 +271,12 @@
       } else {
         result = cmd + part1.concat("[", part2, ",", part3, "]");
       };
-      document.getElementById('cmdout{{- type -}}').value = result
+      document.getElementById('cmdout{{- id -}}').value = result
     };
   };
   
   function copyOutput() {
-    var copyText = document.getElementById("cmdout{{- type -}}");
+    var copyText = document.getElementById("cmdout{{- id -}}");
     copyText.select();
     copyText.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(copyText.value);
