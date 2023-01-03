@@ -149,12 +149,6 @@
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="stony{{- id -}}" label="Stone">
-        {%- for item in Stone -%}
-          <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
-          {%- continue -%}
-        {%- endfor -%}
-      </optgroup>
       <optgroup id="metallic{{- id -}}" label="Metals">
         {%- for item in Metals -%}
           <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
@@ -163,6 +157,12 @@
       </optgroup>
       <optgroup id="woody{{- id -}}" label="Wood">
           <option value="wood">Wood</option>
+      </optgroup>
+      <optgroup id="stony{{- id -}}" label="Stone">
+        {%- for item in Stone -%}
+          <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          {%- continue -%}
+        {%- endfor -%}
       </optgroup>
     </select>
   </div>
@@ -191,6 +191,8 @@
 
 <script>
 
+  var $eddclone{{- id -}} = $('#select_material{{- id -}}').clone();
+
   easydropdown('#select_item{{- id -}}', {
     behavior: {
       liveUpdates: true,
@@ -212,12 +214,9 @@
             val[i] = val[i] + "{{- id -}}";
           }
           $('#select_material{{- id -}}').removeAttr("disabled");
-          document.querySelectorAll("#select_material{{- id }} optgroup").forEach(opt => {
-            if ($.inArray(opt.id, val) != -1) {
-              opt.disabled = false; 
-            } else {
-              opt.disabled = true;
-            }
+          $('#select_material{{- id -}}').find("optgroup").remove();
+          val.forEach(opt => {
+            $('#select_material{{- id -}}').append($eddclone{{- id -}}.find("optgroup[id='" + opt + "']").clone());
           });
         }
         showCommand{{- id -}}();
