@@ -273,7 +273,7 @@
     };
   };
   
-  function copyOutput() {
+  function copyOutput{{- id -}}() {
     var copyText = document.getElementById("cmdout{{- id -}}");
     copyText.select();
     copyText.setSelectionRange(0, 99999);
