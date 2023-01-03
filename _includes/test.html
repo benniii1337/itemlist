@@ -235,7 +235,7 @@
     $("#select_quality")[0].selectedIndex = 0;
   }
 
-  {%- assign cmd = {{- include.cmd | append: ' ' -}} -%}
+  {%- assign cmd = include.cmd | append: ' ' -%}
 
   var cmdArray = ["{{- cmd -}}", "$", "!price "];
   var cmd = "{{- cmd -}}";
