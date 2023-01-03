@@ -172,9 +172,9 @@
   <span class="focus-border"></span>
 </div>
 <div class="copy">
-  <button class="ei-btn" onclick="copyOutput()">COPY</button>
-  <button class="ei-btn" onclick="toggleCmd()">SWITCH</button>
-  <button class="ei-btn" onclick="clearDrops()">CLEAR</button>    
+  <button class="ei-btn" onclick="copyOutput{{- id -}}()">COPY</button>
+  <button class="ei-btn" onclick="toggleCmd{{- id -}}()">SWITCH</button>
+  <button class="ei-btn" onclick="clearDrops{{- id -}}()">CLEAR</button>    
 </div>
 
 <script>
@@ -190,7 +190,7 @@
         val = val.split(", ");
         val = val.map(function(elem) { return elem.toLowerCase(); }); 
         var srch = document.getElementById('{{- id -}}Input');
-        clearDrops();
+        clearDrops{{- id -}}();
         srch.value = $('#select_item{{- id -}}').find(':selected').val();
         srch.onkeyup();
         if (val == "") {
@@ -208,7 +208,7 @@
             }
           });
         }
-        showCommand();
+        showCommand{{- id -}}();
       },
     }
   });
@@ -220,7 +220,7 @@
     },
     callbacks: {
       onSelect: function() {
-        showCommand();
+        showCommand{{- id -}}();
       },
     }
   });
@@ -232,12 +232,12 @@
     },
     callbacks: {
       onSelect: function() {
-        showCommand();
+        showCommand{{- id -}}();
       },
     }
   });
   
-  function clearDrops() {
+  function clearDrops{{- id -}}() {
     $("#select_material{{- id -}}")[0].selectedIndex = 0;
     $("#select_quality{{- id -}}")[0].selectedIndex = 0;
   }
@@ -245,20 +245,18 @@
   var cmdArray = ["{{- cmd -}}", "$", "!price "];
   var cmd = "{{- cmd -}}";
   
-  function toggleCmd() {
+  function toggleCmd{{- id -}}() {
     cmd = $.inArray(cmd, cmdArray) + 1;
     if (cmd < cmdArray.length) {
       cmd = cmdArray[cmd];
-      console.log(cmd);
     }
     else {
       cmd = "{{- cmd -}}";
-      console.log(cmd);
     }
-    showCommand();
+    showCommand{{- id -}}();
   }
   
-  function showCommand() {
+  function showCommand{{- id -}}() {
     var part1 = document.getElementById('select_item{{- id -}}').value;
     var part2 = document.getElementById('select_material{{- id -}}').value;
     var part3 = document.getElementById('select_quality{{- id -}}').value;
