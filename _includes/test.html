@@ -200,7 +200,7 @@
             val[i] = val[i] + "{{- id -}}";
           }
           $('#select_material{{- id -}}').removeAttr("disabled");
-          document.querySelectorAll("#select_material{{- id -}} optgroup").forEach(opt => {
+          document.querySelectorAll("#select_material{{- id }} optgroup").forEach(opt => {
             if ($.inArray(opt.id, val) != -1) {
               opt.disabled = false; 
             } else {
