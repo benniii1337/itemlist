@@ -1,3 +1,6 @@
+{%- assign cmd = include.cmd | append: ' ' -%}
+{%- assign type = include.type -%}
+
 {%- assign Fabrics = '' | split: ',' -%}
 {%- assign Leathers = '' | split: ',' -%}
 {%- assign Metals = '' | split: ',' -%}
@@ -78,8 +81,8 @@
 
 <div class="box">
   <div class="drops">
-    <select id="select_item" style="width: 100%">
-      <option value="" data-placeholder>{{- include.type -}}</option>
+    <select id="select_item{{- type -}}" style="width: 100%">
+      <option value="" data-placeholder>{{- type -}}</option>
       <optgroup id="neolithic" label="Neolithic">
         {%- for item in techNeolithic -%}
           <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
@@ -119,7 +122,7 @@
     </select>
   </div>
   <div class="drops">
-    <select id="select_material" style="width: 100%">
+    <select id="select_material{{- type -}}" style="width: 100%">
       <option value="" data-placeholder>Material</option>
       <optgroup id="fabric" label="Fabrics">
         {%- for item in Fabrics -%}
@@ -151,7 +154,7 @@
     </select>
   </div>
   <div class="drops">
-    <select id="select_quality" style="width: 100%">
+    <select id="select_quality{{- type -}}" style="width: 100%">
       <option value="" data-placeholder>Quality</option>
       <option value="awful">Awful</option>
       <option value="poor">Poor</option>
@@ -164,7 +167,7 @@
   </div>
 </div>
 <div class="ei-box">
-  <input id="cmdout" class="ei-out" type="text" placeholder="Chatcommand" onclick="this.select()" readonly>
+  <input id="cmdout{{- type -}}" class="ei-out" type="text" placeholder="Chatcommand" onclick="this.select()" readonly>
   <span class="focus-border"></span>
 </div>
 <div class="copy">
@@ -175,25 +178,25 @@
 
 <script>
 
-  easydropdown('#select_item', {
+  easydropdown('#select_item{{- type -}}', {
     behavior: {
       liveUpdates: true,
       showPlaceholderWhenOpen: true
     },
     callbacks: {
       onSelect: function() {
-        var val = $('#select_item').find(':selected').data('cat');
+        var val = $('#select_item{{- type -}}').find(':selected').data('cat');
         val = val.split(", ");
         val = val.map(function(elem) { return elem.toLowerCase(); }); 
         var srch = document.getElementById('{{- include.id -}}Input');
         clearDrops();
-        srch.value = $('#select_item').find(':selected').val();
+        srch.value = $('#select_item{{- type -}}').find(':selected').val();
         srch.onkeyup();
         if (val == "") {
-          $('#select_material').attr("disabled", "disabled");
+          $('#select_material{{- type -}}').attr("disabled", "disabled");
         } else {
-          $('#select_material').removeAttr("disabled");
-          document.querySelectorAll("#select_material optgroup").forEach(opt => {
+          $('#select_material{{- type -}}').removeAttr("disabled");
+          document.querySelectorAll("#select_material{{- type -}} optgroup").forEach(opt => {
             if ($.inArray(opt.id, val) != -1) {
               opt.disabled = false; 
             } else {
@@ -206,7 +209,7 @@
     }
   });
   
-  easydropdown('#select_material', {
+  easydropdown('#select_material{{- type -}}', {
     behavior: {
       liveUpdates: true,
       showPlaceholderWhenOpen: true
@@ -218,7 +221,7 @@
     }
   });
   
-  easydropdown('#select_quality', {
+  easydropdown('#select_quality{{- type -}}', {
     behavior: {
       liveUpdates: true,
       showPlaceholderWhenOpen: true
@@ -231,11 +234,9 @@
   });
   
   function clearDrops() {
-    $("#select_material")[0].selectedIndex = 0;
-    $("#select_quality")[0].selectedIndex = 0;
+    $("#select_material{{- type -}}")[0].selectedIndex = 0;
+    $("#select_quality{{- type -}}")[0].selectedIndex = 0;
   }
-
-  {%- assign cmd = include.cmd | append: ' ' -%}
 
   var cmdArray = ["{{- cmd -}}", "$", "!price "];
   var cmd = "{{- cmd -}}";
@@ -254,9 +255,9 @@
   }
   
   function showCommand() {
-    var part1 = document.getElementById('select_item').value;
-    var part2 = document.getElementById('select_material').value;
-    var part3 = document.getElementById('select_quality').value;
+    var part1 = document.getElementById('select_item{{- type -}}').value;
+    var part2 = document.getElementById('select_material{{- type -}}').value;
+    var part3 = document.getElementById('select_quality{{- type -}}').value;
        
     if (part1) {
       if (!part2 && !part3) {
@@ -266,12 +267,12 @@
       } else {
         result = cmd + part1.concat("[", part2, ",", part3, "]");
       };
-      document.getElementById('cmdout').value = result
+      document.getElementById('cmdout{{- type -}}').value = result
     };
   };
   
   function copyOutput() {
-    var copyText = document.getElementById("cmdout");
+    var copyText = document.getElementById("cmdout{{- type -}}");
     copyText.select();
     copyText.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(copyText.value);
