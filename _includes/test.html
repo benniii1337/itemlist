@@ -242,16 +242,16 @@
     $("#select_quality{{- id -}}")[0].selectedIndex = 0;
   }
 
-  var cmdArray = ["{{- cmd -}}", "$", "!price "];
-  var cmd = "{{- cmd -}}";
+  var cmdArray{{- id -}} = ["{{- cmd -}}", "$", "!price "];
+  var cmd{{- id -}} = "{{- cmd -}}";
   
   function toggleCmd{{- id -}}() {
-    cmd = $.inArray(cmd, cmdArray) + 1;
-    if (cmd < cmdArray.length) {
-      cmd = cmdArray[cmd];
+    cmd{{- id -}} = $.inArray(cmd{{- id -}}, cmdArray{{- id -}}) + 1;
+    if (cmd{{- id -}} < cmdArray{{- id -}}.length) {
+      cmd{{- id -}} = cmdArray{{- id -}}[cmd{{- id -}}];
     }
     else {
-      cmd = "{{- cmd -}}";
+      cmd{{- id -}} = "{{- cmd -}}";
     }
     showCommand{{- id -}}();
   }
@@ -263,11 +263,11 @@
        
     if (part1) {
       if (!part2 && !part3) {
-        result = cmd + part1;
+        result = cmd{{- id -}} + part1;
       } else if (!part2 || !part3) {
-        result = cmd + part1.concat("[", part2, part3, "]");
+        result = cmd{{- id -}} + part1.concat("[", part2, part3, "]");
       } else {
-        result = cmd + part1.concat("[", part2, ",", part3, "]");
+        result = cmd{{- id -}} + part1.concat("[", part2, ",", part3, "]");
       };
       document.getElementById('cmdout{{- id -}}').value = result
     };
