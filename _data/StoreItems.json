@@ -4,7 +4,8 @@
       "abr": "beer",
       "price": 20,
       "category": "Drugs",
-      "defname": "Beer"
+      "defname": "Beer",
+      "tech": "Neolithic"
     },
     {
       "abr": "wort",
@@ -700,13 +701,15 @@
       "abr": "thrumbohorn",
       "price": 1333,
       "category": "Misc",
-      "defname": "ThrumboHorn"
+      "defname": "ThrumboHorn",
+      "tech": "Neolithic"
     },
     {
       "abr": "elephanttusk",
       "price": 133,
       "category": "Misc",
-      "defname": "ElephantTusk"
+      "defname": "ElephantTusk",
+      "tech": "Neolithic"
     },
     {
       "abr": "packagedsurvivalmeal",
@@ -1042,7 +1045,8 @@
       "abr": "wood",
       "price": 2,
       "category": "Raw resources",
-      "defname": "WoodLog"
+      "defname": "WoodLog",
+      "tech": "Neolithic"
     },
     {
       "abr": "uranium",
@@ -1594,7 +1598,7 @@
       "price": 141,
       "category": "Melee weapons",
       "defname": "MeleeWeapon_Club",
-      "ingredients": "Metallic, Woody, Stony",
+      "ingredients": "Metallic, Stony, Woody",
       "tech": "Neolithic"
     },
     {
@@ -3627,7 +3631,7 @@
       "price": 281,
       "category": "Melee weapons",
       "defname": "VWE_MeleeWeapon_Hammer",
-      "ingredients": "Metallic, Woody, Stony",
+      "ingredients": "Metallic, Stony, Woody",
       "tech": "Medieval"
     },
     {
@@ -3663,7 +3667,7 @@
       "price": 147,
       "category": "Melee weapons",
       "defname": "VWE_MeleeWeapon_Axe",
-      "ingredients": "Metallic, Woody, Stony",
+      "ingredients": "Metallic, Stony, Woody",
       "tech": "Neolithic"
     },
     {
@@ -3697,7 +3701,7 @@
       "price": 244,
       "category": "Melee weapons",
       "defname": "VWE_MeleeWeapon_HeavyClub",
-      "ingredients": "Metallic, Woody, Stony",
+      "ingredients": "Metallic, Stony, Woody",
       "tech": "Neolithic"
     },
     {
@@ -3940,7 +3944,7 @@
       "price": 89,
       "category": "Melee weapons",
       "defname": "VWE_MeleeWeapon_LightClub",
-      "ingredients": "Metallic, Woody, Stony",
+      "ingredients": "Metallic, Stony, Woody",
       "tech": "Neolithic"
     },
     {
@@ -4704,7 +4708,7 @@
       "price": 72,
       "category": "Melee weapons",
       "defname": "VWE_MeleeWeapon_Shiv",
-      "ingredients": "Metallic, Woody, Stony",
+      "ingredients": "Metallic, Stony, Woody",
       "tech": "Neolithic"
     },
     {
@@ -5090,7 +5094,7 @@
       "price": 176,
       "category": "Melee weapons",
       "defname": "VWE_MeleeWeapon_TribalAxe",
-      "ingredients": "Woody, Stony",
+      "ingredients": "Metallic, Stony, Woody",
       "tech": "Neolithic"
     },
     {
