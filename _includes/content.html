@@ -37,10 +37,10 @@
                     {%- include item.html item=item itemdata=itemdata buyName=buyName -%}
                 {%- when 'Weapon' -%}
                     {%- assign itemdata = site.data.itemdata[item.defname] -%}
-                    {%- include weapon.html item=item itemdata=itemdata buyName=buyName -%}
+                    {%- include weapon.html type=type item=item itemdata=itemdata buyName=buyName -%}
                 {%- when 'Apparel' -%}
                     {%- assign itemdata = site.data.itemdata[item.defname] -%}
-                    {%- include apparel.html item=item itemdata=itemdata buyName=buyName -%}
+                    {%- include apparel.html type=type item=item itemdata=itemdata buyName=buyName -%}
                 {%- when 'Animal' -%}
                     {%- assign itemdata = site.data.itemdata[item.defname] -%}
                     {%- include animal.html item=item itemdata=itemdata buyName=buyName -%}
