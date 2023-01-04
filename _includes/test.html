@@ -1,91 +1,173 @@
+{%- assign cmd = include.cmd | append: ' ' -%}
+{%- assign type = include.type -%}
+{%- assign id = include.id -%}
+
 {%- assign Fabrics = '' | split: ',' -%}
 {%- assign Leathers = '' | split: ',' -%}
 {%- assign Metals = '' | split: ',' -%}
 {%- assign Stone = '' | split: ',' -%}
-{%- assign type = include.type -%}
-
-{%- assign count = 0 -%}
 
 {%- for item in site.data.StoreItems.items -%}
-    {%- if item.category == "Textiles" -%}
-        {%- assign Fabrics = Fabrics | push: item | sort: "abr" -%}
-        {%- continue -%}
+  {%- if item.category == "Textiles" -%}
+    {%- assign Fabrics = Fabrics | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.category == "Wools" -%}
+    {%- assign Fabrics = Fabrics | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.category == "Leathers" -%}
+    {%- assign Leathers = Leathers | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.category == "Stone blocks" -%}
+    {%- assign Stone = Stone | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.category == "Raw resources" -%}
+    {%- if item.abr == "wood" -%}
+      {%- continue -%}
+    {%- elsif item.abr == "jade" -%}
+      {%- assign Stone = Stone | push: item | sort: "abr" -%}
+      {%- continue -%}
+    {% else %}
+      {%- assign Metals = Metals | push: item | sort: "abr" -%}
+      {%- continue -%}
     {%- endif -%}
-    
-    {%- if item.category == "Wools" -%}
-        {%- assign Fabrics = Fabrics | push: item | sort: "abr" -%}
-        {%- continue -%}
-    {%- endif -%}
-    
-    {%- if item.category == "Leathers" -%}
-        {%- assign Leathers = Leathers | push: item | sort: "abr" -%}
-        {%- continue -%}
-    {%- endif -%}
-    
-    {%- if item.category == "Stone blocks" -%}
-        {%- assign Stone = Stone | push: item | sort: "abr" -%}
-        {%- continue -%}
-    {%- endif -%}
-    
-    {%- if item.category == "Raw resources" -%}
-        {%- if item.abr == "wood" -%}
-          {%- continue -%}
-        {%- elsif item.abr == "jade" -%}
-          {%- assign Stone = Stone | push: item | sort: "abr" -%}
-          {%- continue -%}
-        {% else %}
-          {%- assign Metals = Metals | push: item | sort: "abr" -%}
-          {%- continue -%}
-        {%- endif -%}
-    {%- endif -%}
+  {%- endif -%}  
+{%- endfor -%}
+
+{%- assign techNeolithic = '' | split: ',' -%}
+{%- assign techMedieval = '' | split: ',' -%}
+{%- assign techIndustrial = '' | split: ',' -%}
+{%- assign techSpacer = '' | split: ',' -%}
+{%- assign techUltratech = '' | split: ',' -%}
+{%- assign techArchotech = '' | split: ',' -%}
+
+{%- for item in include.displayData  -%}
+  {%- if item.tech == "Neolithic" -%}
+    {%- assign techNeolithic = techNeolithic | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.tech == "Medieval" -%}
+    {%- assign techMedieval = techMedieval | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.tech == "Industrial" -%}
+    {%- assign techIndustrial = techIndustrial | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.tech == "Spacer" -%}
+    {%- assign techSpacer = techSpacer | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.tech == "Ultratech" -%}
+    {%- assign techUltratech = techUltratech | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
+  
+  {%- if item.tech == "Archotech" -%}
+    {%- assign techArchotech = techArchotech | push: item | sort: "abr" -%}
+    {%- continue -%}
+  {%- endif -%}
 {%- endfor -%}
 
 <div class="box">
   <div class="drops">
-    <select id="select_apparel" style="width: 100%">
-      <option value="" data-placeholder>Apparel</option>
-        {%- for item in include.displayData -%}
-          {%- if type == "Apparel" -%}
+    <select id="select_item{{- id -}}" style="width: 100%">
+      <option value="" data-placeholder>{{- type -}}</option>
+      {%- if techNeolithic.size > 0 -%}
+        <optgroup id="neolithic{{- id -}}" label="Neolithic">
+          {%- for item in techNeolithic -%}
             <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
             {%- continue -%}
-          {%- endif -%}
-        {%- endfor -%}
+          {%- endfor -%}
+        </optgroup>
+      {%- endif -%}
+      {%- if techMedieval.size > 0 -%}
+        <optgroup id="medieval{{- id -}}" label="Medieval">
+          {%- for item in techMedieval -%}
+            <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            {%- continue -%}
+          {%- endfor -%}
+        </optgroup>
+      {%- endif -%}
+      {%- if techIndustrial.size > 0 -%}
+        <optgroup id="industrial{{- id -}}" label="Industrial">
+          {%- for item in techIndustrial -%}
+            <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            {%- continue -%}
+          {%- endfor -%}
+        </optgroup>
+      {%- endif -%}
+      {%- if techSpacer.size > 0 -%}
+        <optgroup id="spacer{{- id -}}" label="Spacer">
+          {%- for item in techSpacer -%}
+            <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            {%- continue -%}
+          {%- endfor -%}
+        </optgroup>
+      {%- endif -%}
+      {%- if techUltratech.size > 0 -%}
+        <optgroup id="ultratech{{- id -}}" label="Ultratech">
+          {%- for item in techUltratech -%}
+            <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            {%- continue -%}
+          {%- endfor -%}
+        </optgroup>
+      {%- endif -%}
+      {%- if techArchotech.size > 0 -%}
+        <optgroup id="archotech{{- id -}}" label="Archotech">
+          {%- for item in techArchotech -%}
+            <option data-cat="{{- item.ingredients -}}" value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+            {%- continue -%}
+          {%- endfor -%}
+        </optgroup>
+      {%- endif -%}
     </select>
   </div>
   <div class="drops">
-    <select id="select_material" style="width: 100%">
+    <select id="select_material{{- id -}}" style="width: 100%">
       <option value="" data-placeholder>Material</option>
-      <optgroup id="fabric" label="Fabrics">
+      <optgroup id="fabric{{- id -}}" label="Fabrics">
         {%- for item in Fabrics -%}
           <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="leathery" label="Leathers">
+      <optgroup id="leathery{{- id -}}" label="Leathers">
         {%- for item in Leathers -%}
           <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="stony" label="Stone">
-        {%- for item in Stone -%}
-          <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
-          {%- continue -%}
-        {%- endfor -%}
-      </optgroup>
-      <optgroup id="metallic" label="Metals">
+      <optgroup id="metallic{{- id -}}" label="Metals">
         {%- for item in Metals -%}
           <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
           {%- continue -%}
         {%- endfor -%}
       </optgroup>
-      <optgroup id="woody" label="Wood">
+      <optgroup id="stony{{- id -}}" label="Stone">
+        {%- for item in Stone -%}
+          <option value="{{- item.abr -}}">{{- item.abr | capitalize -}}</option>
+          {%- continue -%}
+        {%- endfor -%}
+      </optgroup>
+      <optgroup id="woody{{- id -}}" label="Wood">
           <option value="wood">Wood</option>
       </optgroup>
     </select>
   </div>
   <div class="drops">
-    <select id="select_quality" style="width: 100%">
+    <select id="select_quality{{- id -}}" style="width: 100%">
       <option value="" data-placeholder>Quality</option>
       <option value="awful">Awful</option>
       <option value="poor">Poor</option>
@@ -98,87 +180,112 @@
   </div>
 </div>
 <div class="ei-box">
-  <input id="cmdout" class="ei-out" type="text" placeholder="Chatcommand" onclick="this.select()" readonly>
+  <input id="cmdout{{- id -}}" class="ei-out" type="text" placeholder="Chatcommand" onclick="this.select()" readonly>
   <span class="focus-border"></span>
 </div>
 <div class="copy">
-  <button class="ei-btn" onclick="copyOutput()">COPY</button>
-  <button class="ei-btn" onclick="clearDrops()">CLEAR</button>    
+  <button class="ei-btn" onclick="copyOutput{{- id -}}()">COPY</button>
+  <button class="ei-btn" onclick="toggleCmd{{- id -}}()">SWITCH</button>
+  <button class="ei-btn" onclick="clearDrops{{- id -}}()">CLEAR</button>    
 </div>
 
 <script>
 
-  easydropdown('#select_apparel', {
+  var $eddclone{{- id -}} = $('#select_material{{- id -}}').clone();
+
+  easydropdown('#select_item{{- id -}}', {
     behavior: {
       liveUpdates: true,
       showPlaceholderWhenOpen: true
     },
     callbacks: {
       onSelect: function() {
-        var val = $('#select_apparel').find(':selected').data('cat');
+        var val = $('#select_item{{- id -}}').find(':selected').data('cat');
         val = val.split(", ");
         val = val.map(function(elem) { return elem.toLowerCase(); }); 
-        clearDrops();
-        document.querySelectorAll("#select_material optgroup").forEach(opt => {
-          if ($.inArray(opt.id, val) != -1) {
-            opt.disabled = false; 
-          } else {
-            opt.disabled = true;
+        var srch = document.getElementById('{{- id -}}Input');
+        clearDrops{{- id -}}();
+        srch.value = $('#select_item{{- id -}}').find(':selected').val();
+        srch.onkeyup();
+        if (val == "") {
+          $('#select_material{{- id -}}').attr("disabled", "disabled");
+        } else {
+          for (var i = 0; i < val.length; i++) {
+            val[i] = val[i] + "{{- id -}}";
           }
-        });
-        showCommand();
+          $('#select_material{{- id -}}').removeAttr("disabled");
+          $('#select_material{{- id -}}').find("optgroup").remove();
+          val.forEach(opt => {
+            $('#select_material{{- id -}}').append($eddclone{{- id -}}.find("optgroup[id='" + opt + "']").clone());
+          });
+        }
+        showCommand{{- id -}}();
       },
     }
   });
   
-  easydropdown('#select_material', {
+  easydropdown('#select_material{{- id -}}', {
     behavior: {
       liveUpdates: true,
       showPlaceholderWhenOpen: true
     },
     callbacks: {
       onSelect: function() {
-        showCommand();
+        showCommand{{- id -}}();
       },
     }
   });
   
-  easydropdown('#select_quality', {
+  easydropdown('#select_quality{{- id -}}', {
     behavior: {
       liveUpdates: true,
       showPlaceholderWhenOpen: true
     },
     callbacks: {
       onSelect: function() {
-        showCommand();
+        showCommand{{- id -}}();
       },
     }
   });
+    
+  function clearDrops{{- id -}}() {
+    $("#select_material{{- id -}}")[0].selectedIndex = 0;
+    $("#select_quality{{- id -}}")[0].selectedIndex = 0;
+  }
+
+  var cmdArray{{- id -}} = ["{{- cmd -}}", "$", "!price "];
+  var cmd{{- id -}} = "{{- cmd -}}";
   
-  function clearDrops() {
-    $("#select_material")[0].selectedIndex = 0;
-    $("#select_quality")[0].selectedIndex = 0;
+  function toggleCmd{{- id -}}() {
+    cmd{{- id -}} = $.inArray(cmd{{- id -}}, cmdArray{{- id -}}) + 1;
+    if (cmd{{- id -}} < cmdArray{{- id -}}.length) {
+      cmd{{- id -}} = cmdArray{{- id -}}[cmd{{- id -}}];
+    }
+    else {
+      cmd{{- id -}} = "{{- cmd -}}";
+    }
+    showCommand{{- id -}}();
   }
   
-  function showCommand() {
-    var part1 = document.getElementById('select_apparel').value;
-    var part2 = document.getElementById('select_material').value;
-    var part3 = document.getElementById('select_quality').value;
-    
+  function showCommand{{- id -}}() {
+    var part1 = document.getElementById('select_item{{- id -}}').value;
+    var part2 = document.getElementById('select_material{{- id -}}').value;
+    var part3 = document.getElementById('select_quality{{- id -}}').value;
+       
     if (part1) {
       if (!part2 && !part3) {
-        result = "$wear " +part1;
+        result = cmd{{- id -}} + part1;
       } else if (!part2 || !part3) {
-        result = "$wear " +part1.concat("[", part2, part3, "]");
+        result = cmd{{- id -}} + part1.concat("[", part2, part3, "]");
       } else {
-        result = "$wear " + part1.concat("[", part2, ",", part3, "]");
+        result = cmd{{- id -}} + part1.concat("[", part2, ",", part3, "]");
       };
-      document.getElementById('cmdout').value = result
+      document.getElementById('cmdout{{- id -}}').value = result
     };
   };
   
-  function copyOutput() {
-    var copyText = document.getElementById("cmdout");
+  function copyOutput{{- id -}}() {
+    var copyText = document.getElementById("cmdout{{- id -}}");
     copyText.select();
     copyText.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(copyText.value);

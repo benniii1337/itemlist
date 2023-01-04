@@ -1,4 +1,4 @@
-<tr>
+<tr class="changeSelected{{ include.type }}">
     <td>
         {%- capture name -%}
             {%- if include.itemdata.CustomName != nil -%}
@@ -8,7 +8,7 @@
             {%- endif -%}
         {%- endcapture -%}
 
-        {{- name -}}
+        <span class="name">{{- name -}}</span>
 
 
         {%- if site.store.items.mod -%}
@@ -69,3 +69,15 @@
         {%- endif -%}
     </td>
 </tr>
+
+<script>
+  $(".changeSelected{{- type -}}").click(function() {
+    var $row = $(this).closest("tr");
+    var $text = $row.find(".name").text();
+
+    const $select = document.querySelector('#select_item{{- id -}}');
+    document.querySelector('#select_item{{- id -}}');
+    $select.value = $text
+      
+  });
+</script>
