@@ -187,6 +187,7 @@
   <button class="ei-btn" onclick="copyOutput{{- id -}}()">COPY</button>
   <button class="ei-btn" onclick="toggleCmd{{- id -}}()">SWITCH</button>
   <button class="ei-btn" onclick="clearDrops{{- id -}}()">CLEAR</button>    
+  <button class="ei-btn" onclick="clearDrops{{- id -}}('all')">RESET</button>  
 </div>
 
 <script>
@@ -201,23 +202,25 @@
     callbacks: {
       onSelect: function() {
         var val = $('#select_item{{- id -}}').find(':selected').data('cat');
-        val = val.split(", ");
-        val = val.map(function(elem) { return elem.toLowerCase(); }); 
-        var srch = document.getElementById('{{- id -}}Input');
-        clearDrops{{- id -}}();
-        srch.value = $('#select_item{{- id -}}').find(':selected').val();
-        srch.onkeyup();
-        if (val == "") {
-          $('#select_material{{- id -}}').attr("disabled", "disabled");
-        } else {
-          for (var i = 0; i < val.length; i++) {
-            val[i] = val[i] + "{{- id -}}";
+        if (val != undefined) {
+          val = val.split(", ");
+          val = val.map(function(elem) { return elem.toLowerCase(); }); 
+          var srch = document.getElementById('{{- id -}}Input');
+          clearDrops{{- id -}}();
+          srch.value = $('#select_item{{- id -}}').find(':selected').val();
+          srch.onkeyup();
+          if (val == "") {
+            $('#select_material{{- id -}}').attr("disabled", "disabled");
+          } else {
+            for (var i = 0; i < val.length; i++) {
+              val[i] = val[i] + "{{- id -}}";
+            }
+            $('#select_material{{- id -}}').removeAttr("disabled");
+            $('#select_material{{- id -}}').find("optgroup").remove();
+            val.forEach(opt => {
+              $('#select_material{{- id -}}').append($eddclone{{- id -}}.find("optgroup[id='" + opt + "']").clone());
+            });
           }
-          $('#select_material{{- id -}}').removeAttr("disabled");
-          $('#select_material{{- id -}}').find("optgroup").remove();
-          val.forEach(opt => {
-            $('#select_material{{- id -}}').append($eddclone{{- id -}}.find("optgroup[id='" + opt + "']").clone());
-          });
         }
         showCommand{{- id -}}();
       },
@@ -248,7 +251,10 @@
     }
   });
     
-  function clearDrops{{- id -}}() {
+  function clearDrops{{- id -}}(x) {
+    if (x) {
+      $("#select_item{{- id -}}")[0].selectedIndex = 0;
+    }
     $("#select_material{{- id -}}")[0].selectedIndex = 0;
     $("#select_quality{{- id -}}")[0].selectedIndex = 0;
   }
