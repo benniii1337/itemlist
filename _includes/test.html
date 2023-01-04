@@ -286,8 +286,10 @@
       } else {
         result = cmd{{- id -}} + part1.concat("[", part2, ",", part3, "]");
       };
-      document.getElementById('cmdout{{- id -}}').value = result
+    } else {
+      result = "";
     };
+    document.getElementById('cmdout{{- id -}}').value = result
   };
   
   function copyOutput{{- id -}}() {
