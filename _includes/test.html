@@ -247,17 +247,7 @@
       },
     }
   });
-  
-  $(".changeSelected{{- type -}}").click(function() {
-    var $row = $(this).closest("tr");
-    var $text = $row.find(".name").text();
-
-    const $select = document.querySelector('#select_item{{- id -}}');
-    document.querySelector('#select_item{{- id -}}');
-    $select.value = $text
-      
-  });
-  
+    
   function clearDrops{{- id -}}() {
     $("#select_material{{- id -}}")[0].selectedIndex = 0;
     $("#select_quality{{- id -}}")[0].selectedIndex = 0;

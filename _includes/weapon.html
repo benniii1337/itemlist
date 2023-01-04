@@ -69,3 +69,15 @@
         {%- endif -%}
     </td>
 </tr>
+
+<script>
+  $(".changeSelected{{- type -}}").click(function() {
+    var $row = $(this).closest("tr");
+    var $text = $row.find(".name").text();
+
+    const $select = document.querySelector('#select_item{{- id -}}');
+    document.querySelector('#select_item{{- id -}}');
+    $select.value = $text
+      
+  });
+</script>
